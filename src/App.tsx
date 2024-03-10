@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     },
     {
         path: '*',
-        element: <Navigate to={'/dashboard'}></Navigate>
+        element: <Navigate to={'/resumes'}></Navigate>
     }
 ]);
 
