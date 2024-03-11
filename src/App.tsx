@@ -1,5 +1,5 @@
 import './App.css';
-import {createBrowserRouter} from "react-router-dom";
+import {createBrowserRouter, redirect} from "react-router-dom";
 import {RouterProvider, Navigate} from "react-router-dom";
 import React from 'react';
 import {Layout} from "./Layout";
@@ -11,6 +11,10 @@ const router = createBrowserRouter([
         path: '/',
         element: <Layout></Layout>,
         children: [
+            {
+                index: true,
+                loader: async () => redirect('/resumes'),
+            },
             {
                 path: 'resumes',
                 element: <ResumeListPage/>,
