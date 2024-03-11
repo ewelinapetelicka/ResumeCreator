@@ -1,5 +1,3 @@
-export function ResumeListPage(){
-    return (
-        <div>test</div>
-    )
+export function ResumeListPage() {
+  return <div>test</div>;
 }
