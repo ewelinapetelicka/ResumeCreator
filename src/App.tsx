@@ -5,6 +5,7 @@ import React from 'react';
 import {Layout} from "./Layout";
 import {ResumeListPage} from "./modules/pages/resume-list-page/ResumeListPage";
 import {TemplateListPage} from "./modules/pages/templeate-list-page/TemplateListPage";
+import {ChakraProvider} from '@chakra-ui/react'
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,8 @@ const router = createBrowserRouter([
 
 export function App() {
     return (
+        <ChakraProvider>
             <RouterProvider router={router}/>
+        </ChakraProvider>
     );
 }
