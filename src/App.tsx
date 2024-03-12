@@ -4,7 +4,7 @@ import { RouterProvider, Navigate } from 'react-router-dom';
 import React from 'react';
 import { Layout } from './Layout';
 import { ResumeListPage } from './modules/pages/resume-list-page/ResumeListPage';
-import { TemplateListPage } from './modules/pages/templeate-list-page/TemplateListPage';
+import { TemplateListPage } from './modules/pages/template-list-page/TemplateListPage';
 import { ChakraProvider } from '@chakra-ui/react';
 
 const router = createBrowserRouter([
