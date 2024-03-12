@@ -1,5 +1,3 @@
-export function  TemplateListPage(){
-    return (
-        <div>test</div>
-    )
+export function TemplateListPage() {
+  return <div>test</div>;
 }
