@@ -4,8 +4,10 @@ import { RouterProvider, Navigate } from 'react-router-dom';
 import React from 'react';
 import { Layout } from './Layout';
 import { ResumeListPage } from './modules/pages/resume-list-page/ResumeListPage';
-import { TemplateListPage } from './modules/pages/template-list-page/TemplateListPage';
+import { TemplateListPage } from './modules/template-list/pages/template-list-page/TemplateListPage';
 import { ChakraProvider } from '@chakra-ui/react';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
 const router = createBrowserRouter([
   {
@@ -34,8 +36,10 @@ const router = createBrowserRouter([
 
 export function App() {
   return (
-    <ChakraProvider>
-      <RouterProvider router={router} />
-    </ChakraProvider>
+    <Provider store={store}>
+      <ChakraProvider>
+        <RouterProvider router={router} />
+      </ChakraProvider>
+    </Provider>
   );
 }
