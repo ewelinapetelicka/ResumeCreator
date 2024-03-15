@@ -11,7 +11,7 @@ const initialState: TemplatesState = {
 };
 
 export const templatesSlice = createSlice({
-  name: 'templatesSlice',
+  name: 'templates',
   initialState,
   reducers: {
     setTemplates: (state, action: PayloadAction<Template[]>) => {

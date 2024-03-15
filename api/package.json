@@ -1,0 +1,9 @@
+{
+  "name": "resume-creator",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "copy": "copy db.json db-running.json",
+    "start": "npm run copy && json-server db-running.json --port=8000"
+  }
+}
