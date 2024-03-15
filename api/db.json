@@ -1,0 +1,24 @@
+{
+  "templates": [
+    {
+      "id": "1",
+      "name": "clean"
+    },
+    {
+      "id": "2",
+      "name": "left"
+    },
+    {
+      "id": "3",
+      "name": "right"
+    },
+    {
+      "id": "4",
+      "name": "horizontal-stripe"
+    },
+    {
+      "id": "5",
+      "name": "round"
+    }
+  ]
+}

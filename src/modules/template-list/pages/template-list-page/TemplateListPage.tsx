@@ -4,16 +4,19 @@ import {
   setTemplates,
 } from '../../../../store/template/templates.slice';
 import { useEffect } from 'react';
-import { templatesConst } from '../../../../const/template.const';
 import { Template } from '../../../../model/template.model';
 import { Wrap, WrapItem } from '@chakra-ui/react';
+import { useHttpClient } from '../../../../hooks/http-client/use-http-client';
 
 export function TemplateListPage() {
+  const httpClient = useHttpClient();
   const dispatch = useDispatch();
   const templates = useSelector(selectTemplates);
 
   useEffect(() => {
-    dispatch(setTemplates(templatesConst));
+    httpClient
+      .get<Template[]>('templates')
+      .then((templates) => dispatch(setTemplates(templates)));
   }, []);
 
   return (
