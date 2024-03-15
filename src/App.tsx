@@ -8,6 +8,8 @@ import { TemplateListPage } from './modules/template-list/pages/template-list-pa
 import { ChakraProvider } from '@chakra-ui/react';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
+import { TemplatePreviewPage } from './modules/template-list/pages/template-preview-page/TemplatePreviewPage';
+import { TemplateLayout } from './modules/template-list/TemplateLayout';
 
 const router = createBrowserRouter([
   {
@@ -24,7 +26,17 @@ const router = createBrowserRouter([
       },
       {
         path: 'templates',
-        element: <TemplateListPage />,
+        element: <TemplateLayout />,
+        children: [
+          {
+            path: '',
+            element: <TemplateListPage />,
+          },
+          {
+            path: ':id',
+            element: <TemplatePreviewPage />,
+          },
+        ],
       },
     ],
   },
