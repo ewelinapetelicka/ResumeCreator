@@ -2,23 +2,67 @@
   "templates": [
     {
       "id": "1",
-      "name": "clean"
+      "name": "clean",
+      "elements": [
+        {
+          "type": "BOX",
+          "position": {
+            "top": 0,
+            "left": 0,
+            "width": 100,
+            "height": 30
+          },
+          "style": {
+            "bg": "#222222",
+            "borderRadius": 15
+          }
+        },
+        {
+          "type": "BOX",
+          "position": {
+            "top": 30,
+            "left": 0,
+            "width": 100,
+            "height": 70
+          },
+          "style": {
+            "bg": "red"
+          }
+        },
+        {
+          "type": "TEXT",
+          "position": {
+            "top": 15,
+            "left": 15,
+            "width": 100,
+            "height": 70
+          },
+          "style": {
+            "color": "white",
+            "size": 30
+          }
+        }
+      ]
     },
     {
       "id": "2",
-      "name": "left"
+      "name": "left",
+      "elements": []
     },
     {
       "id": "3",
-      "name": "right"
+      "name": "right",
+      "elements": []
     },
     {
       "id": "4",
-      "name": "horizontal-stripe"
+      "name": "horizontal-stripe",
+      "elements": []
     },
     {
       "id": "5",
-      "name": "round"
+      "name": "round",
+      "elements": []
     }
   ]
 }
