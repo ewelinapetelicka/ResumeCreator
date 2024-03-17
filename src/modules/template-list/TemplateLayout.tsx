@@ -7,6 +7,7 @@ import {
 import { useHttpClient } from '../../hooks/http-client/use-http-client';
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
+import { Loader } from '../../components/loader/Loader';
 
 export function TemplateLayout() {
   const httpClient = useHttpClient();
@@ -24,7 +25,7 @@ export function TemplateLayout() {
   }, []);
 
   if (!isLoaded) {
-    return <></>; // TODO: Add loader
+    return <Loader></Loader>;
   }
 
   return <Outlet />;

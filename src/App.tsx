@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 import { TemplatePreviewPage } from './modules/template-list/pages/template-preview-page/TemplatePreviewPage';
 import { TemplateLayout } from './modules/template-list/TemplateLayout';
+import { theme } from './theme';
 
 const router = createBrowserRouter([
   {
@@ -49,7 +50,7 @@ const router = createBrowserRouter([
 export function App() {
   return (
     <Provider store={store}>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <RouterProvider router={router} />
       </ChakraProvider>
     </Provider>
