@@ -1,8 +1,9 @@
 import { Box, Button, Text } from '@chakra-ui/react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export function Header() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <Box>
@@ -34,17 +35,19 @@ export function Header() {
           letterSpacing={'5px'}>
           reator
         </Text>
-        <Box>
+        <Box gap={'20px'} display={'flex'}>
           <Button
             colorScheme="gray"
-            variant="ghost"
-            onClick={() => navigate('/resumes')}>
+            onClick={() => navigate('/resumes')}
+            variant={location.pathname.includes('resumes') ? 'solid' : 'ghost'}>
             Resumes
           </Button>
           <Button
             colorScheme="gray"
-            variant="ghost"
-            onClick={() => navigate('/templates')}>
+            onClick={() => navigate('/templates')}
+            variant={
+              location.pathname.includes('templates') ? 'solid' : 'ghost'
+            }>
             Templates
           </Button>
         </Box>
