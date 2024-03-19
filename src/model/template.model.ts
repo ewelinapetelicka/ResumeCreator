@@ -1,5 +1,6 @@
 import { AbsolutePosition } from './position.model';
 import { BoxStyle, TextStyle } from './style.model';
+import { DimensionPercentage } from './size.model';
 
 export interface Template {
   id: string;
@@ -19,6 +20,7 @@ export interface Element {
 
 export interface BoxElement extends Element {
   type: ElementType.BOX;
+  dimension: DimensionPercentage;
   style: BoxStyle;
 }
 

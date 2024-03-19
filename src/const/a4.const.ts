@@ -1,6 +1,6 @@
-import { Dimension } from '../model/size.model';
+import { DimensionPixel } from '../model/size.model';
 
-export const A4: Dimension = {
+export const A4: DimensionPixel = {
   width: 595,
   height: 842,
 };

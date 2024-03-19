@@ -7,11 +7,11 @@ import {
 import { Box } from '@chakra-ui/react';
 import { BoxDrawer } from './elements/BoxDrawer';
 import { TextDrawer } from './elements/TextDrawer';
-import { Dimension } from '../../model/size.model';
+import { DimensionPixel } from '../../model/size.model';
 
 interface TemplateDrawerProps {
   template: Template;
-  dimension: Dimension;
+  dimension: DimensionPixel;
 }
 
 export function TemplateDrawer(props: TemplateDrawerProps) {
