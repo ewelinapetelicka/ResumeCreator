@@ -1,5 +1,6 @@
-import { Box, Button, Text } from '@chakra-ui/react';
+import { Box, Button, Image, Text } from '@chakra-ui/react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import React from 'react';
 
 export function Header() {
   const navigate = useNavigate();
