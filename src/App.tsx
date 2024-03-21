@@ -3,7 +3,7 @@ import { createBrowserRouter, redirect } from 'react-router-dom';
 import { RouterProvider, Navigate } from 'react-router-dom';
 import React from 'react';
 import { Layout } from './Layout';
-import { ResumeListPage } from './modules/pages/resume-list-page/ResumeListPage';
+import { ResumeListPage } from './modules/resume-list/pages/resume-list-page/ResumeListPage';
 import { TemplateListPage } from './modules/template-list/pages/template-list-page/TemplateListPage';
 import { ChakraProvider } from '@chakra-ui/react';
 import { Provider } from 'react-redux';
@@ -11,6 +11,7 @@ import { store } from './store/store';
 import { TemplatePreviewPage } from './modules/template-list/pages/template-preview-page/TemplatePreviewPage';
 import { TemplateLayout } from './modules/template-list/TemplateLayout';
 import { theme } from './theme';
+import { NotFoundPage } from './pages/not-found-page/NotFoundPage';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    path: '404',
+    element: <NotFoundPage />,
   },
   {
     path: '*',
