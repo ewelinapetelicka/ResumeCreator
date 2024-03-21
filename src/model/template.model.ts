@@ -1,6 +1,7 @@
 import { AbsolutePosition } from './position.model';
 import { BoxStyle, TextStyle } from './style.model';
 import { DimensionPercentage } from './size.model';
+import { PersonalDataField } from './personal-data.model';
 
 export interface Template {
   id: string;
@@ -26,5 +27,6 @@ export interface BoxElement extends Element {
 
 export interface TextElement extends Element {
   type: ElementType.TEXT;
+  personalDataField: PersonalDataField;
   style: TextStyle;
 }

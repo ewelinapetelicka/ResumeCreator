@@ -8,10 +8,12 @@ import { Box } from '@chakra-ui/react';
 import { BoxDrawer } from './elements/BoxDrawer';
 import { TextDrawer } from './elements/TextDrawer';
 import { DimensionPixel } from '../../model/size.model';
+import { PersonalData } from '../../model/personal-data.model';
 
 interface TemplateDrawerProps {
   template: Template;
   dimension: DimensionPixel;
+  data: PersonalData;
 }
 
 export function TemplateDrawer(props: TemplateDrawerProps) {
@@ -26,7 +28,13 @@ export function TemplateDrawer(props: TemplateDrawerProps) {
           case ElementType.BOX:
             return <BoxDrawer element={element as BoxElement} key={i} />;
           case ElementType.TEXT:
-            return <TextDrawer element={element as TextElement} key={i} />;
+            return (
+              <TextDrawer
+                element={element as TextElement}
+                data={props.data}
+                key={i}
+              />
+            );
           default:
             return <></>;
         }
