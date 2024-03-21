@@ -11,8 +11,8 @@ export function BoxDrawer(props: BoxDrawerProps) {
       position={'absolute'}
       top={props.element.position.top + '%'}
       left={props.element.position.left + '%'}
-      w={props.element.position.width + '%'}
-      h={props.element.position.height + '%'}
+      w={props.element.dimension.width + '%'}
+      h={props.element.dimension.height + '%'}
       bg={props.element.style.bg}
       borderRadius={props.element.style.borderRadius}></Box>
   );
