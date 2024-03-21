@@ -1,8 +1,10 @@
 import { TextElement } from '../../../model/template.model';
 import { Text } from '@chakra-ui/react';
+import { PersonalData } from '../../../model/personal-data.model';
 
 interface TextDrawerProps {
   element: TextElement;
+  data: PersonalData;
 }
 
 export function TextDrawer(props: TextDrawerProps) {
@@ -13,7 +15,7 @@ export function TextDrawer(props: TextDrawerProps) {
       left={props.element.position.left + '%'}
       color={props.element.style.color}
       fontSize={props.element.style.size}>
-      Lorem ipsum dolor sit amet.
+      {props.data[props.element.personalDataField]}
     </Text>
   );
 }

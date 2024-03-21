@@ -5,13 +5,14 @@ import { selectTemplateById } from '../../../../store/template/templates.slice';
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 import { Box } from '@chakra-ui/react';
 import { A4 } from '../../../../const/a4.const';
+import { defaultPersonalDataConst } from '../../const/default-personal-data.const';
 
 export function TemplatePreviewPage() {
   const params = useParams();
   const template = useSelector(selectTemplateById(params.id!));
 
   if (!template) {
-    return <Navigate to={'/404'} />; // TODO: add 404 page
+    return <Navigate to={'/404'} />;
   }
 
   return (
@@ -29,7 +30,11 @@ export function TemplatePreviewPage() {
             overflow: 'hidden',
             cursor: 'grab',
           }}>
-          <TemplateDrawer template={template} dimension={A4} />
+          <TemplateDrawer
+            template={template}
+            dimension={A4}
+            data={defaultPersonalDataConst}
+          />
         </TransformComponent>
       </TransformWrapper>
     </Box>
