@@ -14,7 +14,10 @@ export function TextDrawer(props: TextDrawerProps) {
       top={props.element.position.top + '%'}
       left={props.element.position.left + '%'}
       color={props.element.style.color}
-      fontSize={props.element.style.size}>
+      fontSize={props.element.style.fontSize}
+      fontFamily={props.element.style.fontFamily}
+      fontWeight={props.element.style.fontWeight}
+      textTransform={props.element.style.textTransform}>
       {props.data[props.element.personalDataField]}
     </Text>
   );

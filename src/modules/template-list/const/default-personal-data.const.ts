@@ -4,4 +4,5 @@ export const defaultPersonalDataConst: PersonalData = {
   name: 'John',
   surname: 'Doe',
   fullName: 'John Doe',
+  role: 'Frontend Developer',
 };
