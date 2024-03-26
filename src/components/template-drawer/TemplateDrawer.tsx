@@ -9,6 +9,8 @@ import { BoxDrawer } from './elements/BoxDrawer';
 import { TextDrawer } from './elements/TextDrawer';
 import { DimensionPixel } from '../../model/size.model';
 import { PersonalData } from '../../model/personal-data.model';
+import { TemplateUtils } from '../../utils/template-utils';
+import { useEffect } from 'react';
 
 interface TemplateDrawerProps {
   template: Template;
@@ -17,6 +19,10 @@ interface TemplateDrawerProps {
 }
 
 export function TemplateDrawer(props: TemplateDrawerProps) {
+  useEffect(() => {
+    TemplateUtils.registerFonts(props.template);
+  }, []);
+
   return (
     <Box
       w={props.dimension.width}

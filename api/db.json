@@ -39,7 +39,10 @@
           },
           "style": {
             "color": "#414141",
-            "size": 24
+            "fontSize": 24,
+            "fontFamily": "Roboto",
+            "fontWeight": 500,
+            "textTransform": "uppercase"
           }
         },
         {
@@ -51,7 +54,25 @@
           },
           "style": {
             "color": "#414141",
-            "size": 24
+            "fontSize": 24,
+            "fontFamily": "Roboto",
+            "fontWeight": 300,
+            "textTransform": "uppercase"
+          }
+        },
+        {
+          "type": "TEXT",
+          "personalDataField": "role",
+          "position": {
+            "top": 11.5,
+            "left": 10
+          },
+          "style": {
+            "color": "#414141",
+            "fontSize": 10,
+            "fontFamily": "Roboto",
+            "fontWeight": 300,
+            "textTransform": "uppercase"
           }
         }
       ]
