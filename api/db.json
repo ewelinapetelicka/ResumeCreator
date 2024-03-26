@@ -74,6 +74,22 @@
             "fontWeight": 300,
             "textTransform": "uppercase"
           }
+        },
+        {
+          "type": "IMAGE",
+          "personalDataField": "personalPhoto",
+          "position": {
+            "top": 6,
+            "left": 2
+          },
+          "dimension": {
+            "width": 40,
+            "height": 40
+          },
+          "style": {
+            "borderRadius": 20
+          },
+          "alt": "John Doe"
         }
       ]
     },

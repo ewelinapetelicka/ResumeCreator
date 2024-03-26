@@ -1,6 +1,7 @@
 import {
   BoxElement,
   ElementType,
+  ImageElement,
   Template,
   TextElement,
 } from '../../model/template.model';
@@ -11,6 +12,7 @@ import { DimensionPixel } from '../../model/size.model';
 import { PersonalData } from '../../model/personal-data.model';
 import { TemplateUtils } from '../../utils/template-utils';
 import { useEffect } from 'react';
+import { ImageDrawer } from './elements/ImageDrawer';
 
 interface TemplateDrawerProps {
   template: Template;
@@ -39,6 +41,13 @@ export function TemplateDrawer(props: TemplateDrawerProps) {
                 element={element as TextElement}
                 data={props.data}
                 key={i}
+              />
+            );
+          case ElementType.IMAGE:
+            return (
+              <ImageDrawer
+                element={element as ImageElement}
+                data={props.data}
               />
             );
           default:
