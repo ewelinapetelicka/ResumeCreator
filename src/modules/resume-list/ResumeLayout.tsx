@@ -1,7 +1,7 @@
 import { useHttpClient } from '../../hooks/http-client/use-http-client';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  selectLoadedResumes,
+  selectIsResumesLoaded,
   setResumes,
 } from '../../store/resume/resume.slice';
 import { Resume } from '../../model/resume.model';
@@ -11,7 +11,7 @@ import { useEffect } from 'react';
 
 export function ResumeLayout() {
   const http = useHttpClient();
-  const isLoaded = useSelector(selectLoadedResumes);
+  const isLoaded = useSelector(selectIsResumesLoaded);
   const dispatch = useDispatch();
 
   useEffect(() => {

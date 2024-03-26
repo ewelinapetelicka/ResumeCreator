@@ -24,5 +24,6 @@ export const resumesSlice = createSlice({
 });
 
 export const selectResumes = (state: RootState) => state.resumes.resumes;
-export const selectLoadedResumes = (state: RootState) => state.resumes.isLoaded;
+export const selectIsResumesLoaded = (state: RootState) =>
+  state.resumes.isLoaded;
 export const { setResumes } = resumesSlice.actions;
