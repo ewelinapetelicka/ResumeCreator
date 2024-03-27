@@ -16,5 +16,5 @@ export interface BoxStyle {
 }
 
 export interface ImageStyle {
-  borderRadius: Pixel;
+  borderRadius?: Pixel;
 }

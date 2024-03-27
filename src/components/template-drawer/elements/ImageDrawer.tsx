@@ -17,6 +17,6 @@ export function ImageDrawer(props: ImageDrawerProps) {
       borderRadius={props.element.style.borderRadius}
       w={props.element.dimension.width + 'px'}
       h={props.element.dimension.height + 'px'}
-      alt="Dan Abramov"></Image>
+      alt={props.element.alt}></Image>
   );
 }

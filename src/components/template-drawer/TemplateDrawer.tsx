@@ -48,6 +48,7 @@ export function TemplateDrawer(props: TemplateDrawerProps) {
               <ImageDrawer
                 element={element as ImageElement}
                 data={props.data}
+                key={i}
               />
             );
           default:
