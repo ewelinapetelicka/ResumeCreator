@@ -3,6 +3,7 @@ export interface PersonalData {
   surname: string;
   fullName: string;
   role: string;
+  personalPhoto: string;
 }
 
 export type PersonalDataField = keyof PersonalData;

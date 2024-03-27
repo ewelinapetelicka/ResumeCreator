@@ -5,4 +5,5 @@ export const defaultPersonalDataConst: PersonalData = {
   surname: 'Doe',
   fullName: 'John Doe',
   role: 'Frontend Developer',
+  personalPhoto: 'https://thispersondoesnotexist.com/',
 };

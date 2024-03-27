@@ -1,6 +1,6 @@
 import { AbsolutePosition } from './position.model';
-import { BoxStyle, TextStyle } from './style.model';
-import { DimensionPercentage } from './size.model';
+import { BoxStyle, ImageStyle, TextStyle } from './style.model';
+import { DimensionPercentage, DimensionPixel } from './size.model';
 import { PersonalDataField } from './personal-data.model';
 
 export interface Template {
@@ -12,6 +12,7 @@ export interface Template {
 export enum ElementType {
   BOX = 'BOX',
   TEXT = 'TEXT',
+  IMAGE = 'IMAGE',
 }
 
 export interface Element {
@@ -29,4 +30,12 @@ export interface TextElement extends Element {
   type: ElementType.TEXT;
   personalDataField: PersonalDataField;
   style: TextStyle;
+}
+
+export interface ImageElement extends Element {
+  type: ElementType.IMAGE;
+  dimension: DimensionPixel;
+  style: ImageStyle;
+  personalDataField: PersonalDataField;
+  alt: string;
 }

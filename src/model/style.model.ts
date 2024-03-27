@@ -11,6 +11,10 @@ export interface TextStyle {
 
 export interface BoxStyle {
   bg?: string;
-  padding?: number;
+  padding?: Pixel;
   borderRadius?: string;
+}
+
+export interface ImageStyle {
+  borderRadius?: Pixel;
 }
