@@ -12,6 +12,7 @@ import { TemplatePreviewPage } from './modules/template-list/pages/template-prev
 import { TemplateLayout } from './modules/template-list/TemplateLayout';
 import { theme } from './theme';
 import { NotFoundPage } from './pages/not-found-page/NotFoundPage';
+import { ResumeLayout } from './modules/resume-list/ResumeLayout';
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,13 @@ const router = createBrowserRouter([
       },
       {
         path: 'resumes',
-        element: <ResumeListPage />,
+        element: <ResumeLayout />,
+        children: [
+          {
+            path: '',
+            element: <ResumeListPage />,
+          },
+        ],
       },
       {
         path: 'templates',
