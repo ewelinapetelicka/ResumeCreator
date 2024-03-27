@@ -1,25 +1,50 @@
-import React from 'react';
-import { Wrap, WrapItem } from '@chakra-ui/react';
+import React, { useState } from 'react';
+import {
+  Flex,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Wrap,
+  WrapItem,
+} from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
-import { selectResumes } from '../../../../store/resume/resume.slice';
+import { selectResumesByFilters } from '../../../../store/resume/resume.slice';
 import { Resume } from '../../../../model/resume.model';
+import { SearchIcon } from '@chakra-ui/icons';
 
 export function ResumeListPage() {
-  const resumes = useSelector(selectResumes);
+  const [query, setQuery] = useState('');
+  const resumes = useSelector(selectResumesByFilters(query));
+
   return (
-    <Wrap m={'20px'} spacing={'20px'} mt={'20px'} justify={'space-evenly'}>
-      {resumes.map((el: Resume) => {
-        return (
-          <WrapItem
-            w={'354px'}
-            h={'100px'}
-            bgColor={'white'}
-            borderRadius={'20px'}
-            key={el.id}>
-            {el.name}
-          </WrapItem>
-        );
-      })}
-    </Wrap>
+    <Flex direction={'column'} m={'20px'}>
+      <Flex justifyContent={'flex-end'}>
+        <InputGroup w={300}>
+          <InputLeftElement pointerEvents="none">
+            <SearchIcon color="gray.300" />
+          </InputLeftElement>
+          <Input
+            bg="white"
+            placeholder="Search..."
+            onChange={(event) => setQuery(event.target.value)}
+          />
+        </InputGroup>
+      </Flex>
+
+      <Wrap spacing={'20px'} mt={'20px'} justify={'space-evenly'}>
+        {resumes.map((el: Resume) => {
+          return (
+            <WrapItem
+              w={'354px'}
+              h={'100px'}
+              bgColor={'white'}
+              borderRadius={'20px'}
+              key={el.id}>
+              {el.name}
+            </WrapItem>
+          );
+        })}
+      </Wrap>
+    </Flex>
   );
 }
