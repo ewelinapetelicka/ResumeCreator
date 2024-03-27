@@ -6,4 +6,8 @@ export const defaultPersonalDataConst: PersonalData = {
   fullName: 'John Doe',
   role: 'Frontend Developer',
   personalPhoto: 'https://thispersondoesnotexist.com/',
+  phone: '777777777',
+  email: 'johnDoe@gmail.com',
+  github: 'github.com/johnDoe',
+  linkedin: 'linkedin.com/in/johnDoe',
 };

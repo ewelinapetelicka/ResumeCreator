@@ -4,6 +4,10 @@ export interface PersonalData {
   fullName: string;
   role: string;
   personalPhoto: string;
+  phone: string;
+  email: string;
+  linkedin: string;
+  github: string;
 }
 
 export type PersonalDataField = keyof PersonalData;
