@@ -29,6 +29,9 @@ export function TemplatePreviewPage() {
             height: '100%',
             overflow: 'hidden',
             cursor: 'grab',
+          }}
+          contentStyle={{
+            boxShadow: '#e9e9e9 0px 0px 15px 5px',
           }}>
           <TemplateDrawer
             template={template}

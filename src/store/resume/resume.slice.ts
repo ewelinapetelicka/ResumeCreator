@@ -24,6 +24,16 @@ export const resumesSlice = createSlice({
 });
 
 export const selectResumes = (state: RootState) => state.resumes.resumes;
+export const selectResumesByFilters = (query: string) => (state: RootState) =>
+  state.resumes.resumes.filter((resume) => {
+    if (query) {
+      return resume.name
+        .toLowerCase()
+        .trim()
+        .includes(query.toLowerCase().trim());
+    }
+    return true;
+  });
 export const selectIsResumesLoaded = (state: RootState) =>
   state.resumes.isLoaded;
 export const { setResumes } = resumesSlice.actions;
