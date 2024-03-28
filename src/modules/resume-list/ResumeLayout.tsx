@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   selectIsResumesLoaded,
   setResumes,
-} from '../../store/resume/resume.slice';
+} from '../../store/resume/resumes.slice';
 import { Resume } from '../../model/resume.model';
 import { Loader } from '../../components/loader/Loader';
 import { Outlet } from 'react-router-dom';

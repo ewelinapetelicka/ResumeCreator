@@ -8,7 +8,7 @@ import {
   WrapItem,
 } from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
-import { selectResumesByFilters } from '../../../../store/resume/resume.slice';
+import { selectResumesByFilters } from '../../../../store/resume/resumes.slice';
 import { Resume } from '../../../../model/resume.model';
 import { SearchIcon } from '@chakra-ui/icons';
 

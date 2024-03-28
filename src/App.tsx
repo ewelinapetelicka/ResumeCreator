@@ -13,6 +13,7 @@ import { TemplateLayout } from './modules/template-list/TemplateLayout';
 import { theme } from './theme';
 import { NotFoundPage } from './pages/not-found-page/NotFoundPage';
 import { ResumeLayout } from './modules/resume-list/ResumeLayout';
+import { AuthorizedRoute } from './components/authorized-route/AuthorizedRoute';
 
 const router = createBrowserRouter([
   {
@@ -21,11 +22,15 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader: async () => redirect('/resumes'),
+        loader: async () => redirect('/templates'),
       },
       {
         path: 'resumes',
-        element: <ResumeLayout />,
+        element: (
+          <AuthorizedRoute>
+            <ResumeLayout />
+          </AuthorizedRoute>
+        ),
         children: [
           {
             path: '',
@@ -55,7 +60,7 @@ const router = createBrowserRouter([
   },
   {
     path: '*',
-    element: <Navigate to={'/resumes'}></Navigate>,
+    element: <Navigate to={'/templates'}></Navigate>,
   },
 ]);
 

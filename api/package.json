@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "copy": "copy db.json db-running.json",
-    "start": "npm run copy && json-server db-running.json --port=8000"
+    "serve": "json-server-auth db-running.json --port=8000 -r routes.json",
+    "start": "npm run copy && npm run serve"
   }
 }
