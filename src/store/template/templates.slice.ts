@@ -27,5 +27,15 @@ export const selectIsTemplateLoaded = (state: RootState) =>
   state.templates.isLoaded;
 export const selectTemplateById = (id: string) => (state: RootState) =>
   state.templates.templates.find((el) => el.id === id);
+export const selectTemplatesByFilters = (query: string) => (state: RootState) =>
+  state.templates.templates.filter((template) => {
+    if (query) {
+      return template.name
+        .toLowerCase()
+        .trim()
+        .includes(query.toLowerCase().trim());
+    }
+    return true;
+  });
 
 export const { setTemplates } = templatesSlice.actions;
