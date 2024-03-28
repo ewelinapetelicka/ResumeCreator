@@ -1,8 +1,11 @@
 import { Box, Button, Text } from '@chakra-ui/react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { selectIsUserLogged } from '../../store/user/user.slice';
 
 export function Header() {
+  const isLogged = useSelector(selectIsUserLogged);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -37,12 +40,16 @@ export function Header() {
           reator
         </Text>
         <Box gap={'20px'} display={'flex'}>
-          <Button
-            colorScheme="gray"
-            onClick={() => navigate('/resumes')}
-            variant={location.pathname.includes('resumes') ? 'solid' : 'ghost'}>
-            Resumes
-          </Button>
+          {isLogged && (
+            <Button
+              colorScheme="gray"
+              onClick={() => navigate('/resumes')}
+              variant={
+                location.pathname.includes('resumes') ? 'solid' : 'ghost'
+              }>
+              Resumes
+            </Button>
+          )}
           <Button
             colorScheme="gray"
             onClick={() => navigate('/templates')}
