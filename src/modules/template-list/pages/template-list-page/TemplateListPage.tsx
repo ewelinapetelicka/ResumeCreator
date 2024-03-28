@@ -35,7 +35,7 @@ export function TemplateListPage() {
           />
         </InputGroup>
       </Flex>
-      <Wrap m={'20px'} spacing={'20px'} mt={'20px'} justify={'space-evenly'}>
+      <Wrap spacing={'20px'} mt={'20px'} justify={'space-evenly'}>
         {templates.map((el: Template) => {
           return (
             <WrapItem
