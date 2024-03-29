@@ -18,6 +18,7 @@ interface TemplateDrawerProps {
   template: Template;
   dimension: DimensionPixel;
   data: PersonalData;
+  scale?: number;
 }
 
 export function TemplateDrawer(props: TemplateDrawerProps) {
@@ -30,7 +31,9 @@ export function TemplateDrawer(props: TemplateDrawerProps) {
       w={props.dimension.width}
       h={props.dimension.height}
       bg={'white'}
-      position={'relative'}>
+      position={'relative'}
+      transform={`scale(${props.scale || 1})`}
+      transformOrigin={'top left'}>
       {props.template.elements.map((element, i) => {
         switch (element.type) {
           case ElementType.BOX:
