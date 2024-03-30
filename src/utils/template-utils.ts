@@ -22,9 +22,9 @@ export class TemplateUtils {
           .filter(
             (element) =>
               element.type === ElementType.TEXT &&
-              (element as TextElement).style.fontFamily,
+              (element as TextElement).style?.fontFamily,
           )
-          .map((element) => (element as TextElement).style.fontFamily!),
+          .map((element) => (element as TextElement).style?.fontFamily!),
       ),
     ];
   }

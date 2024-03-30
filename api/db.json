@@ -17,102 +17,165 @@
     {
       "id": "1",
       "name": "clean",
-      "elements": [
+      "style": {
+        "background": "#F3F3F3"
+      },
+      "layouts": [
         {
-          "type": "BOX",
-          "position": {
-            "top": 0,
-            "left": 0
-          },
-          "dimension": {
-            "width": 100,
-            "height": 100
-          },
+          "fields": [
+            {
+              "field": "name",
+              "elements": ["name"]
+            }
+          ],
           "style": {
-            "bg": "#F3F3F3"
+            "top": "5%",
+            "left": "10%"
           }
         },
         {
-          "type": "TEXT",
-          "personalDataField": "name",
-          "position": {
-            "top": 5,
-            "left": 10
+          "fields": [
+            {
+              "field": "surname",
+              "elements": ["surname"]
+            }
+          ],
+          "style": {
+            "top": "8%",
+            "left": "10%"
+          }
+        },
+        {
+          "fields": [
+            {
+              "field": "role",
+              "elements": ["role"]
+            }
+          ],
+          "style": {
+            "top": "11.5%",
+            "left": "10%"
+          }
+        },
+        {
+          "fields": [
+            {
+              "field": "phone",
+              "elements": ["socialName", "socialIcon"]
+            },
+            {
+              "field": "email",
+              "elements": ["socialName", "socialIcon"]
+            },
+            {
+              "field": "linkedin",
+              "elements": ["socialName", "socialIcon"]
+            },
+            {
+              "field": "github",
+              "elements": ["socialName", "socialIcon"]
+            }
+          ],
+          "style": {
+            "top": "6.2%",
+            "right": "11%",
+            "flexDirection": "column",
+            "gap": "4px"
           },
+          "elementWrapperStyle": {
+            "justifyContent": "end",
+            "gap": "4px",
+            "alignItems": "center"
+          }
+        }
+      ],
+      "elements": [
+        {
+          "id": "name",
+          "type": "TEXT",
           "style": {
             "color": "#414141",
-            "fontSize": 24,
+            "fontSize": "24px",
             "fontFamily": "Roboto",
             "fontWeight": 500,
             "textTransform": "uppercase"
           }
         },
         {
+          "id": "surname",
           "type": "TEXT",
-          "personalDataField": "surname",
-          "position": {
-            "top": 8,
-            "left": 10
-          },
           "style": {
             "color": "#414141",
-            "fontSize": 24,
+            "fontSize": "24px",
             "fontFamily": "Roboto",
             "fontWeight": 300,
             "textTransform": "uppercase"
           }
         },
         {
+          "id": "role",
           "type": "TEXT",
-          "personalDataField": "role",
-          "position": {
-            "top": 11.5,
-            "left": 10
-          },
           "style": {
             "color": "#414141",
-            "fontSize": 10,
+            "fontSize": "10px",
             "fontFamily": "Roboto",
             "fontWeight": 300,
             "textTransform": "uppercase"
           }
         },
         {
-          "type": "IMAGE",
-          "personalDataField": "personalPhoto",
-          "position": {
-            "top": 6,
-            "left": 2
-          },
-          "dimension": {
-            "width": 40,
-            "height": 40
+          "id": "socialName",
+          "type": "TEXT",
+          "style": {
+            "color": "#414141",
+            "fontSize": "8px",
+            "fontFamily": "Roboto",
+            "fontWeight": 300,
+            "textAlign": "right"
+          }
+        },
+        {
+          "id": "socialIcon",
+          "type": "ICON",
+          "staticData": {
+            "phone": "FiPhone",
+            "email": "FaRegEnvelope",
+            "linkedin": "LuLinkedin",
+            "github": "FiGithub"
           },
           "style": {
-            "borderRadius": 20
-          },
-          "alt": "Personal photo"
+            "size": 10,
+            "color": "#414141"
+          }
         }
       ]
     },
     {
       "id": "2",
       "name": "left",
+      "style": {},
+      "layouts": [],
       "elements": []
     },
     {
       "id": "3",
       "name": "right",
+      "style": {},
+      "layouts": [],
       "elements": []
     },
     {
       "id": "4",
       "name": "horizontal-stripe",
+      "style": {},
+      "layouts": [],
       "elements": []
     },
     {
       "id": "5",
       "name": "round",
+      "style": {},
+      "layouts": [],
       "elements": []
     }
   ],
