@@ -120,7 +120,7 @@
     {
       "id": "1",
       "email": "user@gmail.com",
-      "password": "123456"
+      "password": "$2y$10$Tsoz6pJaTzqOgdODwKVRLuPs.W/QNL2eNyWw5c/7qMPKkN/7Asdle"
     }
   ]
 }

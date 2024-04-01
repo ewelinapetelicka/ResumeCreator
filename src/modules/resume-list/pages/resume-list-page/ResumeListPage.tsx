@@ -30,7 +30,6 @@ export function ResumeListPage() {
           />
         </InputGroup>
       </Flex>
-
       <Wrap spacing={'20px'} mt={'20px'} justify={'space-evenly'}>
         {resumes.map((el: Resume) => {
           return (

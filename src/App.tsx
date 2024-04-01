@@ -14,6 +14,7 @@ import { theme } from './theme';
 import { NotFoundPage } from './pages/not-found-page/NotFoundPage';
 import { ResumeLayout } from './modules/resume-list/ResumeLayout';
 import { AuthorizedRoute } from './components/authorized-route/AuthorizedRoute';
+import { LoginPage } from './pages/login-page/LoginPage';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    path: 'login',
+    element: <LoginPage />,
   },
   {
     path: '404',
