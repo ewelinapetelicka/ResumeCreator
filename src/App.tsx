@@ -15,6 +15,7 @@ import { NotFoundPage } from './pages/not-found-page/NotFoundPage';
 import { ResumeLayout } from './modules/resume-list/ResumeLayout';
 import { AuthorizedRoute } from './components/authorized-route/AuthorizedRoute';
 import { LoginPage } from './pages/login-page/LoginPage';
+import { UnauthorizedPage } from './pages/unauthorized-page/UnauthorizedPage';
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
   {
     path: '404',
     element: <NotFoundPage />,
+  },
+  {
+    path: '401',
+    element: <UnauthorizedPage />,
   },
   {
     path: '*',

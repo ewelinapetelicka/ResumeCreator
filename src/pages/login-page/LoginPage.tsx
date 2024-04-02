@@ -1,4 +1,11 @@
-import { Box, Button, Input, InputGroup, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Input,
+  InputGroup,
+  InputRightElement,
+  Text,
+} from '@chakra-ui/react';
 import { useState } from 'react';
 import { useHttpClient } from '../../hooks/http-client/use-http-client';
 import { useDispatch } from 'react-redux';
@@ -11,6 +18,7 @@ export function LoginPage() {
   const http = useHttpClient();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [show, setShow] = useState(false);
 
   function signIn() {
     http
@@ -52,11 +60,20 @@ export function LoginPage() {
           <Input
             placeholder={'email address'}
             value={email}
+            type={email}
             onChange={(event) => setEmail(event.target.value)}></Input>
-          <Input
-            placeholder={'password'}
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}></Input>
+          <InputGroup>
+            <Input
+              placeholder={'password'}
+              type={show ? 'text' : 'password'}
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}></Input>
+            <InputRightElement width="4.5rem">
+              <Button h="1.75rem" size="sm" onClick={() => setShow(!show)}>
+                {show ? 'Hide' : 'Show'}
+              </Button>
+            </InputRightElement>
+          </InputGroup>
         </InputGroup>
         <Text>
           Don't have an account yet?
