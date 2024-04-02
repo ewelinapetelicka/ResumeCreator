@@ -11,6 +11,6 @@ export function AuthorizedRoute(props: AuthorizedRouteProps) {
   return useSelector(selectIsUserLogged) ? (
     props.children
   ) : (
-    <Navigate to={'/403'} />
+    <Navigate to={'/401'} />
   );
 }

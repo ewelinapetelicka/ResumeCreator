@@ -1,13 +1,14 @@
 import { Box, Button, Text } from '@chakra-ui/react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { selectIsUserLogged } from '../../store/user/user.slice';
+import { useDispatch, useSelector } from 'react-redux';
+import { logOut, selectIsUserLogged } from '../../store/user/user.slice';
 
 export function Header() {
   const isLogged = useSelector(selectIsUserLogged);
   const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch();
 
   return (
     <Box>
@@ -59,6 +60,11 @@ export function Header() {
             Templates
           </Button>
         </Box>
+        {isLogged ? (
+          <Button onClick={() => dispatch(logOut())}>LOGOUT</Button>
+        ) : (
+          <Button onClick={() => navigate('/login')}>LOGIN</Button>
+        )}
       </Box>
     </Box>
   );
