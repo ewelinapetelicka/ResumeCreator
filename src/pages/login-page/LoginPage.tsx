@@ -51,14 +51,18 @@ export function LoginPage() {
           gap={'30px'}>
           <Input
             placeholder={'email address'}
+            value={email}
             onChange={(event) => setEmail(event.target.value)}></Input>
           <Input
             placeholder={'password'}
+            value={password}
             onChange={(event) => setPassword(event.target.value)}></Input>
         </InputGroup>
         <Text>
-          Don't have an account yet?{' '}
-          <Button variant={'link'}>Create account</Button>
+          Don't have an account yet?
+          <Button variant={'link'} m={'6px'} textDecoration={'underline'}>
+            Create account
+          </Button>
         </Text>
         <Button onClick={() => signIn()}>LOGIN</Button>
       </Box>
