@@ -112,7 +112,7 @@
             "top": "17%",
             "left": "10%",
             "flexDirection": "column",
-            "gap": "8px"
+            "gap": "16px"
           }
         },
         {
@@ -130,7 +130,7 @@
             "top": "17%",
             "left": "50%",
             "flexDirection": "column",
-            "gap": "8px"
+            "gap": "16px"
           },
           "elementWrapperStyle": {
             "flexDirection": "column",
