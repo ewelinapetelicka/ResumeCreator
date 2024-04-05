@@ -30,7 +30,7 @@ export function UnauthorizedPage() {
         <Text fontWeight={'bolder'}>
           YOU ARE NOT AUTHORIZED TO ACCESS THIS PAGE
         </Text>
-        <Button onClick={() => navigate('/LOGIN')}>LOGIN</Button>
+        <Button onClick={() => navigate('/login')}>LOGIN</Button>
       </Box>
     </Box>
   );

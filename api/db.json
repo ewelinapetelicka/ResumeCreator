@@ -87,6 +87,54 @@
             "gap": "4px",
             "alignItems": "center"
           }
+        },
+        {
+          "fields": [
+            {
+              "field": "education",
+              "elements": ["sectionTitle"]
+            },
+            {
+              "field": "skills",
+              "elements": ["sectionTitle"]
+            },
+            {
+              "field": "certificates",
+              "elements": ["sectionTitle"]
+            },
+            {
+              "field": "hobbies",
+              "elements": ["sectionTitle"]
+            }
+          ],
+          "style": {
+            "top": "17%",
+            "left": "10%",
+            "flexDirection": "column",
+            "gap": "8px"
+          }
+        },
+        {
+          "fields": [
+            {
+              "field": "aboutMe",
+              "elements": ["sectionTitle", "sectionDescription"]
+            },
+            {
+              "field": "workExperience",
+              "elements": ["sectionTitle"]
+            }
+          ],
+          "style": {
+            "top": "17%",
+            "left": "50%",
+            "flexDirection": "column",
+            "gap": "8px"
+          },
+          "elementWrapperStyle": {
+            "flexDirection": "column",
+            "gap": "4px"
+          }
         }
       ],
       "elements": [
@@ -146,6 +194,38 @@
           "style": {
             "size": 10,
             "color": "#414141"
+          }
+        },
+        {
+          "id": "sectionTitle",
+          "type": "TEXT",
+          "staticData": {
+            "education": "Education",
+            "skills": "Skills",
+            "certificates": "Certificates",
+            "hobbies": "Hobbies",
+            "aboutMe": "About Me",
+            "workExperience": "Work Experience"
+          },
+          "style": {
+            "fontSize": 11,
+            "color": "#414141",
+            "fontWeight": 500,
+            "textTransform": "uppercase",
+            "letterSpacing": "0.5px"
+          }
+        },
+        {
+          "id": "sectionDescription",
+          "type": "TEXT",
+          "style": {
+            "fontSize": 8,
+            "color": "#414141",
+            "fontWeight": 300,
+            "paddingLeft": "20px",
+            "paddingRight": "50px",
+            "letterSpacing": "0.5px",
+            "textAlign": "justify"
           }
         }
       ]
