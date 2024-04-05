@@ -20,7 +20,7 @@ export function LayoutDrawer(props: LayoutDrawerProps) {
     if (element.staticData) {
       return element.staticData[personalDataField];
     }
-    return props.data[personalDataField];
+    return props.data[personalDataField] as string;
   }
 
   return (
