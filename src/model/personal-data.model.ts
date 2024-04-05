@@ -1,3 +1,9 @@
+export interface PersonalDataDescribable {
+  name: string;
+  description?: string;
+  time?: string;
+}
+
 export interface PersonalData {
   name: string;
   surname: string;
@@ -8,6 +14,12 @@ export interface PersonalData {
   email: string;
   linkedin: string;
   github: string;
+  certifications: PersonalDataDescribable[];
+  education: PersonalDataDescribable[];
+  workExperience: PersonalDataDescribable[];
+  hobbies: string[];
+  skills: string[];
+  aboutMe: string;
 }
 
 export type PersonalDataField = keyof PersonalData;
