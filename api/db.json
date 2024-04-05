@@ -136,6 +136,20 @@
             "flexDirection": "column",
             "gap": "4px"
           }
+        },
+        {
+          "fields": [
+            {
+              "field": "rodo",
+              "elements": ["rodo"]
+            }
+          ],
+          "style": {
+            "bottom": "5%",
+            "left": "0",
+            "marginLeft": "50px",
+            "marginRight": "50px"
+          }
         }
       ],
       "elements": [
@@ -226,7 +240,23 @@
             "paddingLeft": "20px",
             "paddingRight": "50px",
             "letterSpacing": "0.5px",
-            "textAlign": "justify"
+            "textAlign": "justify",
+            "lineHeight": "10px"
+          }
+        },
+        {
+          "id": "rodo",
+          "type": "TEXT",
+          "staticData": {
+            "rodo": "Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO)."
+          },
+          "style": {
+            "fontSize": 8,
+            "color": "#414141",
+            "fontWeight": 300,
+            "letterSpacing": "0.5px",
+            "textAlign": "justify",
+            "lineHeight": "10px"
           }
         }
       ]
