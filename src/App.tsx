@@ -16,6 +16,7 @@ import { ResumeLayout } from './modules/resume-list/ResumeLayout';
 import { AuthorizedRoute } from './components/authorized-route/AuthorizedRoute';
 import { LoginPage } from './pages/login-page/LoginPage';
 import { UnauthorizedPage } from './pages/unauthorized-page/UnauthorizedPage';
+import { RegisterPage } from './pages/register-page/RegisterPage';
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
   {
     path: 'login',
     element: <LoginPage />,
+  },
+  {
+    path: 'register',
+    element: <RegisterPage />,
   },
   {
     path: '404',

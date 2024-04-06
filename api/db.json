@@ -1,21 +1,21 @@
 {
   "resumes": [
     {
-      "id": "1",
+      "id": 1,
       "name": "My resume 2024",
-      "templateId": "1",
-      "userId": "1"
+      "templateId": 1,
+      "userId": 1
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Resume 2000 - old",
-      "templateId": "3",
-      "userId": "1"
+      "templateId": 3,
+      "userId": 1
     }
   ],
   "templates": [
     {
-      "id": "1",
+      "id": 1,
       "name": "clean",
       "style": {
         "background": "#F3F3F3"
@@ -700,25 +700,25 @@
       ]
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "left",
       "style": {},
       "layouts": []
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "right",
       "style": {},
       "layouts": []
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "horizontal-stripe",
       "style": {},
       "layouts": []
     },
     {
-      "id": "5",
+      "id": 5,
       "name": "round",
       "style": {},
       "layouts": []
@@ -726,7 +726,7 @@
   ],
   "users": [
     {
-      "id": "1",
+      "id": 1,
       "email": "user@gmail.com",
       "password": "$2y$10$Tsoz6pJaTzqOgdODwKVRLuPs.W/QNL2eNyWw5c/7qMPKkN/7Asdle"
     }

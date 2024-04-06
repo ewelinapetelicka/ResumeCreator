@@ -1,5 +1,5 @@
 export interface Resume {
-  id: string;
+  id: number;
   name: string;
-  templateId: string;
+  templateId: number;
 }
