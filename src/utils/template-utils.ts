@@ -18,7 +18,11 @@ export class TemplateUtils {
   static extractUniqueFonts(template: Template): string[] {
     return [
       ...new Set(
-        template.elements
+        template.layouts
+          .map((el) => el.fields)
+          .flat()
+          .map((el) => el.elements)
+          .flat()
           .filter(
             (element) =>
               element.type === ElementType.TEXT &&

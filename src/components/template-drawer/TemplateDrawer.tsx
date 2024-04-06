@@ -27,12 +27,7 @@ export function TemplateDrawer(props: TemplateDrawerProps) {
       transform={`scale(${props.scale || 1})`}
       transformOrigin={'top left'}>
       {props.template.layouts.map((layout, i) => (
-        <LayoutDrawer
-          layout={layout}
-          elements={props.template.elements}
-          data={props.data}
-          key={i}
-        />
+        <LayoutDrawer layout={layout} data={props.data} key={i} />
       ))}
     </Box>
   );

@@ -12,62 +12,91 @@ export const defaultPersonalDataConst: PersonalData = {
   linkedin: 'linkedin.com/in/johnDoe',
   certifications: [
     {
-      name: 'Certified Manager (CM)',
+      name: 'Certified Manager',
       description:
         'This certification demonstrates proficiency in essential managerial skills, including leadership, strategic planning, ' +
         'and team management.',
+      time: '2020',
+      company: 'Oxford Leadership Programme',
     },
     {
-      name: 'Project Management Professional (PMP)',
-      description:
-        'PMP certification validates expertise in project management methodologies, including initiating, planning, executing,' +
-        ' monitoring, controlling, and closing projects effectively.',
+      name: 'Project Management Professional',
+      time: '2016',
+      company: 'Oxford Leadership Programme',
     },
     {
-      name: 'Certified ScrumMaster (CSM)',
-      description:
-        'CSM certification demonstrates understanding and application of Scrum principles in managing agile projects,' +
-        ' fostering collaboration, and maximizing team productivity.',
+      name: 'Certified ScrumMaster',
+      time: '2015',
+      company: 'Scrum.org',
     },
   ],
   education: [
     {
-      name: 'Bachelor of Business Administration (BBA)- University of Cambridge',
-      description:
-        'Studied business administration with a focus on management principles. Took courses in organizational behavior,' +
-        ' finance, marketing, and strategic planning. Participated in extracurricular activities such as student government and business clubs.',
-    },
-    {
-      name: 'Master of Business Administration (MBA)- University of Cambridge',
+      name: 'Master of Business Administration',
       description:
         'Specialized in strategic management and organizational leadership. Conducted research on leadership styles and their impact on organizational performance.' +
         ' Completed a capstone project on strategic planning for global expansion. Engaged in internships with leading companies to gain practical experience in management.',
+      time: '2015-2018',
+      company: 'University of Cambridge',
+    },
+    {
+      name: 'Bachelor of Business Administration',
+      description:
+        'Studied business administration with a focus on management principles. Took courses in organizational behavior,' +
+        ' finance, marketing, and strategic planning. Participated in extracurricular activities such as student government and business clubs.',
+      time: '2012-2015',
+      company: 'University of Cambridge',
     },
   ],
   workExperience: [
     {
-      name: 'Enterprises-FOTech- Operations Manager',
-      time: 'June 2014-December 2018',
-      description: `Managed day-to-day operations of multiple departments, including human resources, finance, and customer service.
-       Implemented process improvements to streamline operations and reduce costs. Led training initiatives to develop employee skills and enhance team performance. 
-       Collaborated with senior management to develop strategic plans and achieve organizational goals.`,
-    },
-    {
-      name: 'CFG-Corporation - Senior Project Manager',
-      time: 'January 2019- present',
+      name: 'Senior Project Manager',
+      time: '01.2019-present',
       description:
         'Lead cross-functional teams in the successful delivery of large-scale projects. Developed and executed project plans,' +
         ' monitored progress, and managed project budgets. Facilitated communication between stakeholders and team members to ensure alignment with project goals and objectives. ' +
         'Implemented agile methodologies to improve project efficiency and adaptability.',
+      company: 'CFG-Corporation',
+    },
+    {
+      name: 'Operations Manager',
+      time: '06.2014-12.2018',
+      description: `Managed day-to-day operations of multiple departments, including human resources, finance, and customer service.
+       Implemented process improvements to streamline operations and reduce costs. Led training initiatives to develop employee skills and enhance team performance. 
+       Collaborated with senior management to develop strategic plans and achieve organizational goals.`,
+      company: 'Enterprises-FOTech',
     },
   ],
-  hobbies: ['Skiing', 'Horseback Riding ', 'Chess', 'The Pre-War Cinema Era"'],
+  hobbies: [
+    {
+      name: 'Skiing',
+    },
+    {
+      name: 'Horseback Riding',
+    },
+    {
+      name: 'Chess',
+    },
+    {
+      name: 'The Pre-War Cinema Era',
+    },
+  ],
   skills: [
-    'Communication',
-    'Decision Making',
-    'Leadership',
-    'Strategic Planning',
-    'Conflict Resolution',
+    {
+      name: 'Communication',
+    },
+    {
+      name: 'Decision Making',
+    },
+    {
+      name: 'Leadership',
+    },
+    {
+      name: 'Strategic Planning',
+    },
+    {
+      name: 'Conflict Resolution',
+    },
   ],
   aboutMe:
     'John is a seasoned Senior Manager with a proven track record of driving organizational success through effective leadership and strategic planning.' +

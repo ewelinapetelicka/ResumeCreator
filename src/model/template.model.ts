@@ -1,5 +1,5 @@
 import { DimensionPixel } from './size.model';
-import { PersonalDataField } from './personal-data.model';
+import { PersonalDataField, PersonalDataValue } from './personal-data.model';
 import { CSSProperties } from 'react';
 import { IconBaseProps } from 'react-icons';
 
@@ -8,30 +8,29 @@ export interface Template {
   name: string;
   style?: CSSProperties;
   layouts: Layout[];
+}
+
+export interface FieldDefinition {
+  field: PersonalDataField;
   elements: Element[];
 }
 
-export interface LayoutField {
-  field: PersonalDataField;
-  elements: string[];
-}
-
 export interface Layout {
-  fields: LayoutField[];
+  fields: FieldDefinition[];
   style?: CSSProperties;
   elementWrapperStyle?: CSSProperties;
 }
 
 export interface Element {
-  id: string;
   type: ElementType;
-  staticData?: Record<PersonalDataField, string>;
+  staticData?: PersonalDataValue;
 }
 
 export enum ElementType {
   TEXT = 'TEXT',
   IMAGE = 'IMAGE',
   ICON = 'ICON',
+  LIST = 'LIST',
 }
 
 export interface TextElement extends Element {
@@ -49,4 +48,12 @@ export interface ImageElement extends Element {
 export interface IconElement extends Element {
   type: ElementType.ICON;
   style?: IconBaseProps;
+}
+
+export interface ListElement extends Element {
+  type: ElementType.LIST;
+  fields: FieldDefinition[];
+  elementWrapperStyle?: CSSProperties;
+  listElementWrapperStyle?: CSSProperties;
+  style?: CSSProperties;
 }
