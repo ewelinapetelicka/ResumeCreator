@@ -43,7 +43,7 @@ export function TemplateListPage() {
               bgColor={'white'}
               borderRadius={'20px'}
               key={el.id}
-              onClick={() => navigate(el.id)}
+              onClick={() => navigate(el.id.toString())}
               cursor={'pointer'}
               overflow={'hidden'}
               boxShadow={'#e9e9e9 0px 0px 15px 5px'}

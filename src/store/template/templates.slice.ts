@@ -25,7 +25,7 @@ export const templatesSlice = createSlice({
 export const selectTemplates = (state: RootState) => state.templates.templates;
 export const selectIsTemplateLoaded = (state: RootState) =>
   state.templates.isLoaded;
-export const selectTemplateById = (id: string) => (state: RootState) =>
+export const selectTemplateById = (id: number) => (state: RootState) =>
   state.templates.templates.find((el) => el.id === id);
 export const selectTemplatesByFilters = (query: string) => (state: RootState) =>
   state.templates.templates.filter((template) => {

@@ -6,23 +6,29 @@ import {
   InputRightElement,
   Text,
 } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useHttpClient } from '../../hooks/http-client/use-http-client';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../store/user/user.slice';
-import { useNavigate } from 'react-router-dom';
 
-export function LoginPage() {
-  const [email, setEmail] = useState('user@gmail.com');
-  const [password, setPassword] = useState('123456');
+export function RegisterPage() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [show, setShow] = useState(false);
+  const navigate = useNavigate();
+  const [isIdentical, setIsIdentical] = useState(true);
   const http = useHttpClient();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const [show, setShow] = useState(false);
 
-  function signIn() {
+  useEffect(() => {
+    setIsIdentical(confirmPassword === password);
+  }, [confirmPassword, password]);
+
+  function createAccount() {
     http
-      .post<{ accessToken: string }>('login', {
+      .post<{ accessToken: string }>('register', {
         email: email,
         password: password,
       })
@@ -51,7 +57,7 @@ export function LoginPage() {
         alignItems={'center'}
         gap={'30px'}
         justifyContent={'center'}>
-        <Text fontSize={'x-large'}>LOGIN</Text>
+        <Text fontSize={'x-large'}>SignUp</Text>
         <InputGroup
           w={'80%'}
           display={'flex'}
@@ -60,32 +66,42 @@ export function LoginPage() {
           <Input
             placeholder={'email address'}
             value={email}
-            type={email}
             onChange={(event) => setEmail(event.target.value)}></Input>
           <InputGroup>
             <Input
+              onChange={(event) => setPassword(event.target.value)}
               placeholder={'password'}
               type={show ? 'text' : 'password'}
               value={password}
-              onChange={(event) => setPassword(event.target.value)}></Input>
+              isInvalid={!isIdentical}
+              errorBorderColor={'red.600'}></Input>
             <InputRightElement width="4.5rem">
               <Button h="1.75rem" size="sm" onClick={() => setShow(!show)}>
                 {show ? 'Hide' : 'Show'}
               </Button>
             </InputRightElement>
           </InputGroup>
+          <InputGroup>
+            <Input
+              onChange={(event) => setConfirmPassword(event.target.value)}
+              placeholder={'confirm password'}
+              type={show ? 'text' : 'password'}
+              value={confirmPassword}
+              isInvalid={!isIdentical}
+              errorBorderColor={'red.600'}></Input>
+          </InputGroup>
         </InputGroup>
         <Text>
-          Don't have an account yet?
+          Already have an account?
           <Button
             variant={'link'}
             m={'6px'}
             textDecoration={'underline'}
-            onClick={() => navigate('/register')}>
-            Create account
+            onClick={() => navigate('/login')}>
+            Login
           </Button>
         </Text>
-        <Button onClick={() => signIn()}>LOGIN</Button>
+        <Button onClick={() => createAccount()}>Create account</Button>
       </Box>
     </Box>
   );

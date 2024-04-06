@@ -4,7 +4,7 @@ import { CSSProperties } from 'react';
 import { IconBaseProps } from 'react-icons';
 
 export interface Template {
-  id: string;
+  id: number;
   name: string;
   style?: CSSProperties;
   layouts: Layout[];

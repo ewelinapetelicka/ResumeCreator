@@ -9,7 +9,7 @@ import { defaultPersonalDataConst } from '../../const/default-personal-data.cons
 
 export function TemplatePreviewPage() {
   const params = useParams();
-  const template = useSelector(selectTemplateById(params.id!));
+  const template = useSelector(selectTemplateById(parseInt(params.id!)));
 
   if (!template) {
     return <Navigate to={'/404'} />;
