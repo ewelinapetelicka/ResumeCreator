@@ -1,16 +1,29 @@
 import { useSelector } from 'react-redux';
 import { selectIsUserLogged } from '../../store/user/user.slice';
-import { ReactElement } from 'react';
-import { Navigate } from 'react-router-dom';
+import { ReactElement, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface AuthorizedRouteProps {
   children: ReactElement;
 }
 
 export function AuthorizedRoute(props: AuthorizedRouteProps) {
-  return useSelector(selectIsUserLogged) ? (
-    props.children
-  ) : (
-    <Navigate to={'/401'} />
-  );
+  const [initialized, setInitialized] = useState(false);
+  const isLogged = useSelector(selectIsUserLogged);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLogged) {
+      return;
+    }
+    navigate(initialized ? '/templates' : '/403');
+  }, [isLogged]);
+
+  useEffect(() => setInitialized(true), []);
+
+  if (!isLogged) {
+    return <></>;
+  }
+
+  return props.children;
 }
