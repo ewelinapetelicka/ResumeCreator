@@ -21,7 +21,8 @@ export function Header() {
         alignItems={'center'}
         boxShadow={'0px 1px 4px #e1e1e1'}
         borderRadius={'10px'}
-        justifyContent={'space-between'}>
+        justifyContent={'space-between'}
+      >
         <Box display={'flex'} alignItems={'center'} gap={'5px'}>
           <Text fontWeight={'bolder'} fontSize={'xx-large'}>
             R
@@ -29,7 +30,8 @@ export function Header() {
           <Text
             textTransform={'uppercase'}
             fontWeight={'bolder'}
-            letterSpacing={'5px'}>
+            letterSpacing={'5px'}
+          >
             esume
           </Text>
           <Text fontWeight={'bolder'} fontSize={'xx-large'}>
@@ -38,7 +40,8 @@ export function Header() {
           <Text
             textTransform={'uppercase'}
             fontWeight={'bolder'}
-            letterSpacing={'5px'}>
+            letterSpacing={'5px'}
+          >
             reator
           </Text>
           <Box gap={'20px'} display={'flex'} pl={'10px'}>
@@ -48,7 +51,8 @@ export function Header() {
                 onClick={() => navigate('/resumes')}
                 variant={
                   location.pathname.includes('resumes') ? 'solid' : 'ghost'
-                }>
+                }
+              >
                 Resumes
               </Button>
             )}
@@ -57,7 +61,8 @@ export function Header() {
               onClick={() => navigate('/templates')}
               variant={
                 location.pathname.includes('templates') ? 'solid' : 'ghost'
-              }>
+              }
+            >
               Templates
             </Button>
           </Box>

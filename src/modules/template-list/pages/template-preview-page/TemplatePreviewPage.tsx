@@ -22,7 +22,8 @@ export function TemplatePreviewPage() {
         centerOnInit
         minScale={0.1}
         maxScale={5}
-        initialScale={0.7}>
+        initialScale={0.7}
+      >
         <TransformComponent
           wrapperStyle={{
             width: '100%',
@@ -30,7 +31,8 @@ export function TemplatePreviewPage() {
             overflow: 'hidden',
             cursor: 'grab',
           }}
-          contentStyle={{ boxShadow: '#e9e9e9 0px 0px 15px 5px' }}>
+          contentStyle={{ boxShadow: '#e9e9e9 0px 0px 15px 5px' }}
+        >
           <TemplateDrawer
             template={template}
             dimension={A4}

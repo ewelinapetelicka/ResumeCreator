@@ -50,7 +50,8 @@ export function TemplateListPage() {
               transition={'0.1s'}
               _hover={{
                 transform: 'scale(1.02)',
-              }}>
+              }}
+            >
               <TemplateDrawer
                 template={el}
                 dimension={A4}

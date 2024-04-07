@@ -39,7 +39,8 @@ export function LoginPage() {
       bg={'gray.100'}
       display={'flex'}
       justifyContent={'center'}
-      alignItems={'center'}>
+      alignItems={'center'}
+    >
       <Box
         w={'40%'}
         p={'30px'}
@@ -50,24 +51,28 @@ export function LoginPage() {
         flexDirection={'column'}
         alignItems={'center'}
         gap={'30px'}
-        justifyContent={'center'}>
+        justifyContent={'center'}
+      >
         <Text fontSize={'x-large'}>LOGIN</Text>
         <InputGroup
           w={'80%'}
           display={'flex'}
           flexDirection={'column'}
-          gap={'30px'}>
+          gap={'30px'}
+        >
           <Input
             placeholder={'email address'}
             value={email}
             type={email}
-            onChange={(event) => setEmail(event.target.value)}></Input>
+            onChange={(event) => setEmail(event.target.value)}
+          ></Input>
           <InputGroup>
             <Input
               placeholder={'password'}
               type={show ? 'text' : 'password'}
               value={password}
-              onChange={(event) => setPassword(event.target.value)}></Input>
+              onChange={(event) => setPassword(event.target.value)}
+            ></Input>
             <InputRightElement width="4.5rem">
               <Button h="1.75rem" size="sm" onClick={() => setShow(!show)}>
                 {show ? 'Hide' : 'Show'}
@@ -81,7 +86,8 @@ export function LoginPage() {
             variant={'link'}
             m={'6px'}
             textDecoration={'underline'}
-            onClick={() => navigate('/register')}>
+            onClick={() => navigate('/register')}
+          >
             Create account
           </Button>
         </Text>

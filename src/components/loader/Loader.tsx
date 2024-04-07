@@ -9,7 +9,8 @@ export function Loader() {
       flexDirection={'column'}
       alignItems={'center'}
       gap={'10px'}
-      justifyContent={'center'}>
+      justifyContent={'center'}
+    >
       <Spinner
         thickness="8px"
         speed="1s"
