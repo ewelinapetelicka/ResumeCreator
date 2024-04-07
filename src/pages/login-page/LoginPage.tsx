@@ -9,8 +9,10 @@ import {
 import { useState } from 'react';
 import { useHttpClient } from '../../hooks/http-client/use-http-client';
 import { useDispatch } from 'react-redux';
-import { logIn } from '../../store/user/user.slice';
+import { logIn, setUser } from '../../store/user/user.slice';
 import { useNavigate } from 'react-router-dom';
+import { User } from '../../model/user.model';
+import { JwtDecoderUtils } from '../../utils/jwt-decoder/jwt-decoder-utils';
 
 export function LoginPage() {
   const [email, setEmail] = useState('user@gmail.com');
@@ -20,16 +22,17 @@ export function LoginPage() {
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
 
-  function signIn() {
-    http
-      .post<{ accessToken: string }>('login', {
-        email: email,
-        password: password,
-      })
-      .then((token) => {
-        dispatch(logIn(token.accessToken));
-        navigate('/resumes');
-      });
+  async function signIn() {
+    const token = await http.post<{ accessToken: string }>('login', {
+      email: email,
+      password: password,
+    });
+    dispatch(logIn(token.accessToken));
+    const user = await http.get<User>(
+      'users/' + JwtDecoderUtils.decode(token.accessToken).sub,
+    );
+    dispatch(setUser(user));
+    navigate('/resumes');
   }
 
   return (

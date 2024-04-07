@@ -10,7 +10,9 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useHttpClient } from '../../hooks/http-client/use-http-client';
 import { useDispatch } from 'react-redux';
-import { logIn } from '../../store/user/user.slice';
+import { logIn, setUser } from '../../store/user/user.slice';
+import { User } from '../../model/user.model';
+import { JwtDecoderUtils } from '../../utils/jwt-decoder/jwt-decoder-utils';
 
 export function RegisterPage() {
   const [email, setEmail] = useState('');
@@ -26,16 +28,17 @@ export function RegisterPage() {
     setIsIdentical(confirmPassword === password);
   }, [confirmPassword, password]);
 
-  function createAccount() {
-    http
-      .post<{ accessToken: string }>('register', {
-        email: email,
-        password: password,
-      })
-      .then((token) => {
-        dispatch(logIn(token.accessToken));
-        navigate('/resumes');
-      });
+  async function createAccount() {
+    const token = await http.post<{ accessToken: string }>('register', {
+      email: email,
+      password: password,
+    });
+    dispatch(logIn(token.accessToken));
+    const user = await http.get<User>(
+      'users/' + JwtDecoderUtils.decode(token.accessToken).sub,
+    );
+    dispatch(setUser(user));
+    navigate('/resumes');
   }
 
   return (
