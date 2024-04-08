@@ -8,6 +8,7 @@ export interface Template {
   name: string;
   style?: CSSProperties;
   layouts: Layout[];
+  tags: string[];
 }
 
 export interface FieldDefinition {

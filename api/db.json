@@ -20,6 +20,10 @@
       "style": {
         "background": "#F3F3F3"
       },
+      "tags": [
+        "Simple",
+        "Professional"
+      ],
       "layouts": [
         {
           "fields": [
@@ -703,24 +707,41 @@
       "id": 2,
       "name": "left",
       "style": {},
+      "tags": [
+        "Original",
+        "Circular"
+      ],
       "layouts": []
     },
     {
       "id": 3,
       "name": "right",
       "style": {},
+      "tags": [
+        "Popular",
+        "Professional",
+        "Original"
+      ],
       "layouts": []
     },
     {
       "id": 4,
       "name": "horizontal-stripe",
       "style": {},
+      "tags": [
+        "Simple",
+        "Popular"
+      ],
       "layouts": []
     },
     {
       "id": 5,
       "name": "round",
       "style": {},
+      "tags": [
+        "Circular",
+        "Popular"
+      ],
       "layouts": []
     }
   ],
