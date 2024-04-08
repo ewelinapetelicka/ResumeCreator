@@ -3,6 +3,7 @@ import { selectTemplatesByFilters } from '../../../../store/template/templates.s
 import { Template } from '../../../../model/template.model';
 import {
   Box,
+  Button,
   Flex,
   Input,
   InputGroup,
@@ -14,25 +15,50 @@ import React, { useState } from 'react';
 import { TemplateDrawer } from '../../../../components/template-drawer/TemplateDrawer';
 import { A4 } from '../../../../const/a4.const';
 import { defaultPersonalDataConst } from '../../const/default-personal-data.const';
+import { TemplateTagsConst } from '../../../../const/template.tags.const';
 
 export function TemplateListPage() {
   const [query, setQuery] = useState('');
-  const templates = useSelector(selectTemplatesByFilters(query));
+  const [tags, setTags] = useState<string[]>([]);
+  const templates = useSelector(selectTemplatesByFilters(query, tags));
   const navigate = useNavigate();
+
+  function chooseTag(tag: string) {
+    if (tags.includes(tag)) {
+      setTags(tags.filter((el) => el !== tag));
+    } else {
+      setTags([...tags, tag]);
+    }
+  }
 
   return (
     <Flex direction={'column'} m={'20px'}>
-      <Flex justifyContent={'flex-end'}>
-        <InputGroup w={300}>
-          <InputLeftElement pointerEvents="none">
-            <SearchIcon color="gray.300" />
-          </InputLeftElement>
-          <Input
-            bg="white"
-            placeholder="Search..."
-            onChange={(event) => setQuery(event.target.value)}
-          />
-        </InputGroup>
+      <Flex justifyContent={'space-between'} alignItems={'center'}>
+        <Flex gap={'10px'}>
+          {TemplateTagsConst.map((tag, index) => {
+            return (
+              <Button
+                colorScheme="gray"
+                bg={tags.includes(tag) ? 'white' : 'transparent'}
+                key={index}
+                onClick={() => chooseTag(tag)}>
+                {tag}
+              </Button>
+            );
+          })}
+        </Flex>
+        <Flex justifyContent={'flex-end'}>
+          <InputGroup w={300}>
+            <InputLeftElement pointerEvents="none">
+              <SearchIcon color="gray.300" />
+            </InputLeftElement>
+            <Input
+              bg="white"
+              placeholder="Search..."
+              onChange={(event) => setQuery(event.target.value)}
+            />
+          </InputGroup>
+        </Flex>
       </Flex>
       <Flex gap={'20px'} mt={'20px'} wrap={'wrap'} justify={'space-evenly'}>
         {templates.map((el: Template) => {
@@ -50,8 +76,7 @@ export function TemplateListPage() {
               transition={'0.1s'}
               _hover={{
                 transform: 'scale(1.02)',
-              }}
-            >
+              }}>
               <TemplateDrawer
                 template={el}
                 dimension={A4}

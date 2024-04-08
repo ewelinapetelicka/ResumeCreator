@@ -27,15 +27,20 @@ export const selectIsTemplateLoaded = (state: RootState) =>
   state.templates.isLoaded;
 export const selectTemplateById = (id: number) => (state: RootState) =>
   state.templates.templates.find((el) => el.id === id);
-export const selectTemplatesByFilters = (query: string) => (state: RootState) =>
-  state.templates.templates.filter((template) => {
-    if (query) {
-      return template.name
-        .toLowerCase()
-        .trim()
-        .includes(query.toLowerCase().trim());
-    }
-    return true;
-  });
+export const selectTemplatesByFilters =
+  (query: string, tags: string[]) => (state: RootState) =>
+    state.templates.templates.filter((template) => {
+      let visible = true;
+      if (query) {
+        visible = template.name
+          .toLowerCase()
+          .trim()
+          .includes(query.toLowerCase().trim());
+      }
+      if (tags.length) {
+        visible = visible && template.tags.some((tag) => tags.includes(tag));
+      }
+      return visible;
+    });
 
 export const { setTemplates } = templatesSlice.actions;
