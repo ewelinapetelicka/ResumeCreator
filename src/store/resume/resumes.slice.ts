@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Resume } from '../../model/resume.model';
 import { RootState } from '../store';
+import { logOut } from '../user/user.slice';
 
 interface ResumesState {
   resumes: Resume[];
@@ -20,6 +21,12 @@ export const resumesSlice = createSlice({
       state.resumes = action.payload;
       state.isLoaded = true;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(logOut, (state) => {
+      state.isLoaded = false;
+      state.resumes = [];
+    });
   },
 });
 

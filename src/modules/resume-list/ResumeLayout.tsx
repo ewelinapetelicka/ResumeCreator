@@ -8,18 +8,20 @@ import { Resume } from '../../model/resume.model';
 import { Loader } from '../../components/loader/Loader';
 import { Outlet } from 'react-router-dom';
 import { useEffect } from 'react';
+import { selectUserId } from '../../store/user/user.slice';
 
 export function ResumeLayout() {
   const http = useHttpClient();
   const isLoaded = useSelector(selectIsResumesLoaded);
   const dispatch = useDispatch();
+  const userId = useSelector(selectUserId);
 
   useEffect(() => {
     if (isLoaded) {
       return;
     }
     http
-      .get<Resume[]>('resumes')
+      .get<Resume[]>(`users/${userId}/resumes`)
       .then((resumes) => dispatch(setResumes(resumes)));
   }, []);
 
