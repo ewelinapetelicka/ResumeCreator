@@ -749,6 +749,8 @@
     {
       "id": 1,
       "email": "user@gmail.com",
+      "name": "John",
+      "surname": "Doe",
       "password": "$2y$10$Tsoz6pJaTzqOgdODwKVRLuPs.W/QNL2eNyWw5c/7qMPKkN/7Asdle"
     }
   ]

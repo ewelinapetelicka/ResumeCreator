@@ -1,14 +1,31 @@
-import { Box, Button, Text } from '@chakra-ui/react';
+import {
+  Avatar,
+  Box,
+  Button,
+  Flex,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Text,
+} from '@chakra-ui/react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { logOut, selectIsUserLogged } from '../../store/user/user.slice';
+import {
+  logOut,
+  selectIsUserLogged,
+  selectUser,
+} from '../../store/user/user.slice';
+import { defaultPersonalDataConst } from '../../modules/template-list/const/default-personal-data.const';
+import { CustomAvatar } from '../custom-avatar/CustomAvatar';
 
 export function Header() {
   const isLogged = useSelector(selectIsUserLogged);
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
+  const user = useSelector(selectUser);
 
   return (
     <Box>
@@ -21,8 +38,7 @@ export function Header() {
         alignItems={'center'}
         boxShadow={'0px 1px 4px #e1e1e1'}
         borderRadius={'10px'}
-        justifyContent={'space-between'}
-      >
+        justifyContent={'space-between'}>
         <Box display={'flex'} alignItems={'center'} gap={'5px'}>
           <Text fontWeight={'bolder'} fontSize={'xx-large'}>
             R
@@ -30,8 +46,7 @@ export function Header() {
           <Text
             textTransform={'uppercase'}
             fontWeight={'bolder'}
-            letterSpacing={'5px'}
-          >
+            letterSpacing={'5px'}>
             esume
           </Text>
           <Text fontWeight={'bolder'} fontSize={'xx-large'}>
@@ -40,8 +55,7 @@ export function Header() {
           <Text
             textTransform={'uppercase'}
             fontWeight={'bolder'}
-            letterSpacing={'5px'}
-          >
+            letterSpacing={'5px'}>
             reator
           </Text>
           <Box gap={'20px'} display={'flex'} pl={'10px'}>
@@ -51,8 +65,7 @@ export function Header() {
                 onClick={() => navigate('/resumes')}
                 variant={
                   location.pathname.includes('resumes') ? 'solid' : 'ghost'
-                }
-              >
+                }>
                 Resumes
               </Button>
             )}
@@ -61,19 +74,41 @@ export function Header() {
               onClick={() => navigate('/templates')}
               variant={
                 location.pathname.includes('templates') ? 'solid' : 'ghost'
-              }
-            >
+              }>
               Templates
             </Button>
           </Box>
         </Box>
-        <Box pr={'10px'}>
+        <Flex alignItems={'center'} pr={'10px'}>
           {isLogged ? (
-            <Button onClick={() => dispatch(logOut())}>LOGOUT</Button>
+            <Menu>
+              <MenuButton>
+                <CustomAvatar
+                  name={user.name}
+                  surname={user.surname}
+                  onClick={() => <div>menu</div>}
+                />
+              </MenuButton>
+              <MenuList>
+                <MenuItem
+                  minH="48px"
+                  display={'flex'}
+                  justifyContent={'center'}>
+                  <Text>Profile page</Text>
+                </MenuItem>
+                <MenuItem
+                  minH="40px"
+                  display={'flex'}
+                  justifyContent={'center'}
+                  onClick={() => dispatch(logOut())}>
+                  <Text>LOGOUT</Text>
+                </MenuItem>
+              </MenuList>
+            </Menu>
           ) : (
             <Button onClick={() => navigate('/login')}>LOGIN</Button>
           )}
-        </Box>
+        </Flex>
       </Box>
     </Box>
   );
