@@ -1,11 +1,12 @@
-import { useSelector } from 'react-redux';
-import { selectAccessToken } from '../../store/user/user.slice';
+import { useDispatch, useSelector } from 'react-redux';
+import { logOut, selectAccessToken } from '../../store/user/user.slice';
 import { useToast } from '@chakra-ui/react';
 
 export function useHttpClient() {
   const host = 'http://localhost:8000';
   const accessToken = useSelector(selectAccessToken);
   const toast = useToast();
+  const dispatch = useDispatch();
 
   function getHeaders(): HeadersInit {
     return {
@@ -20,6 +21,9 @@ export function useHttpClient() {
   }
 
   function handleError(response: Response, data: string) {
+    if (response.status === 401) {
+      dispatch(logOut());
+    }
     console.error(response);
     toast({
       title: 'Error',
