@@ -5,7 +5,7 @@ import { CiUser } from 'react-icons/ci';
 interface CustomAvatarProps {
   name?: string;
   surname?: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export function CustomAvatar(props: CustomAvatarProps) {
@@ -20,7 +20,7 @@ export function CustomAvatar(props: CustomAvatarProps) {
       justifyContent={'center'}
       alignItems={'center'}
       bgColor={'gray.100'}
-      onClick={() => props.onClick()}>
+      onClick={() => props.onClick && props.onClick()}>
       {props.name && props.surname ? (
         <>
           <Text>{props.name.slice(0, 1)}</Text>

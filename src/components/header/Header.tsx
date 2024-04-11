@@ -83,18 +83,14 @@ export function Header() {
           {isLogged ? (
             <Menu>
               <MenuButton>
-                <CustomAvatar
-                  name={user.name}
-                  surname={user.surname}
-                  onClick={() => <div>menu</div>}
-                />
+                <CustomAvatar name={user.name} surname={user.surname} />
               </MenuButton>
               <MenuList>
                 <MenuItem
                   minH="48px"
                   display={'flex'}
                   justifyContent={'center'}>
-                  <Text>Profile page</Text>
+                  <Text>PROFILE PAGE</Text>
                 </MenuItem>
                 <MenuItem
                   minH="40px"
