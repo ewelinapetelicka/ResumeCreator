@@ -101,11 +101,5 @@ export const defaultPersonalDataConst: PersonalData = {
   aboutMe:
     'John is a seasoned Senior Manager with a proven track record of driving organizational success through effective leadership and strategic planning.' +
     ' With over a decade of experience, he has honed his skills in managing cross-functional teams and delivering high-impact projects.' +
-    ' John is passionate about fostering collaboration and maximizing team productivity.' +
-    ' He thrives in dynamic environments and is adept at implementing agile methodologies to ensure project efficiency and adaptability.' +
-    ' John is known for his strong communication skills and ability to resolve conflicts effectively, contributing to a positive work culture and successful project outcomes. ' +
-    'Outside of work, he enjoys skiing, horseback riding, playing chess, and exploring the enchanting world of The Pre-War Cinema Era.' +
-    " With a Bachelor's and Master's degree in Business Administration from the University of Cambridge, " +
-    'John brings a blend of theoretical knowledge and practical expertise to every endeavor he undertakes.' +
-    ' He is committed to continuous learning and professional development, always seeking opportunities to expand his skill set and stay ahead in a rapidly evolving business landscape.',
+    ' John is passionate about fostering collaboration and maximizing team productivity.',
 };

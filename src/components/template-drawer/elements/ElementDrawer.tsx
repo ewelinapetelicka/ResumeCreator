@@ -1,6 +1,7 @@
 import {
   Element,
   ElementType,
+  EmptyElement,
   IconElement,
   ImageElement,
   ListElement,
@@ -14,6 +15,7 @@ import {
   PersonalDataDescribable,
   PersonalDataValue,
 } from '../../../model/personal-data.model';
+import { EmptyDrawer } from './EmptyDrawer';
 
 interface ElementDrawerProps {
   element: Element;
@@ -22,6 +24,8 @@ interface ElementDrawerProps {
 
 export function ElementDrawer(props: ElementDrawerProps) {
   switch (props.element.type) {
+    case ElementType.EMPTY:
+      return <EmptyDrawer element={props.element as EmptyElement} />;
     case ElementType.TEXT:
       return (
         <TextDrawer

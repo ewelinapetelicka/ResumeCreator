@@ -28,10 +28,16 @@ export interface Element {
 }
 
 export enum ElementType {
+  EMPTY = 'EMPTY',
   TEXT = 'TEXT',
   IMAGE = 'IMAGE',
   ICON = 'ICON',
   LIST = 'LIST',
+}
+
+export interface EmptyElement extends Element {
+  type: ElementType.EMPTY;
+  style?: CSSProperties;
 }
 
 export interface TextElement extends Element {
