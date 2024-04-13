@@ -857,7 +857,8 @@
                             "color": "#414141",
                             "fontWeight": 700,
                             "fontFamily": "Roboto",
-                            "textTransform": "uppercase"
+                            "textTransform": "uppercase",
+                            "lineHeight": "6px"
                           }
                         }
                       ]
@@ -949,7 +950,8 @@
                             "color": "#414141",
                             "fontWeight": 700,
                             "fontFamily": "Roboto",
-                            "textTransform": "uppercase"
+                            "textTransform": "uppercase",
+                            "lineHeight": "6px"
                           }
                         }
                       ]
@@ -980,23 +982,6 @@
                             "color": "#414141",
                             "fontWeight": 400,
                             "fontFamily": "Roboto"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "field": "description",
-                      "elements": [
-                        {
-                          "type": "TEXT",
-                          "style": {
-                            "fontSize": "9px",
-                            "color": "#414141",
-                            "fontWeight": 400,
-                            "fontFamily": "Roboto",
-                            "textAlign": "justify",
-                            "lineHeight": "13px",
-                            "paddingBottom": "10px"
                           }
                         }
                       ]
