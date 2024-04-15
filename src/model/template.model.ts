@@ -6,20 +6,20 @@ import { IconBaseProps } from 'react-icons';
 export interface Template {
   id: number;
   name: string;
-  style?: CSSProperties;
-  layouts: Layout[];
   tags: string[];
+  layouts: Layout[];
+  style?: CSSProperties;
 }
 
 export interface FieldDefinition {
   field: PersonalDataField;
   elements: Element[];
+  style?: CSSProperties;
 }
 
 export interface Layout {
   fields: FieldDefinition[];
   style?: CSSProperties;
-  elementWrapperStyle?: CSSProperties;
 }
 
 export interface Element {
@@ -60,7 +60,6 @@ export interface IconElement extends Element {
 export interface ListElement extends Element {
   type: ElementType.LIST;
   fields: FieldDefinition[];
-  elementWrapperStyle?: CSSProperties;
-  listElementWrapperStyle?: CSSProperties;
+  dataStyle?: CSSProperties;
   style?: CSSProperties;
 }

@@ -23,7 +23,7 @@ export function LayoutDrawer(props: LayoutDrawerProps) {
   return (
     <Flex position={'absolute'} style={props.layout.style}>
       {props.layout.fields.map((field) => (
-        <Flex style={props.layout.elementWrapperStyle} key={field.field}>
+        <Flex style={field.style} key={field.field}>
           {field.elements.map((element, i) => (
             <ElementDrawer
               element={element}

@@ -26,9 +26,9 @@ export function ListDrawer(props: ListDrawerProps) {
   return (
     <Flex style={props.element.style}>
       {props.data.map((data, i) => (
-        <Flex style={props.element.listElementWrapperStyle} key={data.name}>
+        <Flex style={props.element.dataStyle} key={data.name}>
           {props.element.fields.map((field) => (
-            <Flex style={props.element.elementWrapperStyle} key={field.field}>
+            <Flex style={field.style} key={field.field}>
               {field.elements.map((element, j) => (
                 <ElementDrawer
                   element={element}
