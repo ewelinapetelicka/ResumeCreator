@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Box,
   Button,
   Flex,
@@ -17,7 +16,6 @@ import {
   selectIsUserLogged,
   selectUser,
 } from '../../store/user/user.slice';
-import { defaultPersonalDataConst } from '../../modules/template-list/const/default-personal-data.const';
 import { CustomAvatar } from '../custom-avatar/CustomAvatar';
 
 export function Header() {
