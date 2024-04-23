@@ -31,6 +31,7 @@ export const userSlice = createSlice({
       localStorage.removeItem(USER_KEY);
     },
     setUser: (state, action: PayloadAction<User>) => {
+      (action.payload as any)['password'] = undefined; // remove from api
       state.user = action.payload;
       localStorage.setItem(USER_KEY, JSON.stringify(action.payload));
     },
