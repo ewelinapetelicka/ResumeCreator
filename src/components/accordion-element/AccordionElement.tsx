@@ -71,7 +71,7 @@ export function PersonalDataDescribableEditor(
                   }}
                 />
               </AreaWithLabel>
-              <AreaWithLabel label={'Company'}>
+              <AreaWithLabel label={'Company:'}>
                 <Input
                   value={el.company}
                   onChange={(event) => {
@@ -86,7 +86,7 @@ export function PersonalDataDescribableEditor(
                   }}
                 />
               </AreaWithLabel>
-              <AreaWithLabel label={'description'}>
+              <AreaWithLabel label={'description:'}>
                 <Input
                   value={el.description}
                   onChange={(event) => {

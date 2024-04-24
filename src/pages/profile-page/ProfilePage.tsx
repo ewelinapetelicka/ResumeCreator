@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectUser, setUser } from '../../store/user/user.slice';
 import { AreaWithLabel } from '../../components/area-with-label/AreaWithLabel';
 import { PersonalDataDescribableEditor } from '../../components/accordion-element/AccordionElement';
-import { MultipleTextListEditor } from '../../components/multiple-text-list-editor/MultipleTextListEditor';
 import { useHttpClient } from '../../hooks/http-client/use-http-client';
 import { useState } from 'react';
 import { User } from '../../model/user.model';
@@ -198,7 +197,7 @@ export function ProfilePage() {
                 }
               />
             </AreaWithLabel>
-            <MultipleTextListEditor label={'skills:'}>
+            <AreaWithLabel label={'skills:'}>
               {editedUser.skills.map((el, index) => {
                 return (
                   <Input
@@ -218,8 +217,8 @@ export function ProfilePage() {
                   />
                 );
               })}
-            </MultipleTextListEditor>
-            <MultipleTextListEditor label={'hobbies:'}>
+            </AreaWithLabel>
+            <AreaWithLabel label={'hobbies:'}>
               {editedUser.hobbies.map((el, index) => {
                 return (
                   <Input
@@ -239,7 +238,7 @@ export function ProfilePage() {
                   />
                 );
               })}
-            </MultipleTextListEditor>
+            </AreaWithLabel>
           </Flex>
           <Flex gap={'200px'} pt={'10px'}>
             <Button onClick={() => saveChangesPersonalData()}>SAVE</Button>

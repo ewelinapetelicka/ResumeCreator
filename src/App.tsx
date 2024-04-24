@@ -32,15 +32,9 @@ const router = createBrowserRouter([
         path: 'profile',
         element: (
           <AuthorizedRoute>
-            <ResumeLayout />
+            <ProfilePage />
           </AuthorizedRoute>
         ),
-        children: [
-          {
-            path: '',
-            element: <ProfilePage />,
-          },
-        ],
       },
       {
         path: 'resumes',

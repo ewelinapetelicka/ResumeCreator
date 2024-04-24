@@ -10,12 +10,9 @@ export function AreaWithLabel(props: AreaWithLabelProps) {
   return (
     <Box>
       <Text
-        display={'flex'}
-        justifySelf={'start'}
-        w={'100%'}
         fontSize={'small'}
         fontWeight={'bold'}
-        color={'Gray 600'}
+        color={'gray.600'}
         textTransform={'uppercase'}>
         {props.label}
       </Text>
