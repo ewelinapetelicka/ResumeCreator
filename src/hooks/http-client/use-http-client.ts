@@ -47,5 +47,11 @@ export function useHttpClient() {
         method: 'POST',
         body: JSON.stringify(body),
       }).then((res) => handleResponse(res)),
+    patch: <T>(endpoint: string, body: any): Promise<T> =>
+      fetch(`${host}/${endpoint}`, {
+        headers: getHeaders(),
+        method: 'PATCH',
+        body: JSON.stringify(body),
+      }).then((res) => handleResponse(res)),
   };
 }

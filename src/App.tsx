@@ -17,6 +17,7 @@ import { AuthorizedRoute } from './components/authorized-route/AuthorizedRoute';
 import { LoginPage } from './pages/login-page/LoginPage';
 import { UnauthorizedPage } from './pages/unauthorized-page/UnauthorizedPage';
 import { RegisterPage } from './pages/register-page/RegisterPage';
+import { ProfilePage } from './pages/profile-page/ProfilePage';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,14 @@ const router = createBrowserRouter([
       {
         index: true,
         loader: async () => redirect('/templates'),
+      },
+      {
+        path: 'profile',
+        element: (
+          <AuthorizedRoute>
+            <ProfilePage />
+          </AuthorizedRoute>
+        ),
       },
       {
         path: 'resumes',

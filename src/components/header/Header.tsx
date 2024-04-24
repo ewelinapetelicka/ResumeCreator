@@ -81,13 +81,14 @@ export function Header() {
           {isLogged ? (
             <Menu>
               <MenuButton>
-                <CustomAvatar name={user.name} surname={user.surname} />
+                <CustomAvatar user={user} />
               </MenuButton>
               <MenuList>
                 <MenuItem
                   minH="48px"
                   display={'flex'}
-                  justifyContent={'center'}>
+                  justifyContent={'center'}
+                  onClick={() => navigate('profile')}>
                   <Text>PROFILE PAGE</Text>
                 </MenuItem>
                 <MenuItem
