@@ -756,7 +756,23 @@
         {
           "fields": [
             {
-              "field": "fullName",
+              "field": "name",
+              "elements": [
+                {
+                  "type": "TEXT",
+                  "style": {
+                    "fontSize": "33px",
+                    "color": "#414141",
+                    "fontWeight": 700,
+                    "fontFamily": "Bebas Neue",
+                    "letterSpacing": "2px",
+                    "textTransform": "uppercase"
+                  }
+                }
+              ]
+            },
+            {
+              "field": "surname",
               "elements": [
                 {
                   "type": "TEXT",
@@ -774,7 +790,8 @@
           ],
           "style": {
             "top": "4%",
-            "left": "7%"
+            "left": "7%",
+            "gap": "7px"
           }
         },
         {
@@ -1341,7 +1358,6 @@
       "email": "user@gmail.com",
       "name": "John",
       "surname": "Doe",
-      "fullName": "John Doe",
       "password": "$2y$10$Tsoz6pJaTzqOgdODwKVRLuPs.W/QNL2eNyWw5c/7qMPKkN/7Asdle",
       "role": "Senior Manager",
       "personalPhoto": "https://thispersondoesnotexist.com/",
