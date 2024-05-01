@@ -53,6 +53,7 @@ export function RegisterPage() {
       alignItems={'center'}>
       <Box
         w={'40%'}
+        minWidth={'500px'}
         p={'30px'}
         boxShadow={'0px 1px 4px #e1e1e1'}
         borderRadius={'30px'}
@@ -71,8 +72,7 @@ export function RegisterPage() {
           <Input
             placeholder={'email address'}
             value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />
+            onChange={(event) => setEmail(event.target.value)}/>
           <InputGroup>
             <Input
               onChange={(event) => setPassword(event.target.value)}
@@ -80,8 +80,7 @@ export function RegisterPage() {
               type={show ? 'text' : 'password'}
               value={password}
               isInvalid={!isIdentical}
-              errorBorderColor={'red.600'}
-            />
+              errorBorderColor={'red.600'}/>
             <InputRightElement width="4.5rem">
               <Button h="1.75rem" size="sm" onClick={() => setShow(!show)}>
                 {show ? 'Hide' : 'Show'}
@@ -95,8 +94,7 @@ export function RegisterPage() {
               type={show ? 'text' : 'password'}
               value={confirmPassword}
               isInvalid={!isIdentical}
-              errorBorderColor={'red.600'}
-            />
+              errorBorderColor={'red.600'}/>
           </InputGroup>
         </InputGroup>
         <Text>

@@ -47,6 +47,7 @@ export function ProfilePage() {
         p={'20px'}>
         <Flex
           w={'60%'}
+          minWidth={'600px'}
           boxShadow={'0px 1px 4px #e1e1e1'}
           borderRadius={'30px'}
           bg={'white'}
