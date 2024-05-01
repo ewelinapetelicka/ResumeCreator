@@ -101,4 +101,5 @@ export const defaultPersonalDataConst: PersonalData = {
     'John is a seasoned Senior Manager with a proven track record of driving organizational success through effective leadership and strategic planning.' +
     ' With over a decade of experience, he has honed his skills in managing cross-functional teams and delivering high-impact projects.' +
     ' John is passionate about fostering collaboration and maximizing team productivity.',
+  updateDate: '',
 };

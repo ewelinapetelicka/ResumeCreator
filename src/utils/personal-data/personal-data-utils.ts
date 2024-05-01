@@ -17,6 +17,7 @@ export class PersonalDataUtils {
       hobbies: [],
       skills: [],
       aboutMe: '',
+      updateDate: new Date().toISOString(),
     };
   }
 }
