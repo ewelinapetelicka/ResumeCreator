@@ -8,7 +8,6 @@ export interface PersonalDataDescribable {
 export interface PersonalData {
   name: string;
   surname: string;
-  fullName: string;
   role: string;
   personalPhoto: string;
   phone: string;

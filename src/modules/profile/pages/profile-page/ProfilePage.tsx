@@ -98,17 +98,6 @@ export function ProfilePage() {
                   }
                 />
               </AreaWithLabel>
-              <AreaWithLabel label={'FULL NAME:'}>
-                <Input
-                  value={editedUser.fullName}
-                  onChange={(event) =>
-                    setEditedUser({
-                      ...editedUser,
-                      fullName: event.target.value,
-                    })
-                  }
-                />
-              </AreaWithLabel>
               <AreaWithLabel label={'EMAIL:'}>
                 <Input
                   value={editedUser.email}
