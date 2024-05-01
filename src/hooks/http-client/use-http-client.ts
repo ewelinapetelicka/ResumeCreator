@@ -53,5 +53,10 @@ export function useHttpClient() {
         method: 'PATCH',
         body: JSON.stringify(body),
       }).then((res) => handleResponse(res)),
+    delete: <T>(endpoint: string): Promise<T> =>
+      fetch(`${host}/${endpoint}`, {
+        headers: getHeaders(),
+        method: 'DELETE',
+      }).then((res) => handleResponse(res)),
   };
 }

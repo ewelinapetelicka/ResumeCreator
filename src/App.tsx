@@ -17,7 +17,7 @@ import { AuthorizedRoute } from './components/authorized-route/AuthorizedRoute';
 import { LoginPage } from './pages/login-page/LoginPage';
 import { UnauthorizedPage } from './pages/unauthorized-page/UnauthorizedPage';
 import { RegisterPage } from './pages/register-page/RegisterPage';
-import { ProfilePage } from './pages/profile-page/ProfilePage';
+import { ProfilePage } from './modules/profile/pages/profile-page/ProfilePage';
 
 const router = createBrowserRouter([
   {
