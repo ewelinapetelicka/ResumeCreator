@@ -48,10 +48,10 @@ export function RegisterPage() {
       bg={'gray.100'}
       display={'flex'}
       justifyContent={'center'}
-      alignItems={'center'}
-    >
+      alignItems={'center'}>
       <Box
         w={'40%'}
+        minWidth={'500px'}
         p={'30px'}
         boxShadow={'0px 1px 4px #e1e1e1'}
         borderRadius={'30px'}
@@ -60,20 +60,17 @@ export function RegisterPage() {
         flexDirection={'column'}
         alignItems={'center'}
         gap={'30px'}
-        justifyContent={'center'}
-      >
+        justifyContent={'center'}>
         <Text fontSize={'x-large'}>SignUp</Text>
         <InputGroup
           w={'80%'}
           display={'flex'}
           flexDirection={'column'}
-          gap={'30px'}
-        >
+          gap={'30px'}>
           <Input
             placeholder={'email address'}
             value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          ></Input>
+            onChange={(event) => setEmail(event.target.value)}></Input>
           <InputGroup>
             <Input
               onChange={(event) => setPassword(event.target.value)}
@@ -81,8 +78,7 @@ export function RegisterPage() {
               type={show ? 'text' : 'password'}
               value={password}
               isInvalid={!isIdentical}
-              errorBorderColor={'red.600'}
-            ></Input>
+              errorBorderColor={'red.600'}></Input>
             <InputRightElement width="4.5rem">
               <Button h="1.75rem" size="sm" onClick={() => setShow(!show)}>
                 {show ? 'Hide' : 'Show'}
@@ -96,8 +92,7 @@ export function RegisterPage() {
               type={show ? 'text' : 'password'}
               value={confirmPassword}
               isInvalid={!isIdentical}
-              errorBorderColor={'red.600'}
-            ></Input>
+              errorBorderColor={'red.600'}></Input>
           </InputGroup>
         </InputGroup>
         <Text>
@@ -106,8 +101,7 @@ export function RegisterPage() {
             variant={'link'}
             m={'6px'}
             textDecoration={'underline'}
-            onClick={() => navigate('/login')}
-          >
+            onClick={() => navigate('/login')}>
             Login
           </Button>
         </Text>
