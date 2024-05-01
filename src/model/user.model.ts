@@ -10,10 +10,10 @@ export interface User {
   phone?: string;
   github?: string;
   linkedin?: string;
-  certifications?: PersonalDataDescribable[];
-  education?: PersonalDataDescribable[];
-  workExperience?: PersonalDataDescribable[];
-  hobbies?: PersonalDataDescribable[];
-  skills?: PersonalDataDescribable[];
+  certifications: PersonalDataDescribable[];
+  education: PersonalDataDescribable[];
+  workExperience: PersonalDataDescribable[];
+  hobbies: PersonalDataDescribable[];
+  skills: PersonalDataDescribable[];
   aboutMe?: string;
 }
