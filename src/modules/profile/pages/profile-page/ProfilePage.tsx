@@ -9,14 +9,13 @@ import {
 } from '@chakra-ui/react';
 import { CustomAvatar } from '../../../../components/custom-avatar/CustomAvatar';
 import { useDispatch, useSelector } from 'react-redux';
-import { logOut, selectUser, setUser } from '../../../../store/user/user.slice';
+import { selectUser, setUser } from '../../../../store/user/user.slice';
 import { AreaWithLabel } from '../../../../components/area-with-label/AreaWithLabel';
 import { PersonalDataDescribableEditor } from '../../../../components/accordion-element/AccordionElement';
 import { useHttpClient } from '../../../../hooks/http-client/use-http-client';
 import { useState } from 'react';
 import { User } from '../../../../model/user.model';
-import { ModalWindow } from '../../dialogs/modal-window/ModalWindow';
-import { useNavigate } from 'react-router-dom';
+import { DeleteAccountDialog } from '../../dialogs/delete-account-dialog/DeleteAccountDialog';
 
 export function ProfilePage() {
   const user = useSelector(selectUser);
@@ -25,7 +24,6 @@ export function ProfilePage() {
   const dispatch = useDispatch();
   const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const navigate = useNavigate();
 
   function saveChangesPersonalData() {
     http.patch('users/' + user.id, editedUser).then(() => {
@@ -38,21 +36,6 @@ export function ProfilePage() {
         position: 'top-right',
         isClosable: true,
       });
-    });
-  }
-
-  function deleteProfile() {
-    http.delete('users/' + user.id).then(() => {
-      dispatch(logOut());
-      toast({
-        title: 'Success',
-        description: 'Your profile has been deleted!',
-        status: 'success',
-        duration: 5000,
-        position: 'top-right',
-        isClosable: true,
-      });
-      navigate('templates');
     });
   }
 
@@ -277,11 +260,7 @@ export function ProfilePage() {
           </Flex>
         </Flex>
       </Box>
-      <ModalWindow
-        open={isOpen}
-        close={onClose}
-        deleteConfirm={() => deleteProfile()}
-      />
+      <DeleteAccountDialog open={isOpen} close={onClose} />
     </>
   );
 }
