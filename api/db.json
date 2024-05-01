@@ -1356,97 +1356,94 @@
     {
       "id": 1,
       "email": "user@gmail.com",
-      "name": "John",
-      "surname": "Doe",
       "password": "$2y$10$Tsoz6pJaTzqOgdODwKVRLuPs.W/QNL2eNyWw5c/7qMPKkN/7Asdle",
-      "role": "Senior Manager",
-      "personalPhoto": "https://thispersondoesnotexist.com/",
-      "phone": "777777777",
-      "github": "github.com/johnDoe",
-      "linkedin": "linkedin.com/in/johnDoe",
-      "certifications": [
-        {
-          "name": "Certified Manager",
-          "description":
-          "This certification demonstrates proficiency in essential managerial skills, including leadership, strategic planning, and team management.",
-          "time": "2020",
-          "company": "Oxford Leadership Programme"
-        },
-        {
-          "name": "Project Management Professional",
-          "time": "2016",
-          "company": "Oxford Leadership Programme"
-        },
-        {
-          "name": "Certified ScrumMaster",
-          "time": "2015",
-          "company": "Scrum.org"
-        }
-      ],
-      "education": [
-        {
-          "name": "Master of Business Administration",
-          "description":
-          "Specialized in strategic management and organizational leadership. Conducted research on leadership styles and their impact on organizational performance. Completed a capstone project on strategic planning for global expansion. Engaged in internships with leading companies to gain practical experience in management.",
-          "time": "2015-2018",
-          "company": "University of Cambridge"
-        },
-        {
-          "name": "Bachelor of Business Administration",
-          "description":
-          "Studied business administration with a focus on management principles. Took courses in organizational behavior,' +finance, marketing, and strategic planning. Participated in extracurricular activities such as student government and business clubs.",
-          "time": "2012-2015",
-          "company": "University of Cambridge"
-        }
-      ],
-      "workExperience": [
-        {
-          "name": "Senior Project Manager",
-          "time": "01.2019-present",
-          "description":
-          "Lead cross-functional teams in the successful delivery of large-scale projects. Developed and executed project plans, monitored progress, and managed project budgets. Facilitated communication between stakeholders and team members to ensure alignment with project goals and objectives. Implemented agile methodologies to improve project efficiency and adaptability.",
-          "company": "CFG-Corporation"
-        },
-        {
-          "name": "Operations Manager",
-          "time": "06.2014-12.2018",
-          "description": "Managed day-to-day operations of multiple departments, including human resources, finance, and customer service.Implemented process improvements to streamline operations and reduce costs. Led training initiatives to develop employee skills and enhance team performance. Collaborated with senior management to develop strategic plans and achieve organizational goals.",
-          "company": "Enterprises-FOTech"
-        }
-      ],
-      "hobbies": [
-        {
-          "name": "Skiing"
-        },
-        {
-          "name": "Horseback Riding"
-        },
-        {
-          "name": "Chess"
-        },
-        {
-          "name": "The Pre-War Cinema Era"
-        }
-      ],
-      "skills": [
-        {
-          "name": "Communication"
-        },
-        {
-          "name": "Decision Making"
-        },
-        {
-          "name": "Leadership"
-        },
-        {
-          "name": "Strategic Planning"
-        },
-        {
-          "name": "Conflict Resolution"
-        }
-      ],
-      "aboutMe":
-      "John is a seasoned Senior Manager with a proven track record of driving organizational success through effective leadership and strategic planning. With over a decade of experience, he has honed his skills in managing cross-functional teams and delivering high-impact projects. John is passionate about fostering collaboration and maximizing team productivity. He thrives in dynamic environments and is adept at implementing agile methodologies to ensure project efficiency and adaptability. John is known for his strong communication skills and ability to resolve conflicts effectively, contributing to a positive work culture and successful project outcomes. Outside of work, he enjoys skiing, horseback riding, playing chess, and exploring the enchanting world of The Pre-War Cinema Era. With a Bachelor's and Master's degree in Business Administration from the University of Cambridge, John brings a blend of theoretical knowledge and practical expertise to every endeavor he undertakes. He is committed to continuous learning and professional development, always seeking opportunities to expand his skill set and stay ahead in a rapidly evolving business landscape."
+      "personalData": {
+        "name": "John",
+        "surname": "Doe",
+        "role": "Senior Manager",
+        "personalPhoto": "https://thispersondoesnotexist.com/",
+        "phone": "777777777",
+        "github": "github.com/johnDoe",
+        "linkedin": "linkedin.com/in/johnDoe",
+        "certifications": [
+          {
+            "name": "Certified Manager",
+            "description": "This certification demonstrates proficiency in essential managerial skills, including leadership, strategic planning, and team management.",
+            "time": "2020",
+            "company": "Oxford Leadership Programme"
+          },
+          {
+            "name": "Project Management Professional",
+            "time": "2016",
+            "company": "Oxford Leadership Programme"
+          },
+          {
+            "name": "Certified ScrumMaster",
+            "time": "2015",
+            "company": "Scrum.org"
+          }
+        ],
+        "education": [
+          {
+            "name": "Master of Business Administration",
+            "description": "Specialized in strategic management and organizational leadership. Conducted research on leadership styles and their impact on organizational performance. Completed a capstone project on strategic planning for global expansion. Engaged in internships with leading companies to gain practical experience in management.",
+            "time": "2015-2018",
+            "company": "University of Cambridge"
+          },
+          {
+            "name": "Bachelor of Business Administration",
+            "description": "Studied business administration with a focus on management principles. Took courses in organizational behavior,' +finance, marketing, and strategic planning. Participated in extracurricular activities such as student government and business clubs.",
+            "time": "2012-2015",
+            "company": "University of Cambridge"
+          }
+        ],
+        "workExperience": [
+          {
+            "name": "Senior Project Manager",
+            "time": "01.2019-present",
+            "description": "Lead cross-functional teams in the successful delivery of large-scale projects. Developed and executed project plans, monitored progress, and managed project budgets. Facilitated communication between stakeholders and team members to ensure alignment with project goals and objectives. Implemented agile methodologies to improve project efficiency and adaptability.",
+            "company": "CFG-Corporation"
+          },
+          {
+            "name": "Operations Manager",
+            "time": "06.2014-12.2018",
+            "description": "Managed day-to-day operations of multiple departments, including human resources, finance, and customer service.Implemented process improvements to streamline operations and reduce costs. Led training initiatives to develop employee skills and enhance team performance. Collaborated with senior management to develop strategic plans and achieve organizational goals.",
+            "company": "Enterprises-FOTech"
+          }
+        ],
+        "hobbies": [
+          {
+            "name": "Skiing"
+          },
+          {
+            "name": "Horseback Riding"
+          },
+          {
+            "name": "Chess"
+          },
+          {
+            "name": "The Pre-War Cinema Era"
+          }
+        ],
+        "skills": [
+          {
+            "name": "Communication"
+          },
+          {
+            "name": "Decision Making"
+          },
+          {
+            "name": "Leadership"
+          },
+          {
+            "name": "Strategic Planning"
+          },
+          {
+            "name": "Conflict Resolution"
+          }
+        ],
+        "aboutMe": "John is a seasoned Senior Manager with a proven track record of driving organizational success through effective leadership and strategic planning. With over a decade of experience, he has honed his skills in managing cross-functional teams and delivering high-impact projects. John is passionate about fostering collaboration and maximizing team productivity. He thrives in dynamic environments and is adept at implementing agile methodologies to ensure project efficiency and adaptability. John is known for his strong communication skills and ability to resolve conflicts effectively, contributing to a positive work culture and successful project outcomes. Outside of work, he enjoys skiing, horseback riding, playing chess, and exploring the enchanting world of The Pre-War Cinema Era. With a Bachelor's and Master's degree in Business Administration from the University of Cambridge, John brings a blend of theoretical knowledge and practical expertise to every endeavor he undertakes. He is committed to continuous learning and professional development, always seeking opportunities to expand his skill set and stay ahead in a rapidly evolving business landscape."
+      }
     }
   ]
 }

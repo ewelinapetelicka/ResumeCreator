@@ -1,0 +1,79 @@
+import {
+  PersonalDataDescribable,
+  PersonalDataField,
+} from '../../model/personal-data.model';
+import { useEffect, useState } from 'react';
+import { Button, Flex, Input } from '@chakra-ui/react';
+import { IoMdTrash } from 'react-icons/io';
+
+interface PersonalDataDescribableNameEditorProps {
+  personalDataDescribable: PersonalDataDescribable[];
+  onChange: (change: PersonalDataDescribable[]) => void;
+}
+
+export function PersonalDataDescribableNameEditor(
+  props: PersonalDataDescribableNameEditorProps,
+) {
+  const [personalDataDescribableNameForm, setPersonalDataDescribableNameForm] =
+    useState<PersonalDataDescribable[]>(
+      structuredClone(props.personalDataDescribable),
+    );
+
+  useEffect(
+    () => props.onChange(personalDataDescribableNameForm),
+    [personalDataDescribableNameForm],
+  );
+
+  function updatePersonalDataDescribableForm(
+    field: PersonalDataField,
+    index: number,
+    data: string,
+  ) {
+    setPersonalDataDescribableNameForm(
+      personalDataDescribableNameForm.map((el, i) =>
+        i === index ? { ...el, [field]: data } : el,
+      ),
+    );
+  }
+
+  function addPersonalDataDescribableFormElement() {
+    setPersonalDataDescribableNameForm([
+      ...personalDataDescribableNameForm,
+      { name: '' },
+    ]);
+  }
+
+  function removePersonalDataDescribableFormElement(index: number) {
+    setPersonalDataDescribableNameForm(
+      personalDataDescribableNameForm.filter((el, i) => index !== i),
+    );
+  }
+
+  return (
+    <>
+      {personalDataDescribableNameForm.map((el, index) => (
+        <Flex>
+          <Input
+            value={el.name}
+            onChange={(event) =>
+              updatePersonalDataDescribableForm(
+                'name',
+                index,
+                event.target.value,
+              )
+            }
+          />
+          <Button
+            colorScheme={'red'}
+            variant={'ghost'}
+            onClick={() => removePersonalDataDescribableFormElement(index)}>
+            <IoMdTrash />
+          </Button>
+        </Flex>
+      ))}
+      <Button onClick={() => addPersonalDataDescribableFormElement()}>
+        ADD NEW
+      </Button>
+    </>
+  );
+}
