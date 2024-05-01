@@ -1,4 +1,4 @@
-import { ElementType, Template, TextElement } from '../model/template.model';
+import { ElementType, Template, TextElement } from '../../model/template.model';
 
 export class TemplateUtils {
   static registerFonts(template: Template): void {

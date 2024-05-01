@@ -16,7 +16,7 @@ import {
   selectIsUserLogged,
   selectUser,
 } from '../../store/user/user.slice';
-import { CustomAvatar } from '../custom-avatar/CustomAvatar';
+import { UserAvatar } from '../user-avatar/UserAvatar';
 
 export function Header() {
   const isLogged = useSelector(selectIsUserLogged);
@@ -81,7 +81,7 @@ export function Header() {
           {isLogged ? (
             <Menu>
               <MenuButton>
-                <CustomAvatar user={user} />
+                <UserAvatar user={user} />
               </MenuButton>
               <MenuList>
                 <MenuItem

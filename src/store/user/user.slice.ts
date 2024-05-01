@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 import { User } from '../../model/user.model';
+import { PersonalData } from '../../model/personal-data.model';
 
 const ACCESS_TOKEN_KEY = 'accessToken';
 const USER_KEY = 'user';
@@ -35,6 +36,16 @@ export const userSlice = createSlice({
       state.user = action.payload;
       localStorage.setItem(USER_KEY, JSON.stringify(action.payload));
     },
+    setUserPersonalData: (state, action: PayloadAction<PersonalData>) => {
+      state.user.personalData = action.payload;
+      localStorage.setItem(
+        USER_KEY,
+        JSON.stringify({
+          ...state.user,
+          personalData: action.payload,
+        }),
+      );
+    },
   },
 });
 
@@ -43,4 +54,5 @@ export const selectIsUserLogged = (state: RootState) =>
 export const selectUserId = (state: RootState) => state.user.user.id;
 export const selectAccessToken = (state: RootState) => state.user.accessToken;
 export const selectUser = (state: RootState) => state.user.user;
-export const { logIn, logOut, setUser } = userSlice.actions;
+export const { logIn, logOut, setUser, setUserPersonalData } =
+  userSlice.actions;
