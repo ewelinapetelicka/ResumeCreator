@@ -36,13 +36,13 @@ export function TemplatePreviewPage() {
         <Text fontSize={'2xl'} fontWeight={'bold'} pr={'50px'}>
           {template.name}
         </Text>
-        {template.tags.map((tag, index) => {
+        {template.tags.map((tag) => {
           return (
             <Button
               colorScheme="gray"
               bg={'transparent'}
               variant={'badge'}
-              key={index}>
+              key={tag}>
               {tag}
             </Button>
           );
