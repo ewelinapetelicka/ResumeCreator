@@ -23,7 +23,12 @@ export function ProfilePage() {
 
   function saveChangesPersonalData() {
     http
-      .patch('users/' + user.id, { personalData: personalDataForm })
+      .patch('users/' + user.id, {
+        personalData: {
+          ...personalDataForm,
+          updateDate: new Date().toISOString(),
+        },
+      })
       .then(() => {
         dispatch(setUserPersonalData(personalDataForm));
         toast({

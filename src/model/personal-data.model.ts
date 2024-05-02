@@ -20,6 +20,7 @@ export interface PersonalData {
   hobbies: PersonalDataDescribable[];
   skills: PersonalDataDescribable[];
   aboutMe: string;
+  updateDate: string;
 }
 
 export type PersonalDataField =
