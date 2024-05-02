@@ -10,6 +10,13 @@ export const theme = extendTheme({
         }),
       },
     }),
+    Button: defineStyleConfig({
+      variants: {
+        badge: defineStyle({
+          pointerEvents: 'none',
+        }),
+      },
+    }),
     Text: defineStyleConfig({
       variants: {
         label: defineStyle({

@@ -7,7 +7,7 @@ import {
   TransformComponent,
   TransformWrapper,
 } from 'react-zoom-pan-pinch';
-import { Box } from '@chakra-ui/react';
+import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import { A4 } from '../../../../const/a4.const';
 import { TemplatePreviewActions } from '../../components/template-preview-actions/TemplatePreviewActions';
 import React, { useRef } from 'react';
@@ -29,10 +29,26 @@ export function TemplatePreviewPage() {
   return (
     <Box
       w={'calc(100% - 40px)'}
-      h={'calc(100% - 40px)'}
+      h={'calc(100% - 60px)'}
       m={'20px'}
       position={'relative'}>
-      <TemplatePreviewActions onResetPosition={() => resetPosition()} />
+      <Flex gap={'10px'} alignItems={'center'}>
+        <Text fontSize={'2xl'} fontWeight={'bold'} pr={'50px'}>
+          {template.name}
+        </Text>
+        {template.tags.map((tag, index) => {
+          return (
+            <Button
+              colorScheme="gray"
+              bg={'transparent'}
+              variant={'badge'}
+              key={index}>
+              {tag}
+            </Button>
+          );
+        })}
+        <TemplatePreviewActions onResetPosition={() => resetPosition()} />
+      </Flex>
       <TransformWrapper
         ref={reactZoomPanPinchContentRef}
         limitToBounds={false}

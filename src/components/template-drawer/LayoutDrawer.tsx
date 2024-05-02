@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react';
+import { Badge, Box, Flex } from '@chakra-ui/react';
 import { Element, Layout } from '../../model/template.model';
 import { ElementDrawer } from './elements/ElementDrawer';
 import {
