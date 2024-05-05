@@ -83,7 +83,7 @@ export function Header() {
               <MenuButton>
                 <UserAvatar user={user} />
               </MenuButton>
-              <MenuList>
+              <MenuList zIndex={'1000'}>
                 <MenuItem
                   minH="48px"
                   display={'flex'}

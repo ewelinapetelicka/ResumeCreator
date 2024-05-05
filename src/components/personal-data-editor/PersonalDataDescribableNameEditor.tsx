@@ -52,7 +52,7 @@ export function PersonalDataDescribableNameEditor(
   return (
     <>
       {personalDataDescribableNameForm.map((el, index) => (
-        <Flex>
+        <Flex key={index}>
           <Input
             value={el.name}
             onChange={(event) =>
