@@ -9,6 +9,7 @@ export interface Template {
   tags: string[];
   layouts: Layout[];
   style?: CSSProperties;
+  colorVariants: string[];
 }
 
 export interface FieldDefinition {

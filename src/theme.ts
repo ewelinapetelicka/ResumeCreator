@@ -15,6 +15,21 @@ export const theme = extendTheme({
         badge: defineStyle({
           pointerEvents: 'none',
         }),
+        color: defineStyle({
+          width: '20px',
+          height: '20px',
+          padding: '0',
+          minWidth: '20px',
+          borderRadius: '20px',
+        }),
+        selectedColor: defineStyle({
+          width: '20px',
+          height: '20px',
+          padding: '0',
+          minWidth: '20px',
+          borderRadius: '20px',
+          border: '4px solid #a1a1a1',
+        }),
       },
     }),
     Text: defineStyleConfig({

@@ -22,6 +22,7 @@ export const templatesSlice = createSlice({
     },
   },
 });
+
 export const selectTemplates = (state: RootState) => state.templates.templates;
 export const selectIsTemplateLoaded = (state: RootState) =>
   state.templates.isLoaded;
