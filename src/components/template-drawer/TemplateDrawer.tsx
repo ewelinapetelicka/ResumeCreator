@@ -2,7 +2,7 @@ import { Template } from '../../model/template.model';
 import { Box } from '@chakra-ui/react';
 import { DimensionPixel } from '../../model/size.model';
 import { PersonalData } from '../../model/personal-data.model';
-import { TemplateUtils } from '../../utils/template/template-utils';
+import { TemplateUtils } from '../../utils/template/template.utils';
 import { useEffect } from 'react';
 import { LayoutDrawer } from './LayoutDrawer';
 

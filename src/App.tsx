@@ -1,6 +1,9 @@
-import './App.css';
-import { createBrowserRouter, redirect } from 'react-router-dom';
-import { RouterProvider, Navigate } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  Navigate,
+  redirect,
+  RouterProvider,
+} from 'react-router-dom';
 import React from 'react';
 import { Layout } from './Layout';
 import { ResumeListPage } from './modules/resume-list/pages/resume-list-page/ResumeListPage';

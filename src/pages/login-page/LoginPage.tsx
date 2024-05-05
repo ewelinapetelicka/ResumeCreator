@@ -12,7 +12,7 @@ import { useDispatch } from 'react-redux';
 import { logIn, setUser } from '../../store/user/user.slice';
 import { useNavigate } from 'react-router-dom';
 import { User } from '../../model/user.model';
-import { JwtDecoderUtils } from '../../utils/jwt-decoder/jwt-decoder-utils';
+import { JwtDecoderUtils } from '../../utils/jwt-decoder/jwt-decoder.utils';
 
 export function LoginPage() {
   const [email, setEmail] = useState('user@gmail.com');

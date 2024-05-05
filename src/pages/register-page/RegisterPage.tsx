@@ -12,8 +12,8 @@ import { useHttpClient } from '../../hooks/http-client/use-http-client';
 import { useDispatch } from 'react-redux';
 import { logIn, setUser } from '../../store/user/user.slice';
 import { User } from '../../model/user.model';
-import { JwtDecoderUtils } from '../../utils/jwt-decoder/jwt-decoder-utils';
-import { PersonalDataUtils } from '../../utils/personal-data/personal-data-utils';
+import { JwtDecoderUtils } from '../../utils/jwt-decoder/jwt-decoder.utils';
+import { PersonalDataUtils } from '../../utils/personal-data/personal-data.utils';
 
 export function RegisterPage() {
   const [email, setEmail] = useState('');
@@ -72,7 +72,8 @@ export function RegisterPage() {
           <Input
             placeholder={'email address'}
             value={email}
-            onChange={(event) => setEmail(event.target.value)}/>
+            onChange={(event) => setEmail(event.target.value)}
+          />
           <InputGroup>
             <Input
               onChange={(event) => setPassword(event.target.value)}
@@ -80,7 +81,8 @@ export function RegisterPage() {
               type={show ? 'text' : 'password'}
               value={password}
               isInvalid={!isIdentical}
-              errorBorderColor={'red.600'}/>
+              errorBorderColor={'red.600'}
+            />
             <InputRightElement width="4.5rem">
               <Button h="1.75rem" size="sm" onClick={() => setShow(!show)}>
                 {show ? 'Hide' : 'Show'}
@@ -94,7 +96,8 @@ export function RegisterPage() {
               type={show ? 'text' : 'password'}
               value={confirmPassword}
               isInvalid={!isIdentical}
-              errorBorderColor={'red.600'}/>
+              errorBorderColor={'red.600'}
+            />
           </InputGroup>
         </InputGroup>
         <Text>
