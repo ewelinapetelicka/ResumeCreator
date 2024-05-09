@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { SearchIcon } from '@chakra-ui/icons';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { TemplateDrawer } from '../../../../components/template-drawer/TemplateDrawer';
 import { A4 } from '../../../../const/a4.const';
 import { defaultPersonalDataConst } from '../../const/default-personal-data.const';

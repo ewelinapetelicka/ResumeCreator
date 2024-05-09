@@ -10,7 +10,7 @@ import {
 import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import { A4 } from '../../../../const/a4.const';
 import { TemplatePreviewActions } from '../../components/template-preview-actions/TemplatePreviewActions';
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { defaultPersonalDataConst } from '../../const/default-personal-data.const';
 
 export function TemplatePreviewPage() {

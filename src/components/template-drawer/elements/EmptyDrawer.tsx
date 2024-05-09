@@ -1,5 +1,4 @@
 import { EmptyElement } from '../../../model/template.model';
-import React from 'react';
 import { Box } from '@chakra-ui/react';
 
 interface EmptyDrawerProps {
@@ -7,5 +6,5 @@ interface EmptyDrawerProps {
 }
 
 export function EmptyDrawer(props: EmptyDrawerProps) {
-    return <Box style={props.element.style} />;
+  return <Box style={props.element.style} />;
 }

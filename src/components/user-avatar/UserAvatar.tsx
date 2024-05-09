@@ -1,5 +1,4 @@
 import { Avatar, Flex, Text } from '@chakra-ui/react';
-import React from 'react';
 import { CiUser } from 'react-icons/ci';
 import { User } from '../../model/user.model';
 

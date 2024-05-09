@@ -1,5 +1,4 @@
-import { Box, Button, Image, Text } from '@chakra-ui/react';
-import React from 'react';
+import { Box, Button, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 
 export function NotFoundPage() {
@@ -12,8 +11,7 @@ export function NotFoundPage() {
       bg={'gray.100'}
       display={'flex'}
       justifyContent={'center'}
-      alignItems={'center'}
-    >
+      alignItems={'center'}>
       <Box
         w={'70%'}
         p={'30px'}
@@ -24,8 +22,7 @@ export function NotFoundPage() {
         flexDirection={'column'}
         alignItems={'center'}
         gap={'30px'}
-        justifyContent={'center'}
-      >
+        justifyContent={'center'}>
         <Text fontSize={'200px'} fontWeight={'bolder'} color={'gray.300'}>
           404
         </Text>

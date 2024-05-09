@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Flex,
   Input,
@@ -38,8 +38,7 @@ export function ResumeListPage() {
               h={'100px'}
               bgColor={'white'}
               borderRadius={'20px'}
-              key={el.id}
-            >
+              key={el.id}>
               {el.name}
             </WrapItem>
           );

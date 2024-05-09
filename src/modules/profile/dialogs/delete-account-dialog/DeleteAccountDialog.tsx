@@ -10,7 +10,6 @@ import {
   Text,
   useToast,
 } from '@chakra-ui/react';
-import React from 'react';
 import { logOut, selectUser } from '../../../../store/user/user.slice';
 import { useNavigate } from 'react-router-dom';
 import { useHttpClient } from '../../../../hooks/http-client/use-http-client';

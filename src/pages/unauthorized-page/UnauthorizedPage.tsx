@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { Box, Button, Text } from '@chakra-ui/react';
-import React from 'react';
 
 export function UnauthorizedPage() {
   const navigate = useNavigate();
@@ -12,8 +11,7 @@ export function UnauthorizedPage() {
       bg={'gray.100'}
       display={'flex'}
       justifyContent={'center'}
-      alignItems={'center'}
-    >
+      alignItems={'center'}>
       <Box
         w={'70%'}
         p={'30px'}
@@ -24,8 +22,7 @@ export function UnauthorizedPage() {
         flexDirection={'column'}
         alignItems={'center'}
         gap={'30px'}
-        justifyContent={'center'}
-      >
+        justifyContent={'center'}>
         <Text fontSize={'200px'} fontWeight={'bolder'} color={'gray.300'}>
           401
         </Text>
