@@ -4,7 +4,6 @@ import {
   redirect,
   RouterProvider,
 } from 'react-router-dom';
-import React from 'react';
 import { Layout } from './Layout';
 import { ResumeListPage } from './modules/resume-list/pages/resume-list-page/ResumeListPage';
 import { TemplateListPage } from './modules/templates/pages/template-list-page/TemplateListPage';
