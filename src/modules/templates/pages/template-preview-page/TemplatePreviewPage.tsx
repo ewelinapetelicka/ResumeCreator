@@ -10,20 +10,14 @@ import {
 import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import { A4 } from '../../../../const/a4.const';
 import { TemplatePreviewActions } from '../../components/template-preview-actions/TemplatePreviewActions';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { defaultPersonalDataConst } from '../../const/default-personal-data.const';
 
 export function TemplatePreviewPage() {
   const params = useParams();
   const template = useSelector(selectTemplateById(parseInt(params.id!)));
   const reactZoomPanPinchContentRef = useRef<ReactZoomPanPinchContentRef>(null);
-  const [selectedColor, setSelectedColor] = useState('');
-
-  useEffect(() => {
-    if (template) {
-      setSelectedColor(template.colorVariants[0]);
-    }
-  }, [template]);
+  const [variant, setVariant] = useState(template?.colorVariants[0] || '');
 
   if (!template) {
     return <Navigate to={'/404'} />;
@@ -65,10 +59,11 @@ export function TemplatePreviewPage() {
           {template.colorVariants?.map((color) => {
             return (
               <Button
-                onClick={() => setSelectedColor(color)}
+                onClick={() => setVariant(color)}
+                key={color}
                 bgColor={color}
                 variant={
-                  selectedColor === color ? 'selectedColor' : 'color'
+                  variant === color ? 'selectedColor' : 'color'
                 }></Button>
             );
           })}
@@ -93,7 +88,7 @@ export function TemplatePreviewPage() {
             template={template}
             dimension={A4}
             data={defaultPersonalDataConst}
-            variant={selectedColor}
+            variant={variant}
           />
         </TransformComponent>
       </TransformWrapper>
