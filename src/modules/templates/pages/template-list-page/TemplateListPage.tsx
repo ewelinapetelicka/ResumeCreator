@@ -15,7 +15,7 @@ import { useState } from 'react';
 import { TemplateDrawer } from '../../../../components/template-drawer/TemplateDrawer';
 import { A4 } from '../../../../const/a4.const';
 import { defaultPersonalDataConst } from '../../const/default-personal-data.const';
-import { TemplateTagsConst } from '../../../../const/template.tags.const';
+import { TemplateTagsConst } from '../../../../const/template-tags.const.ts';
 
 export function TemplateListPage() {
   const [query, setQuery] = useState('');

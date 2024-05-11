@@ -1,13 +1,13 @@
 [
   {
     "id": 1,
-    "name": "clean",
+    "name": "Professional Clarity",
     "style": {
       "background": "#F3F3F3"
     },
     "tags": [
-      "Simple",
-      "Professional"
+      "Professional",
+      "Minimalistic"
     ],
     "layouts": [
       {
@@ -722,13 +722,13 @@
   },
   {
     "id": 2,
-    "name": "left",
+    "name": "Artistic Impression",
     "style": {
       "background": "#f9f9f9"
     },
     "tags": [
-      "Original",
-      "Circular"
+      "Creative",
+      "Multiple Variants"
     ],
     "layouts": [
       {
