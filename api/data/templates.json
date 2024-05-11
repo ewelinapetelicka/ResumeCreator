@@ -1,0 +1,1347 @@
+[
+  {
+    "id": 1,
+    "name": "clean",
+    "style": {
+      "background": "#F3F3F3"
+    },
+    "tags": [
+      "Simple",
+      "Professional"
+    ],
+    "layouts": [
+      {
+        "fields": [
+          {
+            "field": "name",
+            "elements": [
+              {
+                "type": "TEXT",
+                "style": {
+                  "color": "#414141",
+                  "fontSize": "24px",
+                  "fontFamily": "Roboto",
+                  "fontWeight": 500,
+                  "textTransform": "uppercase"
+                }
+              }
+            ]
+          }
+        ],
+        "style": {
+          "top": "5%",
+          "left": "8.5%"
+        }
+      },
+      {
+        "fields": [
+          {
+            "field": "surname",
+            "elements": [
+              {
+                "type": "TEXT",
+                "style": {
+                  "color": "#414141",
+                  "fontSize": "24px",
+                  "fontFamily": "Roboto",
+                  "fontWeight": 300,
+                  "textTransform": "uppercase"
+                }
+              }
+            ]
+          }
+        ],
+        "style": {
+          "top": "8%",
+          "left": "8.5%"
+        }
+      },
+      {
+        "fields": [
+          {
+            "field": "role",
+            "elements": [
+              {
+                "id": "role",
+                "type": "TEXT",
+                "style": {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontFamily": "Roboto",
+                  "fontWeight": 300,
+                  "textTransform": "uppercase"
+                }
+              }
+            ]
+          }
+        ],
+        "style": {
+          "top": "11.5%",
+          "left": "8.5%"
+        }
+      },
+      {
+        "fields": [
+          {
+            "field": "phone",
+            "elements": [
+              {
+                "type": "TEXT",
+                "style": {
+                  "color": "#414141",
+                  "fontSize": "8px",
+                  "fontFamily": "Roboto",
+                  "fontWeight": 300,
+                  "textAlign": "right"
+                }
+              },
+              {
+                "type": "ICON",
+                "staticData": "FiPhone",
+                "style": {
+                  "size": 10,
+                  "color": "#414141"
+                }
+              }
+            ],
+            "style": {
+              "justifyContent": "end",
+              "gap": "4px",
+              "alignItems": "center"
+            }
+          },
+          {
+            "field": "email",
+            "elements": [
+              {
+                "type": "TEXT",
+                "style": {
+                  "color": "#414141",
+                  "fontSize": "8px",
+                  "fontFamily": "Roboto",
+                  "fontWeight": 300,
+                  "textAlign": "right"
+                }
+              },
+              {
+                "type": "ICON",
+                "staticData": "FaRegEnvelope",
+                "style": {
+                  "size": 10,
+                  "color": "#414141"
+                }
+              }
+            ],
+            "style": {
+              "justifyContent": "end",
+              "gap": "4px",
+              "alignItems": "center"
+            }
+          },
+          {
+            "field": "linkedin",
+            "elements": [
+              {
+                "type": "TEXT",
+                "style": {
+                  "color": "#414141",
+                  "fontSize": "8px",
+                  "fontFamily": "Roboto",
+                  "fontWeight": 300,
+                  "textAlign": "right"
+                }
+              },
+              {
+                "type": "ICON",
+                "staticData": "LuLinkedin",
+                "style": {
+                  "size": 10,
+                  "color": "#414141"
+                }
+              }
+            ],
+            "style": {
+              "justifyContent": "end",
+              "gap": "4px",
+              "alignItems": "center"
+            }
+          },
+          {
+            "field": "github",
+            "elements": [
+              {
+                "type": "TEXT",
+                "style": {
+                  "color": "#414141",
+                  "fontSize": "8px",
+                  "fontFamily": "Roboto",
+                  "fontWeight": 300,
+                  "textAlign": "right"
+                }
+              },
+              {
+                "type": "ICON",
+                "staticData": "FiGithub",
+                "style": {
+                  "size": 10,
+                  "color": "#414141"
+                }
+              }
+            ],
+            "style": {
+              "justifyContent": "end",
+              "gap": "4px",
+              "alignItems": "center"
+            }
+          }
+        ],
+        "style": {
+          "top": "6.2%",
+          "right": "8.5%",
+          "flexDirection": "column",
+          "gap": "4px"
+        }
+      },
+      {
+        "fields": [],
+        "style": {
+          "top": "15%",
+          "left": "8.5%",
+          "background": "#C6C6C6",
+          "height": "1px",
+          "width": "83.2%"
+        }
+      },
+      {
+        "fields": [],
+        "style": {
+          "top": "16%",
+          "left": "46%",
+          "background": "#C6C6C6",
+          "height": "65.2%",
+          "width": "1px"
+        }
+      },
+      {
+        "fields": [
+          {
+            "field": "education",
+            "elements": [
+              {
+                "type": "TEXT",
+                "staticData": "Education",
+                "style": {
+                  "fontSize": 11,
+                  "color": "#414141",
+                  "fontWeight": 500,
+                  "textTransform": "uppercase",
+                  "letterSpacing": "0.5px"
+                }
+              },
+              {
+                "type": "LIST",
+                "fields": [
+                  {
+                    "field": "name",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "staticData": "•",
+                        "style": {
+                          "fontSize": "12px",
+                          "lineHeight": "12px",
+                          "color": "#414141",
+                          "fontWeight": 300,
+                          "letterSpacing": "0.5px"
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "9px",
+                          "color": "#414141",
+                          "fontWeight": 500,
+                          "letterSpacing": "0.5px"
+                        }
+                      }
+                    ],
+                    "style": {
+                      "gap": "4px"
+                    }
+                  },
+                  {
+                    "field": "time",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "8px",
+                          "paddingLeft": "10px",
+                          "color": "#414141",
+                          "fontWeight": 300,
+                          "letterSpacing": "0.5px",
+                          "textTransform": "uppercase"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "field": "company",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "8px",
+                          "paddingLeft": "10px",
+                          "color": "#414141",
+                          "fontWeight": 300,
+                          "letterSpacing": "0.5px",
+                          "textTransform": "uppercase"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "style": {
+                  "flexDirection": "column",
+                  "marginLeft": "20px",
+                  "gap": "5px"
+                },
+                "dataStyle": {
+                  "flexDirection": "column"
+                }
+              }
+            ],
+            "style": {
+              "flexDirection": "column",
+              "gap": "4px"
+            }
+          },
+          {
+            "field": "skills",
+            "elements": [
+              {
+                "type": "TEXT",
+                "staticData": "Skills",
+                "style": {
+                  "fontSize": 11,
+                  "color": "#414141",
+                  "fontWeight": 500,
+                  "textTransform": "uppercase",
+                  "letterSpacing": "0.5px"
+                }
+              },
+              {
+                "type": "LIST",
+                "fields": [
+                  {
+                    "field": "name",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "staticData": "•",
+                        "style": {
+                          "fontSize": "11px",
+                          "lineHeight": "12px",
+                          "color": "#414141",
+                          "fontWeight": 300,
+                          "letterSpacing": "0.5px"
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "8px",
+                          "color": "#414141",
+                          "fontWeight": 300,
+                          "letterSpacing": "0.5px"
+                        }
+                      }
+                    ],
+                    "style": {
+                      "gap": "4px"
+                    }
+                  }
+                ],
+                "style": {
+                  "gap": "4px",
+                  "flexDirection": "column",
+                  "marginLeft": "20px"
+                }
+              }
+            ],
+            "style": {
+              "flexDirection": "column",
+              "gap": "4px"
+            }
+          },
+          {
+            "field": "certifications",
+            "elements": [
+              {
+                "type": "TEXT",
+                "staticData": "Certifications",
+                "style": {
+                  "fontSize": 11,
+                  "color": "#414141",
+                  "fontWeight": 500,
+                  "textTransform": "uppercase",
+                  "letterSpacing": "0.5px"
+                }
+              },
+              {
+                "type": "LIST",
+                "fields": [
+                  {
+                    "field": "name",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "staticData": "•",
+                        "style": {
+                          "fontSize": "12px",
+                          "lineHeight": "12px",
+                          "color": "#414141",
+                          "fontWeight": 300,
+                          "letterSpacing": "0.5px"
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "9px",
+                          "color": "#414141",
+                          "fontWeight": 500,
+                          "letterSpacing": "0.5px"
+                        }
+                      }
+                    ],
+                    "style": {
+                      "gap": "4px"
+                    }
+                  },
+                  {
+                    "field": "time",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "8px",
+                          "paddingLeft": "10px",
+                          "color": "#414141",
+                          "fontWeight": 300,
+                          "letterSpacing": "0.5px",
+                          "textTransform": "uppercase"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "field": "company",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "8px",
+                          "paddingLeft": "10px",
+                          "color": "#414141",
+                          "fontWeight": 300,
+                          "letterSpacing": "0.5px",
+                          "textTransform": "uppercase"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "style": {
+                  "flexDirection": "column",
+                  "marginLeft": "20px",
+                  "gap": "5px"
+                },
+                "dataStyle": {
+                  "flexDirection": "column"
+                }
+              }
+            ],
+            "style": {
+              "flexDirection": "column",
+              "gap": "4px"
+            }
+          },
+          {
+            "field": "hobbies",
+            "elements": [
+              {
+                "type": "TEXT",
+                "staticData": "Hobbies",
+                "style": {
+                  "fontSize": 11,
+                  "color": "#414141",
+                  "fontWeight": 500,
+                  "textTransform": "uppercase",
+                  "letterSpacing": "0.5px"
+                }
+              },
+              {
+                "type": "LIST",
+                "fields": [
+                  {
+                    "field": "name",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "staticData": "•",
+                        "style": {
+                          "fontSize": "11px",
+                          "lineHeight": "12px",
+                          "color": "#414141",
+                          "fontWeight": 300,
+                          "letterSpacing": "0.5px"
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "8px",
+                          "color": "#414141",
+                          "fontWeight": 300,
+                          "letterSpacing": "0.5px"
+                        }
+                      }
+                    ],
+                    "style": {
+                      "gap": "4px"
+                    }
+                  }
+                ],
+                "style": {
+                  "gap": "4px",
+                  "flexDirection": "column",
+                  "marginLeft": "20px"
+                }
+              }
+            ],
+            "style": {
+              "flexDirection": "column",
+              "gap": "4px"
+            }
+          }
+        ],
+        "style": {
+          "top": "17%",
+          "left": "8.5%",
+          "flexDirection": "column",
+          "gap": "16px"
+        }
+      },
+      {
+        "fields": [
+          {
+            "field": "aboutMe",
+            "elements": [
+              {
+                "type": "TEXT",
+                "staticData": "About Me",
+                "style": {
+                  "fontSize": 11,
+                  "color": "#414141",
+                  "fontWeight": 500,
+                  "textTransform": "uppercase",
+                  "letterSpacing": "0.5px"
+                }
+              },
+              {
+                "type": "TEXT",
+                "style": {
+                  "fontSize": 8,
+                  "color": "#414141",
+                  "fontWeight": 300,
+                  "paddingLeft": "20px",
+                  "paddingRight": "50px",
+                  "letterSpacing": "0.5px",
+                  "textAlign": "justify",
+                  "lineHeight": "10px"
+                }
+              }
+            ],
+            "style": {
+              "flexDirection": "column",
+              "gap": "4px"
+            }
+          },
+          {
+            "field": "workExperience",
+            "elements": [
+              {
+                "type": "TEXT",
+                "staticData": "Work Experience",
+                "style": {
+                  "fontSize": 11,
+                  "color": "#414141",
+                  "fontWeight": 500,
+                  "textTransform": "uppercase",
+                  "letterSpacing": "0.5px"
+                }
+              },
+              {
+                "type": "LIST",
+                "fields": [
+                  {
+                    "field": "name",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "staticData": "•",
+                        "style": {
+                          "fontSize": "12px",
+                          "lineHeight": "12px",
+                          "color": "#414141",
+                          "fontWeight": 300,
+                          "letterSpacing": "0.5px"
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "9px",
+                          "color": "#414141",
+                          "fontWeight": 500,
+                          "letterSpacing": "0.5px"
+                        }
+                      }
+                    ],
+                    "style": {
+                      "gap": "4px"
+                    }
+                  },
+                  {
+                    "field": "description",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "8px",
+                          "color": "#414141",
+                          "fontWeight": 300,
+                          "paddingLeft": "10px",
+                          "paddingRight": "50px",
+                          "paddingTop": "3px",
+                          "paddingBottom": "3px",
+                          "letterSpacing": "0.5px",
+                          "textAlign": "justify",
+                          "lineHeight": "10px"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "field": "time",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "8px",
+                          "paddingLeft": "10px",
+                          "color": "#414141",
+                          "fontWeight": 300,
+                          "letterSpacing": "0.5px",
+                          "textTransform": "uppercase"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "field": "company",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "8px",
+                          "paddingLeft": "10px",
+                          "color": "#414141",
+                          "fontWeight": 300,
+                          "letterSpacing": "0.5px",
+                          "textTransform": "uppercase"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "style": {
+                  "flexDirection": "column",
+                  "marginLeft": "20px",
+                  "gap": "5px"
+                },
+                "dataStyle": {
+                  "flexDirection": "column"
+                }
+              }
+            ],
+            "style": {
+              "flexDirection": "column",
+              "gap": "4px"
+            }
+          }
+        ],
+        "style": {
+          "top": "17%",
+          "left": "50%",
+          "flexDirection": "column",
+          "gap": "16px"
+        }
+      },
+      {
+        "fields": [
+          {
+            "field": "rodo",
+            "elements": [
+              {
+                "type": "TEXT",
+                "staticData": "Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO).",
+                "style": {
+                  "fontSize": 8,
+                  "color": "#414141",
+                  "fontWeight": 300,
+                  "letterSpacing": "0.5px",
+                  "textAlign": "justify",
+                  "lineHeight": "10px"
+                }
+              }
+            ]
+          }
+        ],
+        "style": {
+          "bottom": "5%",
+          "left": "0%",
+          "marginLeft": "50px",
+          "marginRight": "50px"
+        }
+      }
+    ],
+    "colorVariants": []
+  },
+  {
+    "id": 2,
+    "name": "left",
+    "style": {
+      "background": "#f9f9f9"
+    },
+    "tags": [
+      "Original",
+      "Circular"
+    ],
+    "layouts": [
+      {
+        "fields": [],
+        "style": {
+          "width": "60%",
+          "height": "100%",
+          "background": "var(--template-variant)"
+        }
+      },
+      {
+        "fields": [
+          {
+            "field": "name",
+            "elements": [
+              {
+                "type": "TEXT",
+                "style": {
+                  "fontSize": "33px",
+                  "color": "#414141",
+                  "fontWeight": 700,
+                  "fontFamily": "Bebas Neue",
+                  "letterSpacing": "2px",
+                  "textTransform": "uppercase"
+                }
+              }
+            ]
+          },
+          {
+            "field": "surname",
+            "elements": [
+              {
+                "type": "TEXT",
+                "style": {
+                  "fontSize": "33px",
+                  "color": "#414141",
+                  "fontWeight": 700,
+                  "fontFamily": "Bebas Neue",
+                  "letterSpacing": "2px",
+                  "textTransform": "uppercase"
+                }
+              }
+            ]
+          }
+        ],
+        "style": {
+          "top": "4%",
+          "left": "7%",
+          "gap": "7px"
+        }
+      },
+      {
+        "fields": [
+          {
+            "field": "role",
+            "elements": [
+              {
+                "type": "TEXT",
+                "style": {
+                  "fontSize": "15px",
+                  "color": "#414141",
+                  "fontWeight": 500,
+                  "fontFamily": "Bebas Neue",
+                  "letterSpacing": "2px",
+                  "textTransform": "uppercase"
+                }
+              }
+            ]
+          }
+        ],
+        "style": {
+          "top": "8.5%",
+          "left": "7%"
+        }
+      },
+      {
+        "fields": [
+          {
+            "field": "aboutMe",
+            "elements": [
+              {
+                "type": "EMPTY",
+                "style": {
+                  "background": "#414141",
+                  "width": "100%",
+                  "height": "1px",
+                  "margin": "10px 0"
+                }
+              },
+              {
+                "type": "TEXT",
+                "style": {
+                  "fontSize": "10px",
+                  "color": "#414141",
+                  "fontWeight": 400,
+                  "fontFamily": "Roboto",
+                  "textAlign": "justify",
+                  "lineHeight": "13px"
+                }
+              },
+              {
+                "type": "EMPTY",
+                "style": {
+                  "background": "#414141",
+                  "width": "100%",
+                  "height": "1px",
+                  "margin": "10px 0"
+                }
+              }
+            ],
+            "style": {
+              "flexDirection": "column",
+              "width": "50%"
+            }
+          },
+          {
+            "field": "workExperience",
+            "elements": [
+              {
+                "type": "TEXT",
+                "staticData": "Work Experience",
+                "style": {
+                  "fontSize": "15px",
+                  "color": "#414141",
+                  "fontWeight": 800,
+                  "fontFamily": "Roboto",
+                  "textTransform": "uppercase",
+                  "paddingTop": "10px",
+                  "paddingBottom": "10px"
+                }
+              },
+              {
+                "type": "LIST",
+                "fields": [
+                  {
+                    "field": "name",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "11px",
+                          "color": "#414141",
+                          "fontWeight": 700,
+                          "fontFamily": "Roboto",
+                          "textTransform": "uppercase",
+                          "lineHeight": "7px"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "field": "company",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "9px",
+                          "color": "#414141",
+                          "fontWeight": 400,
+                          "fontFamily": "Roboto",
+                          "lineHeight": "7px",
+                          "paddingTop": "5px"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "field": "time",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "9px",
+                          "color": "#414141",
+                          "fontWeight": 400,
+                          "fontFamily": "Roboto"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "field": "description",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "9px",
+                          "color": "#414141",
+                          "fontWeight": 400,
+                          "fontFamily": "Roboto",
+                          "textAlign": "justify",
+                          "lineHeight": "13px",
+                          "marginTop": "10px",
+                          "marginBottom": "15px",
+                          "paddingLeft": "20px",
+                          "borderLeft": "1px solid #414141"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "style": {
+                  "flexDirection": "column",
+                  "gap": "10px",
+                  "marginTop": "7px"
+                },
+                "dataStyle": {
+                  "flexDirection": "column"
+                }
+              }
+            ],
+            "style": {
+              "flexDirection": "column",
+              "width": "50%"
+            }
+          },
+          {
+            "field": "education",
+            "elements": [
+              {
+                "type": "TEXT",
+                "staticData": "Education",
+                "style": {
+                  "fontSize": "15px",
+                  "color": "#414141",
+                  "fontWeight": 800,
+                  "fontFamily": "Roboto",
+                  "textTransform": "uppercase",
+                  "paddingTop": "10px",
+                  "paddingBottom": "10px"
+                }
+              },
+              {
+                "type": "LIST",
+                "fields": [
+                  {
+                    "field": "name",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "11px",
+                          "color": "#414141",
+                          "fontWeight": 700,
+                          "fontFamily": "Roboto",
+                          "textTransform": "uppercase",
+                          "lineHeight": "7px"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "field": "company",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "9px",
+                          "color": "#414141",
+                          "fontWeight": 400,
+                          "fontFamily": "Roboto",
+                          "lineHeight": "7px",
+                          "paddingTop": "5px"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "field": "time",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "fontSize": "9px",
+                          "color": "#414141",
+                          "fontWeight": 400,
+                          "fontFamily": "Roboto"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "style": {
+                  "flexDirection": "column",
+                  "gap": "10px"
+                },
+                "dataStyle": {
+                  "flexDirection": "column"
+                }
+              }
+            ],
+            "style": {
+              "flexDirection": "column",
+              "width": "50%"
+            }
+          }
+        ],
+        "style": {
+          "top": "12.5%",
+          "left": "7%",
+          "flexDirection": "column"
+        }
+      },
+      {
+        "fields": [
+          {
+            "field": "personalPhoto",
+            "elements": [
+              {
+                "type": "IMAGE",
+                "style": {
+                  "width": "150px",
+                  "height": "150px",
+                  "borderRadius": "50%",
+                  "filter": "grayscale(1)"
+                }
+              }
+            ]
+          }
+        ],
+        "style": {
+          "top": "5%",
+          "right": "7.5%"
+        }
+      },
+      {
+        "fields": [
+          {
+            "field": "",
+            "elements": [
+              {
+                "type": "TEXT",
+                "staticData": "Contacts",
+                "style": {
+                  "fontSize": "15px",
+                  "color": "#414141",
+                  "fontWeight": 800,
+                  "fontFamily": "Roboto",
+                  "textTransform": "uppercase",
+                  "paddingTop": "10px",
+                  "paddingBottom": "5px"
+                }
+              }
+            ]
+          },
+          {
+            "field": "phone",
+            "elements": [
+              {
+                "type": "ICON",
+                "staticData": "FiPhone",
+                "style": {
+                  "size": 15,
+                  "color": "#414141"
+                }
+              },
+              {
+                "type": "TEXT",
+                "style": {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontFamily": "Roboto",
+                  "fontWeight": 400
+                }
+              }
+            ],
+            "style": {
+              "justifyContent": "start",
+              "gap": "4px",
+              "alignItems": "center"
+            }
+          },
+          {
+            "field": "email",
+            "elements": [
+              {
+                "type": "ICON",
+                "staticData": "FaRegEnvelope",
+                "style": {
+                  "size": 15,
+                  "color": "#414141"
+                }
+              },
+              {
+                "type": "TEXT",
+                "style": {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontFamily": "Roboto",
+                  "fontWeight": 400
+                }
+              }
+            ],
+            "style": {
+              "justifyContent": "start",
+              "gap": "4px",
+              "alignItems": "center"
+            }
+          },
+          {
+            "field": "linkedin",
+            "elements": [
+              {
+                "type": "ICON",
+                "staticData": "LuLinkedin",
+                "style": {
+                  "size": 15,
+                  "color": "#414141"
+                }
+              },
+              {
+                "type": "TEXT",
+                "style": {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontFamily": "Roboto",
+                  "fontWeight": 400
+                }
+              }
+            ],
+            "style": {
+              "justifyContent": "start",
+              "gap": "4px",
+              "alignItems": "center"
+            }
+          },
+          {
+            "field": "github",
+            "elements": [
+              {
+                "type": "ICON",
+                "staticData": "FiGithub",
+                "style": {
+                  "size": 15,
+                  "color": "#414141"
+                }
+              },
+              {
+                "type": "TEXT",
+                "style": {
+                  "color": "#414141",
+                  "fontSize": "10px",
+                  "fontFamily": "Roboto",
+                  "fontWeight": 400
+                }
+              }
+            ],
+            "style": {
+              "justifyContent": "start",
+              "gap": "4px",
+              "alignItems": "center"
+            }
+          },
+          {
+            "field": "skills",
+            "elements": [
+              {
+                "type": "TEXT",
+                "staticData": "Skills",
+                "style": {
+                  "fontSize": "15px",
+                  "color": "#414141",
+                  "fontWeight": 800,
+                  "fontFamily": "Roboto",
+                  "textTransform": "uppercase",
+                  "paddingTop": "10px",
+                  "paddingBottom": "5px"
+                }
+              },
+              {
+                "type": "LIST",
+                "fields": [
+                  {
+                    "field": "name",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "staticData": "•",
+                        "style": {
+                          "fontSize": "11px",
+                          "lineHeight": "12px",
+                          "color": "#414141",
+                          "fontWeight": 300,
+                          "letterSpacing": "0.5px"
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "color": "#414141",
+                          "fontSize": "10px",
+                          "fontFamily": "Roboto",
+                          "fontWeight": 400
+                        }
+                      }
+                    ],
+                    "style": {
+                      "gap": "8px"
+                    }
+                  }
+                ],
+                "style": {
+                  "gap": "8px",
+                  "flexDirection": "column"
+                }
+              }
+            ],
+            "style": {
+              "flexDirection": "column",
+              "gap": "4px"
+            }
+          },
+          {
+            "field": "hobbies",
+            "elements": [
+              {
+                "type": "TEXT",
+                "staticData": "Hobbies",
+                "style": {
+                  "fontSize": "15px",
+                  "color": "#414141",
+                  "fontWeight": 800,
+                  "fontFamily": "Roboto",
+                  "textTransform": "uppercase",
+                  "paddingTop": "10px",
+                  "paddingBottom": "5px"
+                }
+              },
+              {
+                "type": "LIST",
+                "fields": [
+                  {
+                    "field": "name",
+                    "elements": [
+                      {
+                        "type": "TEXT",
+                        "staticData": "•",
+                        "style": {
+                          "fontSize": "11px",
+                          "lineHeight": "12px",
+                          "color": "#414141",
+                          "fontWeight": 300,
+                          "letterSpacing": "0.5px"
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "style": {
+                          "color": "#414141",
+                          "fontSize": "10px",
+                          "fontFamily": "Roboto",
+                          "fontWeight": 400
+                        }
+                      }
+                    ],
+                    "style": {
+                      "gap": "8px"
+                    }
+                  }
+                ],
+                "style": {
+                  "gap": "8px",
+                  "flexDirection": "column"
+                }
+              }
+            ],
+            "style": {
+              "flexDirection": "column",
+              "gap": "4px"
+            }
+          }
+        ],
+        "style": {
+          "top": "25%",
+          "left": "65%",
+          "flexDirection": "column",
+          "gap": "8px"
+        }
+      },
+      {
+        "fields": [
+          {
+            "field": "rodo",
+            "elements": [
+              {
+                "type": "TEXT",
+                "staticData": "Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji (zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO).",
+                "style": {
+                  "fontSize": 8,
+                  "color": "#414141",
+                  "fontWeight": 300,
+                  "letterSpacing": "0.5px",
+                  "textAlign": "justify",
+                  "lineHeight": "10px"
+                }
+              }
+            ]
+          }
+        ],
+        "style": {
+          "bottom": "4%",
+          "left": "0%",
+          "marginLeft": "7%",
+          "marginRight": "7%"
+        }
+      }
+    ],
+    "colorVariants": [
+      "#ddc2c2",
+      "#ddd9c2",
+      "#c2ddca",
+      "#c2d1dd",
+      "#ddc2d9"
+    ]
+  }
+]
