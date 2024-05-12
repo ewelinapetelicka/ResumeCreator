@@ -1,5 +1,4 @@
 import { Button, Flex, Tooltip } from '@chakra-ui/react';
-import React from 'react';
 import { MdCenterFocusWeak } from 'react-icons/md';
 
 interface TemplatePreviewActionsProps {

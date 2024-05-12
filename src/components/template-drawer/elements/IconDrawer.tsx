@@ -1,6 +1,7 @@
 import { IconElement } from '../../../model/template.model';
-import loadable, { LoadableComponent } from '@loadable/component';
-import { IconBaseProps } from 'react-icons';
+import { FiGithub, FiPhone } from 'react-icons/fi';
+import { LuLinkedin } from 'react-icons/lu';
+import { FaRegEnvelope } from 'react-icons/fa';
 
 interface IconDrawerProps {
   element: IconElement;
@@ -8,18 +9,16 @@ interface IconDrawerProps {
 }
 
 export function IconDrawer(props: IconDrawerProps) {
-  const lib = props.data
-    .replace(/([a-z0-9])([A-Z])/g, '$1 $2')
-    .split(' ')[0]
-    .toLocaleLowerCase();
-
-  const ElementIcon: LoadableComponent<IconBaseProps> = loadable(
-    () => import(`../../../../node_modules/react-icons/${lib}/index.js`),
-    {
-      resolveComponent: (el: JSX.Element) =>
-        el[props.data as keyof JSX.Element],
-    },
-  );
-
-  return <ElementIcon {...props.element.style} />;
+  switch (props.data) {
+    case 'FiPhone':
+      return <FiPhone />;
+    case 'FiGithub':
+      return <FiGithub />;
+    case 'FaRegEnvelope':
+      return <FaRegEnvelope />;
+    case 'LuLinkedin':
+      return <LuLinkedin />;
+    default:
+      return <></>;
+  }
 }

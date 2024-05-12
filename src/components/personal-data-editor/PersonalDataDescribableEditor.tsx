@@ -56,7 +56,7 @@ export function PersonalDataDescribableEditor(
 
   function removePersonalDataDescribableFormElement(index: number) {
     setPersonalDataDescribableForm(
-      personalDataDescribableForm.filter((el, i) => index !== i),
+      personalDataDescribableForm.filter((_, i) => index !== i),
     );
   }
 

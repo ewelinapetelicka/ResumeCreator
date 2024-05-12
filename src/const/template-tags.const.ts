@@ -1,7 +1,6 @@
 export const TemplateTagsConst: string[] = [
-  'Popular',
-  'Simple',
-  'Circular',
-  'Original',
   'Professional',
+  'Creative',
+  'Minimalistic',
+  'Multiple Variants',
 ];
