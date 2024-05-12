@@ -11,10 +11,12 @@ import { useSelector } from 'react-redux';
 import { selectResumesByFilters } from '../../../../store/resume/resumes.slice';
 import { Resume } from '../../../../model/resume.model';
 import { SearchIcon } from '@chakra-ui/icons';
+import { useNavigate } from 'react-router-dom';
 
 export function ResumeListPage() {
   const [query, setQuery] = useState('');
   const resumes = useSelector(selectResumesByFilters(query));
+  const navigate = useNavigate();
 
   return (
     <Flex direction={'column'} m={'20px'}>
@@ -38,8 +40,11 @@ export function ResumeListPage() {
               h={'100px'}
               bgColor={'white'}
               borderRadius={'20px'}
+              boxShadow={'#e9e9e9 0px 0px 15px 5px'}
+              transition={'0.1s'}
+              cursor={'pointer'}
               key={el.id}
-            >
+              onClick={() => navigate(el.id.toString())}>
               {el.name}
             </WrapItem>
           );

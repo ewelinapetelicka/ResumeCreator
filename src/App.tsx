@@ -21,6 +21,7 @@ import { LoginPage } from './pages/login-page/LoginPage';
 import { UnauthorizedPage } from './pages/unauthorized-page/UnauthorizedPage';
 import { RegisterPage } from './pages/register-page/RegisterPage';
 import { ProfilePage } from './modules/profile/pages/profile-page/ProfilePage';
+import { ResumePreviewPage } from './modules/resume-list/pages/resume-prview-page/ResumePreviewPage';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
           {
             path: '',
             element: <ResumeListPage />,
+          },
+          {
+            path: ':id',
+            element: <ResumePreviewPage />,
           },
         ],
       },
