@@ -11,6 +11,7 @@ import { LoginPage } from './pages/login-page/LoginPage.tsx';
 import { RegisterPage } from './pages/register-page/RegisterPage.tsx';
 import { NotFoundPage } from './pages/not-found-page/NotFoundPage.tsx';
 import { UnauthorizedPage } from './pages/unauthorized-page/UnauthorizedPage.tsx';
+import { ResumePreviewPage } from './modules/resume-list/pages/resume-prview-page/ResumePreviewPage.tsx';
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
           {
             path: '',
             element: <ResumeListPage />,
+          },
+          {
+            path: ':id',
+            element: <ResumePreviewPage />,
           },
         ],
       },
