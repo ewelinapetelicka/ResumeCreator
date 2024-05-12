@@ -9,7 +9,7 @@ import {
 } from 'react-zoom-pan-pinch';
 import { TemplateDrawer } from '../../../../components/template-drawer/TemplateDrawer';
 import { A4 } from '../../../../const/a4.const';
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { selectTemplateById } from '../../../../store/template/templates.slice';
 import { PersonalDataEditor } from '../../../../components/personal-data-editor/PersonalDataEditor';
 import { PersonalData } from '../../../../model/personal-data.model';
@@ -21,7 +21,7 @@ export function ResumePreviewPage() {
   const toast = useToast();
   const resume = useSelector(selectResumeById(parseInt(params.id!)));
   const reactZoomPanPinchContentRef = useRef<ReactZoomPanPinchContentRef>(null);
-  const template = useSelector(selectTemplateById(resume?.templateId!));
+  const template = useSelector(selectTemplateById(resume?.templateId || -1));
   const [resumeDataForm, setResumeDataForm] = useState<PersonalData>(
     structuredClone(resume!.personalData),
   );
