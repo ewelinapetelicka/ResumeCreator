@@ -14,7 +14,7 @@ import {
   PersonalDataDescribable,
   PersonalDataField,
 } from '../../model/personal-data.model';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { IoMdTrash } from 'react-icons/io';
 
 interface PersonalDataDescribableEditorProps {
@@ -29,11 +29,6 @@ export function PersonalDataDescribableEditor(
     useState<PersonalDataDescribable[]>(
       structuredClone(props.personalDataDescribable),
     );
-
-  useEffect(
-    () => props.onChange(personalDataDescribableForm),
-    [personalDataDescribableForm],
-  );
 
   function updatePersonalDataDescribableForm(
     field: PersonalDataField,

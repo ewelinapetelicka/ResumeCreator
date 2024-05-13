@@ -12,6 +12,7 @@ import { RegisterPage } from './pages/register-page/RegisterPage.tsx';
 import { NotFoundPage } from './pages/not-found-page/NotFoundPage.tsx';
 import { UnauthorizedPage } from './pages/unauthorized-page/UnauthorizedPage.tsx';
 import { ResumePreviewPage } from './modules/resumes/pages/resume-preview-page/ResumePreviewPage.tsx';
+import { ResumePrintPage } from './modules/resumes/pages/resume-print-page/ResumePrintPage.tsx';
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
           {
             path: ':id',
             element: <ResumePreviewPage />,
+          },
+          {
+            path: ':id/print',
+            element: <ResumePrintPage />,
           },
         ],
       },

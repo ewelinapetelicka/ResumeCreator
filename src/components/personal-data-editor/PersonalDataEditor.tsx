@@ -4,7 +4,7 @@ import {
   PersonalDataValue,
 } from '../../model/personal-data.model';
 import { Flex, Input, Text, Textarea } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { PersonalDataDescribableEditor } from './PersonalDataDescribableEditor';
 import { PersonalDataDescribableNameEditor } from './PersonalDataDescribableNameEditor';
 
@@ -18,18 +18,18 @@ export function PersonalDataEditor(props: PersonalDataEditorProps) {
     structuredClone(props.personalData),
   );
 
-  useEffect(() => props.onChange(personalDataForm), [personalDataForm]);
-
   function updatePersonalDataForm(
     field: PersonalDataField,
     data: PersonalDataValue,
   ) {
-    setPersonalDataForm({ ...personalDataForm, [field]: data });
+    const edited = { ...personalDataForm, [field]: data };
+    setPersonalDataForm(edited);
+    props.onChange(edited);
   }
 
   return (
     <Flex w={'100%'} flexDirection={'column'} gap={'10px'}>
-      <Text variant={'label'}>Personal photo</Text>
+      <Text variant={'label'}>Avatar</Text>
       <Input
         value={personalDataForm.personalPhoto}
         onChange={(event) =>

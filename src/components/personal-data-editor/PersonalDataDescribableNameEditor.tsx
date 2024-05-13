@@ -2,7 +2,7 @@ import {
   PersonalDataDescribable,
   PersonalDataField,
 } from '../../model/personal-data.model';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Button, Flex, Input } from '@chakra-ui/react';
 import { IoMdTrash } from 'react-icons/io';
 
@@ -19,21 +19,16 @@ export function PersonalDataDescribableNameEditor(
       structuredClone(props.personalDataDescribable),
     );
 
-  useEffect(
-    () => props.onChange(personalDataDescribableNameForm),
-    [personalDataDescribableNameForm],
-  );
-
   function updatePersonalDataDescribableForm(
     field: PersonalDataField,
     index: number,
     data: string,
   ) {
-    setPersonalDataDescribableNameForm(
-      personalDataDescribableNameForm.map((el, i) =>
-        i === index ? { ...el, [field]: data } : el,
-      ),
+    const edited = personalDataDescribableNameForm.map((el, i) =>
+      i === index ? { ...el, [field]: data } : el,
     );
+    setPersonalDataDescribableNameForm(edited);
+    props.onChange(edited);
   }
 
   function addPersonalDataDescribableFormElement() {

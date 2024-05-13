@@ -1,7 +1,7 @@
-import { Box, Button, Flex, useToast } from '@chakra-ui/react';
+import { Box, Button, Flex, Tooltip, useToast } from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
 import { selectResumeById } from '../../../../store/resume/resumes.slice';
-import { Navigate, useParams } from 'react-router-dom';
+import { Navigate, useLocation, useParams } from 'react-router-dom';
 import {
   ReactZoomPanPinchContentRef,
   TransformComponent,
@@ -18,23 +18,28 @@ import { AiOutlineArrowDown } from 'react-icons/ai';
 
 export function ResumePreviewPage() {
   const params = useParams();
+  const location = useLocation();
   const toast = useToast();
+  const http = useHttpClient();
   const resume = useSelector(selectResumeById(parseInt(params.id!)));
   const reactZoomPanPinchContentRef = useRef<ReactZoomPanPinchContentRef>(null);
   const template = useSelector(selectTemplateById(resume?.templateId || -1));
   const [resumeDataForm, setResumeDataForm] = useState<PersonalData>(
     structuredClone(resume!.personalData),
   );
-  const http = useHttpClient();
+  const [canDownload, setCanDownload] = useState(true);
 
   if (!resume || !template) {
     return <Navigate to={'/404'} />;
   }
 
-  function saveResumeDataForm() {
+  async function saveResumeDataForm() {
     http
       .patch('resumes/' + resume?.id, {
-        personalData: resumeDataForm,
+        personalData: {
+          ...resumeDataForm,
+          updateDate: new Date().toISOString(),
+        },
       })
       .then(() => {
         toast({
@@ -45,7 +50,21 @@ export function ResumePreviewPage() {
           position: 'top-right',
           isClosable: true,
         });
+        setCanDownload(true);
       });
+  }
+
+  function downloadResume() {
+    http
+      .patch('resumes/' + resume?.id, {
+        personalData: resumeDataForm,
+      })
+      .then(() => window.open(location.pathname + '/print', '_blank'));
+  }
+
+  function updateResumeDataForm(change: PersonalData) {
+    setResumeDataForm(change);
+    setCanDownload(false);
   }
 
   return (
@@ -70,7 +89,7 @@ export function ResumePreviewPage() {
           overflowY={'scroll'}>
           <PersonalDataEditor
             personalData={resumeDataForm}
-            onChange={(change) => setResumeDataForm(change)}
+            onChange={(change) => updateResumeDataForm(change)}
           />
         </Box>
         <TransformWrapper
@@ -98,10 +117,18 @@ export function ResumePreviewPage() {
       </Flex>
       <Flex position={'absolute'} right={'20px'} bottom={'0px'} gap={'20px'}>
         <Button onClick={() => saveResumeDataForm()}>SAVE</Button>
-        <Button>
-          DOWNLOAD
-          <AiOutlineArrowDown />
-        </Button>
+        <Tooltip
+          label={
+            canDownload
+              ? undefined
+              : 'You have made changes to your resume that have not yet been saved. Please save your changes before downloading.'
+          }
+          placement={'left'}>
+          <Button isDisabled={!canDownload} onClick={() => downloadResume()}>
+            DOWNLOAD
+            <AiOutlineArrowDown />
+          </Button>
+        </Tooltip>
       </Flex>
     </Box>
   );
