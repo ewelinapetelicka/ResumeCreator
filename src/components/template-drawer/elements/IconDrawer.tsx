@@ -11,13 +11,13 @@ interface IconDrawerProps {
 export function IconDrawer(props: IconDrawerProps) {
   switch (props.data) {
     case 'FiPhone':
-      return <FiPhone />;
+      return <FiPhone {...props.element.style} />;
     case 'FiGithub':
-      return <FiGithub />;
+      return <FiGithub {...props.element.style} />;
     case 'FaRegEnvelope':
-      return <FaRegEnvelope />;
+      return <FaRegEnvelope {...props.element.style} />;
     case 'LuLinkedin':
-      return <LuLinkedin />;
+      return <LuLinkedin {...props.element.style} />;
     default:
       return <></>;
   }
