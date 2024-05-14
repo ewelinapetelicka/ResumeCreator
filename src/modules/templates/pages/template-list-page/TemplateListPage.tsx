@@ -8,6 +8,7 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  Text,
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { SearchIcon } from '@chakra-ui/icons';
@@ -20,6 +21,7 @@ import { TemplateTagsConst } from '../../../../const/template-tags.const.ts';
 export function TemplateListPage() {
   const [query, setQuery] = useState('');
   const [tags, setTags] = useState<string[]>([]);
+  const [hovered, setHovered] = useState<Template | null>(null);
   const templates = useSelector(selectTemplatesByFilters(query, tags));
   const navigate = useNavigate();
 
@@ -63,27 +65,43 @@ export function TemplateListPage() {
       <Flex gap={'20px'} mt={'20px'} wrap={'wrap'} justify={'space-evenly'}>
         {templates.map((el: Template) => {
           return (
-            <Box
-              w={A4.width / 2}
-              h={A4.height / 2}
-              bgColor={'white'}
-              borderRadius={'20px'}
-              key={el.id}
-              onClick={() => navigate(el.id.toString())}
-              cursor={'pointer'}
-              overflow={'hidden'}
-              boxShadow={'#e9e9e9 0px 0px 15px 5px'}
-              transition={'0.1s'}
-              _hover={{
-                transform: 'scale(1.02)',
-              }}>
-              <TemplateDrawer
-                template={el}
-                dimension={A4}
-                data={defaultPersonalDataConst}
-                scale={0.5}
-              />
-            </Box>
+            <Flex
+              flexDirection={'column'}
+              alignItems={'center'}
+              justifyContent={'center'}
+              onMouseEnter={() => setHovered(el)}
+              onMouseLeave={() => setHovered(null)}
+              position={'relative'}>
+              <Box
+                w={A4.width / 2}
+                h={A4.height / 2}
+                bgColor={'white'}
+                borderRadius={'20px'}
+                key={el.id}
+                onClick={() => navigate(el.id.toString())}
+                cursor={'pointer'}
+                overflow={'hidden'}
+                boxShadow={'#e9e9e9 0px 0px 15px 5px'}
+                transition={'0.1s'}
+                _hover={{
+                  transform: 'scale(1.02)',
+                }}>
+                <TemplateDrawer
+                  template={el}
+                  dimension={A4}
+                  data={defaultPersonalDataConst}
+                  scale={0.5}
+                />
+              </Box>
+              <Text
+                transition={'0.5s ease-in-out'}
+                size={'large'}
+                opacity={hovered === el ? '1' : '0'}
+                position={'absolute'}
+                bottom={hovered === el ? -35 : 10}>
+                {el.name}
+              </Text>
+            </Flex>
           );
         })}
       </Flex>
