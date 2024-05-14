@@ -66,7 +66,7 @@ export function ResumePreviewPage() {
           gap={'30px'}
           justifyContent={'center'}
           flexDirection={'column'}
-          p={'20px 20px'}
+          p={'20px'}
           overflowY={'scroll'}>
           <PersonalDataEditor
             personalData={resumeDataForm}

@@ -17,13 +17,13 @@ import {
 
 export function ResumeLayout() {
   const http = useHttpClient();
-  const resumesIsLoaded = useSelector(selectIsResumesLoaded);
-  const templatesIsLoaded = useSelector(selectIsTemplateLoaded);
+  const isResumesLoaded = useSelector(selectIsResumesLoaded);
+  const isTemplateLoaded = useSelector(selectIsTemplateLoaded);
   const dispatch = useDispatch();
   const userId = useSelector(selectUserId);
 
   useEffect(() => {
-    if (resumesIsLoaded) {
+    if (isResumesLoaded) {
       return;
     }
     http
@@ -32,7 +32,7 @@ export function ResumeLayout() {
   }, []);
 
   useEffect(() => {
-    if (templatesIsLoaded) {
+    if (isTemplateLoaded) {
       return;
     }
     http
@@ -40,7 +40,7 @@ export function ResumeLayout() {
       .then((templates) => dispatch(setTemplates(templates)));
   }, []);
 
-  if (!templatesIsLoaded || !resumesIsLoaded) {
+  if (!isTemplateLoaded || !isResumesLoaded) {
     return <Loader></Loader>;
   }
 
