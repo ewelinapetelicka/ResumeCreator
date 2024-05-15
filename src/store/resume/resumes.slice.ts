@@ -43,4 +43,6 @@ export const selectResumesByFilters = (query: string) => (state: RootState) =>
   });
 export const selectIsResumesLoaded = (state: RootState) =>
   state.resumes.isLoaded;
+export const selectResumeById = (id: number) => (state: RootState) =>
+  state.resumes.resumes.find((el) => el.id === id);
 export const { setResumes } = resumesSlice.actions;

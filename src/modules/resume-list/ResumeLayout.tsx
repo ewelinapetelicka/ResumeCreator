@@ -9,15 +9,21 @@ import { Loader } from '../../components/loader/Loader';
 import { Outlet } from 'react-router-dom';
 import { useEffect } from 'react';
 import { selectUserId } from '../../store/user/user.slice';
+import { Template } from '../../model/template.model';
+import {
+  selectIsTemplateLoaded,
+  setTemplates,
+} from '../../store/template/templates.slice';
 
 export function ResumeLayout() {
   const http = useHttpClient();
-  const isLoaded = useSelector(selectIsResumesLoaded);
+  const isResumesLoaded = useSelector(selectIsResumesLoaded);
+  const isTemplateLoaded = useSelector(selectIsTemplateLoaded);
   const dispatch = useDispatch();
   const userId = useSelector(selectUserId);
 
   useEffect(() => {
-    if (isLoaded) {
+    if (isResumesLoaded) {
       return;
     }
     http
@@ -25,7 +31,16 @@ export function ResumeLayout() {
       .then((resumes) => dispatch(setResumes(resumes)));
   }, []);
 
-  if (!isLoaded) {
+  useEffect(() => {
+    if (isTemplateLoaded) {
+      return;
+    }
+    http
+      .get<Template[]>(`users/${userId}/templates`)
+      .then((templates) => dispatch(setTemplates(templates)));
+  }, []);
+
+  if (!isTemplateLoaded || !isResumesLoaded) {
     return <Loader></Loader>;
   }
 
