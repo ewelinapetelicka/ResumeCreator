@@ -32,16 +32,17 @@ export function PersonalDataDescribableNameEditor(
   }
 
   function addPersonalDataDescribableFormElement() {
-    setPersonalDataDescribableNameForm([
-      ...personalDataDescribableNameForm,
-      { name: '' },
-    ]);
+    const edited = [...personalDataDescribableNameForm, { name: '' }];
+    setPersonalDataDescribableNameForm(edited);
+    props.onChange(edited);
   }
 
   function removePersonalDataDescribableFormElement(index: number) {
-    setPersonalDataDescribableNameForm(
-      personalDataDescribableNameForm.filter((_, i) => index !== i),
+    const edited = personalDataDescribableNameForm.filter(
+      (_, i) => index !== i,
     );
+    setPersonalDataDescribableNameForm(edited);
+    props.onChange(edited);
   }
 
   return (

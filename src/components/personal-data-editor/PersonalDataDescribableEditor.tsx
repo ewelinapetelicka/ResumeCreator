@@ -35,24 +35,26 @@ export function PersonalDataDescribableEditor(
     index: number,
     data: string,
   ) {
-    setPersonalDataDescribableForm(
-      personalDataDescribableForm.map((el, i) =>
-        i === index ? { ...el, [field]: data } : el,
-      ),
+    const edited = personalDataDescribableForm.map((el, i) =>
+      i === index ? { ...el, [field]: data } : el,
     );
+    setPersonalDataDescribableForm(edited);
+    props.onChange(edited);
   }
 
   function addPersonalDataDescribableFormElement() {
-    setPersonalDataDescribableForm([
+    const edited = [
       ...personalDataDescribableForm,
       { name: '', company: '', time: '', description: '' },
-    ]);
+    ];
+    setPersonalDataDescribableForm(edited);
+    props.onChange(edited);
   }
 
   function removePersonalDataDescribableFormElement(index: number) {
-    setPersonalDataDescribableForm(
-      personalDataDescribableForm.filter((_, i) => index !== i),
-    );
+    const edited = personalDataDescribableForm.filter((_, i) => index !== i);
+    setPersonalDataDescribableForm(edited);
+    props.onChange(edited);
   }
 
   return (
