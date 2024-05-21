@@ -21,6 +21,11 @@ export const resumesSlice = createSlice({
       state.resumes = action.payload;
       state.isLoaded = true;
     },
+    removeResume: (state, action: PayloadAction<number>) => {
+      state.resumes = state.resumes.filter(
+        (resume) => resume.id !== action.payload,
+      );
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(logOut, (state) => {
@@ -45,4 +50,5 @@ export const selectIsResumesLoaded = (state: RootState) =>
   state.resumes.isLoaded;
 export const selectResumeById = (id: number) => (state: RootState) =>
   state.resumes.resumes.find((el) => el.id === id);
-export const { setResumes } = resumesSlice.actions;
+
+export const { setResumes, removeResume } = resumesSlice.actions;
