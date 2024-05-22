@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Tooltip,
-  useDisclosure,
-  useToast,
-} from '@chakra-ui/react';
+import { Box, Button, Flex, Tooltip, useToast } from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
 import { selectResumeById } from '../../../../store/resume/resumes.slice';
 import { Navigate, useLocation, useParams } from 'react-router-dom';
@@ -22,7 +15,6 @@ import { PersonalDataEditor } from '../../../../components/personal-data-editor/
 import { PersonalData } from '../../../../model/personal-data.model';
 import { useHttpClient } from '../../../../hooks/http-client/use-http-client';
 import { AiOutlineArrowDown } from 'react-icons/ai';
-import { DeleteResumeDialog } from '../../../profile/dialogs/delete-resume-dialog/DeleteResumeDialog.tsx';
 
 export function ResumePreviewPage() {
   const params = useParams();
@@ -36,7 +28,6 @@ export function ResumePreviewPage() {
     structuredClone(resume!.personalData),
   );
   const [canDownload, setCanDownload] = useState(true);
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
   if (!resume || !template) {
     return <Navigate to={'/404'} />;
@@ -124,15 +115,6 @@ export function ResumePreviewPage() {
           </TransformComponent>
         </TransformWrapper>
       </Flex>
-      <Flex position={'absolute'} right={'20px'} top={'0px'}>
-        <Button
-          colorScheme={'red'}
-          variant={'ghost'}
-          cursor={'pointer'}
-          onClick={() => onOpen()}>
-          DELETE
-        </Button>
-      </Flex>
       <Flex position={'absolute'} right={'20px'} bottom={'0px'} gap={'20px'}>
         <Button onClick={() => saveResumeDataForm()}>SAVE</Button>
         <Tooltip
@@ -148,7 +130,6 @@ export function ResumePreviewPage() {
           </Button>
         </Tooltip>
       </Flex>
-      <DeleteResumeDialog open={isOpen} close={onClose} id={resume.id} />
     </Box>
   );
 }
