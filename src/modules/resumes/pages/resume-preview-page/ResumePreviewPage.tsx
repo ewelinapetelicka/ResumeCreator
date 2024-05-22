@@ -22,7 +22,7 @@ import { PersonalDataEditor } from '../../../../components/personal-data-editor/
 import { PersonalData } from '../../../../model/personal-data.model';
 import { useHttpClient } from '../../../../hooks/http-client/use-http-client';
 import { AiOutlineArrowDown } from 'react-icons/ai';
-import { DeleteResumeDialog } from '../../../profile/dialogs/delete-resume-dialog/DeleteResumeDialog.tsx';
+import { DeleteResumeDialog } from '../../dialogs/delete-resume-dialog/DeleteResumeDialog.tsx';
 
 export function ResumePreviewPage() {
   const params = useParams();
@@ -125,11 +125,7 @@ export function ResumePreviewPage() {
         </TransformWrapper>
       </Flex>
       <Flex position={'absolute'} right={'20px'} top={'0px'}>
-        <Button
-          colorScheme={'red'}
-          variant={'ghost'}
-          cursor={'pointer'}
-          onClick={() => onOpen()}>
+        <Button colorScheme={'red'} variant={'ghost'} onClick={() => onOpen()}>
           DELETE
         </Button>
       </Flex>
