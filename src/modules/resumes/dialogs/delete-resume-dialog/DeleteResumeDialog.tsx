@@ -9,7 +9,7 @@ import {
   useToast,
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
-import { useHttpClient } from '../../../../hooks/http-client/use-http-client';
+import { useHttpClient } from '../../../../hooks/http-client/use-http-client.ts';
 import { useDispatch } from 'react-redux';
 import { removeResume } from '../../../../store/resume/resumes.slice.ts';
 
