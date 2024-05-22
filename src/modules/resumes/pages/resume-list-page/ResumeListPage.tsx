@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import {
-  Box,
   Flex,
   Input,
   InputGroup,
@@ -60,19 +59,18 @@ export function ResumeListPage() {
           pt={'200px'}
           justifyContent={'center'}
           alignItems={'center'}>
-          <Box
+          <Flex
             p={'30px'}
             w={'50%'}
             boxShadow={'0px 1px 4px #e1e1e1'}
             borderRadius={'30px'}
             bg={'white'}
-            display={'flex'}
             justifyContent={'center'}
             alignItems={'center'}
             gap={'15px'}>
             <SlMagnifierRemove />
             <Text>NO RESUMES FOUND</Text>
-          </Box>
+          </Flex>
         </Flex>
       )}
     </Flex>
