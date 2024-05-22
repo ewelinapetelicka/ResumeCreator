@@ -4,14 +4,16 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  Text,
   Wrap,
   WrapItem,
 } from '@chakra-ui/react';
-import { useSelector } from 'react-redux';
-import { selectResumesByFilters } from '../../../../store/resume/resumes.slice';
 import { Resume } from '../../../../model/resume.model';
 import { SearchIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router-dom';
+import { SlMagnifierRemove } from 'react-icons/sl';
+import { selectResumesByFilters } from '../../../../store/resume/resumes.slice.ts';
+import { useSelector } from 'react-redux';
 
 export function ResumeListPage() {
   const [query, setQuery] = useState('');
@@ -32,24 +34,45 @@ export function ResumeListPage() {
           />
         </InputGroup>
       </Flex>
-      <Wrap spacing={'20px'} mt={'20px'} justify={'space-evenly'}>
-        {resumes.map((el: Resume) => {
-          return (
-            <WrapItem
-              w={'354px'}
-              h={'100px'}
-              bgColor={'white'}
-              borderRadius={'20px'}
-              boxShadow={'#e9e9e9 0px 0px 15px 5px'}
-              transition={'0.1s'}
-              cursor={'pointer'}
-              key={el.id}
-              onClick={() => navigate(el.id.toString())}>
-              {el.name}
-            </WrapItem>
-          );
-        })}
-      </Wrap>
+      {resumes.length !== 0 ? (
+        <Wrap spacing={'20px'} mt={'20px'} justify={'space-evenly'}>
+          {resumes.map((el: Resume) => {
+            return (
+              <WrapItem
+                w={'354px'}
+                h={'100px'}
+                bgColor={'white'}
+                borderRadius={'20px'}
+                boxShadow={'#e9e9e9 0px 0px 15px 5px'}
+                transition={'0.1s'}
+                cursor={'pointer'}
+                key={el.id}
+                onClick={() => navigate(el.id.toString())}>
+                {el.name}
+              </WrapItem>
+            );
+          })}
+        </Wrap>
+      ) : (
+        <Flex
+          w={'100%'}
+          pt={'200px'}
+          justifyContent={'center'}
+          alignItems={'center'}>
+          <Flex
+            p={'30px'}
+            w={'50%'}
+            boxShadow={'0px 1px 4px #e1e1e1'}
+            borderRadius={'30px'}
+            bg={'white'}
+            justifyContent={'center'}
+            alignItems={'center'}
+            gap={'15px'}>
+            <SlMagnifierRemove />
+            <Text>NO RESUMES FOUND</Text>
+          </Flex>
+        </Flex>
+      )}
     </Flex>
   );
 }

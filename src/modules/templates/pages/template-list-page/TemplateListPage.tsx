@@ -17,6 +17,7 @@ import { TemplateDrawer } from '../../../../components/template-drawer/TemplateD
 import { A4 } from '../../../../const/a4.const';
 import { defaultPersonalDataConst } from '../../const/default-personal-data.const';
 import { TemplateTagsConst } from '../../../../const/template-tags.const.ts';
+import { SlMagnifierRemove } from 'react-icons/sl';
 
 export function TemplateListPage() {
   const [query, setQuery] = useState('');
@@ -62,49 +63,70 @@ export function TemplateListPage() {
           </InputGroup>
         </Flex>
       </Flex>
-      <Flex gap={'20px'} mt={'20px'} wrap={'wrap'} justify={'space-evenly'}>
-        {templates.map((el: Template) => {
-          return (
-            <Flex
-              flexDirection={'column'}
-              alignItems={'center'}
-              justifyContent={'center'}
-              onMouseEnter={() => setHovered(el)}
-              onMouseLeave={() => setHovered(null)}
-              position={'relative'}>
-              <Box
-                w={A4.width / 2}
-                h={A4.height / 2}
-                bgColor={'white'}
-                borderRadius={'20px'}
-                key={el.id}
-                onClick={() => navigate(el.id.toString())}
-                cursor={'pointer'}
-                overflow={'hidden'}
-                boxShadow={'#e9e9e9 0px 0px 15px 5px'}
-                transition={'0.1s'}
-                _hover={{
-                  transform: 'scale(1.02)',
-                }}>
-                <TemplateDrawer
-                  template={el}
-                  dimension={A4}
-                  data={defaultPersonalDataConst}
-                  scale={0.5}
-                />
-              </Box>
-              <Text
-                transition={'0.5s ease-in-out'}
-                size={'large'}
-                opacity={hovered === el ? '1' : '0'}
-                position={'absolute'}
-                bottom={hovered === el ? -35 : 10}>
-                {el.name}
-              </Text>
-            </Flex>
-          );
-        })}
-      </Flex>
+      {templates.length !== 0 ? (
+        <Flex gap={'20px'} mt={'20px'} wrap={'wrap'} justify={'space-evenly'}>
+          {templates.map((el: Template) => {
+            return (
+              <Flex
+                flexDirection={'column'}
+                alignItems={'center'}
+                justifyContent={'center'}
+                onMouseEnter={() => setHovered(el)}
+                onMouseLeave={() => setHovered(null)}
+                position={'relative'}>
+                <Box
+                  w={A4.width / 2}
+                  h={A4.height / 2}
+                  bgColor={'white'}
+                  borderRadius={'20px'}
+                  key={el.id}
+                  onClick={() => navigate(el.id.toString())}
+                  cursor={'pointer'}
+                  overflow={'hidden'}
+                  boxShadow={'#e9e9e9 0px 0px 15px 5px'}
+                  transition={'0.1s'}
+                  _hover={{
+                    transform: 'scale(1.02)',
+                  }}>
+                  <TemplateDrawer
+                    template={el}
+                    dimension={A4}
+                    data={defaultPersonalDataConst}
+                    scale={0.5}
+                  />
+                </Box>
+                <Text
+                  transition={'0.5s ease-in-out'}
+                  size={'large'}
+                  opacity={hovered === el ? '1' : '0'}
+                  position={'absolute'}
+                  bottom={hovered === el ? -35 : 10}>
+                  {el.name}
+                </Text>
+              </Flex>
+            );
+          })}
+        </Flex>
+      ) : (
+        <Flex
+          w={'100%'}
+          pt={'200px'}
+          justifyContent={'center'}
+          alignItems={'center'}>
+          <Flex
+            p={'30px'}
+            w={'50%'}
+            boxShadow={'0px 1px 4px #e1e1e1'}
+            borderRadius={'30px'}
+            bg={'white'}
+            justifyContent={'center'}
+            alignItems={'center'}
+            gap={'15px'}>
+            <SlMagnifierRemove />
+            <Text>NO TEMPLATES FOUND</Text>
+          </Flex>
+        </Flex>
+      )}
     </Flex>
   );
 }
