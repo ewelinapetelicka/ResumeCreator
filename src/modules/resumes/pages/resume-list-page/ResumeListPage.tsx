@@ -35,7 +35,7 @@ export function ResumeListPage() {
       {resumes.length !== 0 ? (
         <Wrap spacing={'20px'} mt={'20px'} justify={'space-evenly'}>
           {resumes.map((el: Resume) => {
-            return <ResumeCard resume={el} />;
+            return <ResumeCard resume={el} key={el.id} />;
           })}
         </Wrap>
       ) : (
