@@ -41,13 +41,13 @@ export function useHttpClient() {
       fetch(`${host}/${endpoint}`, {
         headers: getHeaders(),
       }).then((res) => handleResponse(res)),
-    post: <T>(endpoint: string, body: unknown): Promise<T> =>
+    post: <T>(endpoint: string, body: any): Promise<T> =>
       fetch(`${host}/${endpoint}`, {
         headers: getHeaders(),
         method: 'POST',
         body: JSON.stringify(body),
       }).then((res) => handleResponse(res)),
-    patch: <T>(endpoint: string, body: unknown): Promise<T> =>
+    patch: <T>(endpoint: string, body: any): Promise<T> =>
       fetch(`${host}/${endpoint}`, {
         headers: getHeaders(),
         method: 'PATCH',
