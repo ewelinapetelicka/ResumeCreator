@@ -1,7 +1,6 @@
 import { Box, Flex } from '@chakra-ui/react';
 import { A4 } from '../../../../const/a4.const.ts';
 import { TemplateDrawer } from '../../../../components/template-drawer/TemplateDrawer.tsx';
-import { defaultPersonalDataConst } from '../../../templates/const/default-personal-data.const.ts';
 import { Resume } from '../../../../model/resume.model.ts';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -42,8 +41,9 @@ export function ResumeCard(props: ResumeCardProps) {
         <TemplateDrawer
           template={template}
           dimension={A4}
-          data={defaultPersonalDataConst}
+          data={props.resume.personalData}
           scale={0.5}
+          variant={props.resume.colorVariant}
         />
       </Box>
     </Flex>

@@ -30,6 +30,7 @@ export function ResumePrintPage() {
       dimension={A4}
       scale={1.332}
       data={resume.personalData}
+      variant={resume.colorVariant}
     />
   );
 }
