@@ -37,6 +37,7 @@ export function ResumePreviewPage() {
   );
   const [canDownload, setCanDownload] = useState(true);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [variant, setVariant] = useState(template?.colorVariants[0] || '');
 
   if (!resume || !template) {
     return <Navigate to={'/404'} />;
@@ -49,6 +50,7 @@ export function ResumePreviewPage() {
           ...resumeDataForm,
           updateDate: new Date().toISOString(),
         },
+        colorVariant: variant,
       })
       .then(() => {
         toast({
@@ -120,11 +122,30 @@ export function ResumePreviewPage() {
               template={template}
               dimension={A4}
               data={resumeDataForm}
+              variant={variant}
             />
           </TransformComponent>
         </TransformWrapper>
       </Flex>
-      <Flex position={'absolute'} right={'20px'} top={'0px'}>
+      <Flex
+        position={'absolute'}
+        right={'20px'}
+        top={'0px'}
+        alignItems={'center'}
+        gap={'20px'}>
+        <Flex gap={'20px'}>
+          {template.colorVariants?.map((color) => {
+            return (
+              <Button
+                onClick={() => setVariant(color)}
+                key={color}
+                bgColor={color}
+                variant={
+                  variant === color ? 'selectedColor' : 'color'
+                }></Button>
+            );
+          })}
+        </Flex>
         <Button colorScheme={'red'} variant={'ghost'} onClick={() => onOpen()}>
           DELETE
         </Button>

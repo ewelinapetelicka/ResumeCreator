@@ -6,4 +6,5 @@ export interface Resume {
   personalData: PersonalData;
   templateId: number;
   userId: number;
+  colorVariant: string;
 }
