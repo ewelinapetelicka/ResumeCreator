@@ -21,6 +21,15 @@ export const resumesSlice = createSlice({
       state.resumes = action.payload;
       state.isLoaded = true;
     },
+    updateResume: (state, action: PayloadAction<Resume>) => {
+      state.resumes = state.resumes.map((resume) => {
+        if (resume.id === action.payload.id) {
+          return action.payload;
+        } else {
+          return resume;
+        }
+      });
+    },
     removeResume: (state, action: PayloadAction<number>) => {
       state.resumes = state.resumes.filter(
         (resume) => resume.id !== action.payload,
@@ -51,4 +60,4 @@ export const selectIsResumesLoaded = (state: RootState) =>
 export const selectResumeById = (id: number) => (state: RootState) =>
   state.resumes.resumes.find((el) => el.id === id);
 
-export const { setResumes, removeResume } = resumesSlice.actions;
+export const { setResumes, removeResume, updateResume } = resumesSlice.actions;

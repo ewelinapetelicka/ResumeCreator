@@ -6,8 +6,11 @@ import {
   useDisclosure,
   useToast,
 } from '@chakra-ui/react';
-import { useSelector } from 'react-redux';
-import { selectResumeById } from '../../../../store/resume/resumes.slice';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  selectResumeById,
+  updateResume,
+} from '../../../../store/resume/resumes.slice';
 import { Navigate, useLocation, useParams } from 'react-router-dom';
 import {
   ReactZoomPanPinchContentRef,
@@ -23,6 +26,7 @@ import { PersonalData } from '../../../../model/personal-data.model';
 import { useHttpClient } from '../../../../hooks/http-client/use-http-client';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 import { DeleteResumeDialog } from '../../dialogs/delete-resume-dialog/DeleteResumeDialog.tsx';
+import { Resume } from '../../../../model/resume.model.ts';
 
 export function ResumePreviewPage() {
   const params = useParams();
@@ -37,6 +41,10 @@ export function ResumePreviewPage() {
   );
   const [canDownload, setCanDownload] = useState(true);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [variant, setVariant] = useState(
+    resume?.colorVariant || template?.colorVariants[0] || '',
+  );
+  const dispatch = useDispatch();
 
   if (!resume || !template) {
     return <Navigate to={'/404'} />;
@@ -44,11 +52,15 @@ export function ResumePreviewPage() {
 
   async function saveResumeDataForm() {
     http
-      .patch('resumes/' + resume?.id, {
+      .patch<Resume>('resumes/' + resume?.id, {
         personalData: {
           ...resumeDataForm,
           updateDate: new Date().toISOString(),
         },
+        colorVariant: variant,
+      })
+      .then((updatedResume) => {
+        dispatch(updateResume(updatedResume));
       })
       .then(() => {
         toast({
@@ -73,6 +85,11 @@ export function ResumePreviewPage() {
 
   function updateResumeDataForm(change: PersonalData) {
     setResumeDataForm(change);
+    setCanDownload(false);
+  }
+
+  function updateResumeColorVariant(change: string) {
+    setVariant(change);
     setCanDownload(false);
   }
 
@@ -120,11 +137,30 @@ export function ResumePreviewPage() {
               template={template}
               dimension={A4}
               data={resumeDataForm}
+              variant={variant}
             />
           </TransformComponent>
         </TransformWrapper>
       </Flex>
-      <Flex position={'absolute'} right={'20px'} top={'0px'}>
+      <Flex
+        position={'absolute'}
+        right={'20px'}
+        top={'0px'}
+        alignItems={'center'}
+        gap={'20px'}>
+        <Flex gap={'20px'}>
+          {template.colorVariants?.map((color) => {
+            return (
+              <Button
+                onClick={() => updateResumeColorVariant(color)}
+                key={color}
+                bgColor={color}
+                variant={
+                  variant === color ? 'selectedColor' : 'color'
+                }></Button>
+            );
+          })}
+        </Flex>
         <Button colorScheme={'red'} variant={'ghost'} onClick={() => onOpen()}>
           DELETE
         </Button>
