@@ -1,23 +1,36 @@
-import { Navigate, useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { TemplateDrawer } from '../../../../components/template-drawer/TemplateDrawer';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectTemplateById } from '../../../../store/template/templates.slice';
 import {
   ReactZoomPanPinchContentRef,
   TransformComponent,
   TransformWrapper,
 } from 'react-zoom-pan-pinch';
-import { Box, Button, Flex, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Text, useToast } from '@chakra-ui/react';
 import { A4 } from '../../../../const/a4.const';
 import { TemplatePreviewActions } from '../../components/template-preview-actions/TemplatePreviewActions';
 import { useRef, useState } from 'react';
 import { defaultPersonalDataConst } from '../../const/default-personal-data.const';
+import { useHttpClient } from '../../../../hooks/http-client/use-http-client.ts';
+import {
+  selectIsUserLogged,
+  selectUser,
+} from '../../../../store/user/user.slice.ts';
+import { Resume } from '../../../../model/resume.model.ts';
+import { addResume } from '../../../../store/resume/resumes.slice.ts';
 
 export function TemplatePreviewPage() {
   const params = useParams();
   const template = useSelector(selectTemplateById(parseInt(params.id!)));
   const reactZoomPanPinchContentRef = useRef<ReactZoomPanPinchContentRef>(null);
   const [variant, setVariant] = useState(template?.colorVariants[0] || '');
+  const http = useHttpClient();
+  const isLogged = useSelector(selectIsUserLogged);
+  const user = useSelector(selectUser);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const toast = useToast();
 
   if (!template) {
     return <Navigate to={'/404'} />;
@@ -25,6 +38,29 @@ export function TemplatePreviewPage() {
 
   function resetPosition() {
     reactZoomPanPinchContentRef.current!.centerView(0.7);
+  }
+
+  function createResume() {
+    http
+      .post<Resume>('resumes', {
+        personalData: user.personalData,
+        name: template?.name,
+        templateId: template?.id,
+        userId: user.id,
+      })
+      .then((resume) => {
+        dispatch(addResume(resume));
+        navigate('/resumes/' + resume.id);
+        toast({
+          title: 'Success',
+          description:
+            'Your resume has been created! Now you can personalize your resume, without changing your profile data.',
+          status: 'success',
+          duration: 5000,
+          position: 'top-right',
+          isClosable: true,
+        });
+      });
   }
 
   return (
@@ -92,6 +128,14 @@ export function TemplatePreviewPage() {
           />
         </TransformComponent>
       </TransformWrapper>
+      <Button
+        position={'absolute'}
+        bottom={'0px'}
+        right={'20px'}
+        onClick={() => createResume()}
+        isDisabled={!isLogged}>
+        CREATE RESUME
+      </Button>
     </Box>
   );
 }
