@@ -44,8 +44,8 @@ export function TemplatePreviewPage() {
     http
       .post<Resume>('resumes', {
         personalData: user.personalData,
-        name: template?.name,
-        templateId: template?.id,
+        name: template!.name,
+        templateId: template!.id,
         userId: user.id,
       })
       .then((resume) => {
