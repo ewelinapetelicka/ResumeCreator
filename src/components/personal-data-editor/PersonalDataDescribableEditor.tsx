@@ -4,7 +4,6 @@ import {
   AccordionIcon,
   AccordionItem,
   AccordionPanel,
-  Box,
   Button,
   Flex,
   Input,
@@ -16,6 +15,8 @@ import {
 } from '../../model/personal-data.model';
 import { useState } from 'react';
 import { IoMdTrash } from 'react-icons/io';
+import { IconContext } from 'react-icons';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 interface PersonalDataDescribableEditorProps {
   personalDataDescribable: PersonalDataDescribable[];
@@ -57,6 +58,16 @@ export function PersonalDataDescribableEditor(
     props.onChange(edited);
   }
 
+  function swapPositions(index1: number, index2: number) {
+    const edited = structuredClone(personalDataDescribableForm);
+    const tmp = edited[index1];
+    edited[index1] = edited[index2];
+    edited[index2] = tmp;
+
+    setPersonalDataDescribableForm(edited);
+    props.onChange(edited);
+  }
+
   return (
     <>
       <Accordion allowMultiple w={'100%'}>
@@ -64,9 +75,46 @@ export function PersonalDataDescribableEditor(
           <AccordionItem key={index}>
             <Flex gap="8px">
               <AccordionButton>
-                <Box as="span" flex="1" textAlign="left">
+                <Flex
+                  as="span"
+                  flex="1"
+                  textAlign="left"
+                  alignItems={'center'}
+                  gap={'4px'}>
+                  <Flex flexDirection={'column'}>
+                    {index === 0 || (
+                      <>
+                        <Button
+                          size="xs"
+                          variant="ghost"
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            swapPositions(index, index - 1);
+                          }}>
+                          <IconContext.Provider value={{ color: '#4a5568' }}>
+                            <FaChevronUp />
+                          </IconContext.Provider>
+                        </Button>
+                      </>
+                    )}
+                    {index === personalDataDescribableForm.length - 1 || (
+                      <>
+                        <Button
+                          size="xs"
+                          variant="ghost"
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            swapPositions(index, index + 1);
+                          }}>
+                          <IconContext.Provider value={{ color: '#4a5568' }}>
+                            <FaChevronDown />
+                          </IconContext.Provider>
+                        </Button>
+                      </>
+                    )}
+                  </Flex>
                   <Text>{el.name}</Text>
-                </Box>
+                </Flex>
                 <AccordionIcon />
               </AccordionButton>
               <Button
@@ -76,7 +124,6 @@ export function PersonalDataDescribableEditor(
                 <IoMdTrash />
               </Button>
             </Flex>
-
             <AccordionPanel pb={4}>
               <Text variant={'label'}>Name</Text>
               <Input
@@ -89,7 +136,6 @@ export function PersonalDataDescribableEditor(
                   )
                 }
               />
-
               <Text variant={'label'}>Time</Text>
               <Input
                 value={el.time}
@@ -101,7 +147,6 @@ export function PersonalDataDescribableEditor(
                   );
                 }}
               />
-
               <Text variant={'label'}>Company</Text>
               <Input
                 value={el.company}
@@ -113,7 +158,6 @@ export function PersonalDataDescribableEditor(
                   );
                 }}
               />
-
               <Text variant={'label'}>Description</Text>
               <Input
                 value={el.description}

@@ -19,14 +19,13 @@
           "company": "Oxford Leadership Programme"
         },
         {
-          "name": "Project Management Professional",
-          "time": "2016",
-          "company": "Oxford Leadership Programme"
-        },
-        {
           "name": "Certified ScrumMaster",
           "time": "2015",
           "company": "Scrum.org"
+        }, {
+          "name": "Project Management Professional",
+          "time": "2016",
+          "company": "Oxford Leadership Programme"
         }
       ],
       "education": [
