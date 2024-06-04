@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { selectTemplatesByFilters } from '../../../../store/template/templates.slice';
 import { Template } from '../../../../model/template.model';
 import {
+  Badge,
   Box,
   Button,
   Flex,
@@ -42,10 +43,15 @@ export function TemplateListPage() {
             return (
               <Button
                 colorScheme="gray"
+                display={'flex'}
+                gap={'7px'}
                 bg={tags.includes(tag) ? 'white' : 'transparent'}
                 key={index}
                 onClick={() => chooseTag(tag)}>
                 {tag}
+                <Badge variant="solid">
+                  {templates.filter((el) => el.tags.includes(tag)).length}
+                </Badge>
               </Button>
             );
           })}
