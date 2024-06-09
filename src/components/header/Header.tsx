@@ -74,6 +74,12 @@ export function Header() {
               }>
               Templates
             </Button>
+            <Button
+              colorScheme="gray"
+              onClick={() => navigate('/FAQ')}
+              variant={location.pathname.includes('FAQ') ? 'solid' : 'ghost'}>
+              FAQ
+            </Button>
           </Box>
         </Box>
         <Flex alignItems={'center'} pr={'10px'}>
