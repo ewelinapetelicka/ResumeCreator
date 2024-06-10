@@ -2,7 +2,7 @@ interface QuestionType {
   question: string;
   answer: string;
 }
-export const Questions: QuestionType[] = [
+export const QUESTIONS: QuestionType[] = [
   {
     question: 'What is a Resume Creator and how does it work?',
     answer:

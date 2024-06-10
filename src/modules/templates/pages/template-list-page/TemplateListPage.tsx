@@ -17,8 +17,8 @@ import { useState } from 'react';
 import { TemplateDrawer } from '../../../../components/template-drawer/TemplateDrawer';
 import { A4 } from '../../../../const/a4.const';
 import { defaultPersonalDataConst } from '../../const/default-personal-data.const';
-import { TemplateTagsConst } from '../../../../const/template-tags.const.ts';
 import { SlMagnifierRemove } from 'react-icons/sl';
+import { TEMPLATE_TAGS_CONST } from '../../../../const/template-tags.const.ts';
 
 export function TemplateListPage() {
   const [query, setQuery] = useState('');
@@ -39,7 +39,7 @@ export function TemplateListPage() {
     <Flex direction={'column'} m={'20px'}>
       <Flex justifyContent={'space-between'} alignItems={'center'}>
         <Flex gap={'10px'}>
-          {TemplateTagsConst.map((tag, index) => {
+          {TEMPLATE_TAGS_CONST.map((tag, index) => {
             return (
               <Button
                 colorScheme="gray"

@@ -1,6 +1,6 @@
 import { Box, Flex, List, ListIcon, ListItem, Text } from '@chakra-ui/react';
 import { HiQuestionMarkCircle } from 'react-icons/hi';
-import { Questions } from '../../const/questions.ts';
+import { QUESTIONS } from '../../const/questions.ts';
 
 export function FrequentlyAskedQuestionsPage() {
   return (
@@ -29,7 +29,7 @@ export function FrequentlyAskedQuestionsPage() {
             gap={'20px'}
             gridTemplateColumns={'auto auto'}
             p={'30px'}>
-            {Questions.map((el) => {
+            {QUESTIONS.map((el) => {
               return (
                 <ListItem>
                   <Flex alignItems={'center'}>
