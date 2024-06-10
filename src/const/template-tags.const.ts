@@ -1,4 +1,4 @@
-export const TemplateTagsConst: string[] = [
+export const TEMPLATE_TAGS_CONST: string[] = [
   'Professional',
   'Creative',
   'Minimalistic',

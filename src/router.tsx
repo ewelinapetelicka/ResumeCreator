@@ -13,6 +13,7 @@ import { NotFoundPage } from './pages/not-found-page/NotFoundPage.tsx';
 import { UnauthorizedPage } from './pages/unauthorized-page/UnauthorizedPage.tsx';
 import { ResumePreviewPage } from './modules/resumes/pages/resume-preview-page/ResumePreviewPage.tsx';
 import { ResumePrintPage } from './modules/resumes/pages/resume-print-page/ResumePrintPage.tsx';
+import { FrequentlyAskedQuestionsPage } from './pages/frequently-asked-questions-page/FrequentlyAskedQuestionsPage.tsx';
 
 export const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ export const router = createBrowserRouter([
             element: <TemplatePreviewPage />,
           },
         ],
+      },
+      {
+        path: 'FAQ',
+        element: <FrequentlyAskedQuestionsPage />,
       },
     ],
   },
