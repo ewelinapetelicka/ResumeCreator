@@ -7,4 +7,5 @@ export interface Resume {
   templateId: number;
   userId: number;
   colorVariant?: string;
+  isFavorite: boolean;
 }

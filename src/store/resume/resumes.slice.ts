@@ -38,6 +38,14 @@ export const resumesSlice = createSlice({
     addResume: (state, action: PayloadAction<Resume>) => {
       state.resumes.push(action.payload);
     },
+    toggleFavoriteResume: (state, action: PayloadAction<number>) => {
+      state.resumes = state.resumes.map((resume) => {
+        if (resume.id === action.payload) {
+          resume.isFavorite = !resume.isFavorite;
+        }
+        return resume;
+      });
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(logOut, (state) => {
@@ -63,5 +71,10 @@ export const selectIsResumesLoaded = (state: RootState) =>
 export const selectResumeById = (id: number) => (state: RootState) =>
   state.resumes.resumes.find((el) => el.id === id);
 
-export const { setResumes, removeResume, updateResume, addResume } =
-  resumesSlice.actions;
+export const {
+  setResumes,
+  removeResume,
+  updateResume,
+  addResume,
+  toggleFavoriteResume,
+} = resumesSlice.actions;

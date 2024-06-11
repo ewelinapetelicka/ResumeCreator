@@ -74,6 +74,7 @@ export function TemplateListPage() {
           {templates.map((el: Template) => {
             return (
               <Flex
+                key={el.id}
                 flexDirection={'column'}
                 alignItems={'center'}
                 justifyContent={'center'}

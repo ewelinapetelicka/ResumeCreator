@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import {
+  Box,
   Flex,
+  IconButton,
   Input,
   InputGroup,
   InputLeftElement,
@@ -10,13 +12,27 @@ import {
 import { Resume } from '../../../../model/resume.model';
 import { SearchIcon } from '@chakra-ui/icons';
 import { SlMagnifierRemove } from 'react-icons/sl';
-import { selectResumesByFilters } from '../../../../store/resume/resumes.slice.ts';
-import { useSelector } from 'react-redux';
+import {
+  selectResumesByFilters,
+  toggleFavoriteResume,
+} from '../../../../store/resume/resumes.slice.ts';
+import { useDispatch, useSelector } from 'react-redux';
 import { ResumeCard } from '../../components/resume-card/ResumeCard.tsx';
+import { FaRegStar, FaStar } from 'react-icons/fa';
+import { useHttpClient } from '../../../../hooks/http-client/use-http-client.ts';
 
 export function ResumeListPage() {
   const [query, setQuery] = useState('');
   const resumes = useSelector(selectResumesByFilters(query));
+  const dispatch = useDispatch();
+  const http = useHttpClient();
+
+  function toggleFavorite(resume: Resume) {
+    dispatch(toggleFavoriteResume(resume.id));
+    http.patch('resumes/' + resume.id, {
+      isFavorite: !resume.isFavorite,
+    });
+  }
 
   return (
     <Flex direction={'column'} m={'20px'}>
@@ -35,7 +51,17 @@ export function ResumeListPage() {
       {resumes.length !== 0 ? (
         <Wrap spacing={'20px'} mt={'20px'} justify={'space-evenly'}>
           {resumes.map((el: Resume) => {
-            return <ResumeCard resume={el} key={el.id} />;
+            return (
+              <Box>
+                <IconButton
+                  key={el.id}
+                  onClick={() => toggleFavorite(el)}
+                  aria-label="Add to favorite"
+                  icon={el.isFavorite ? <FaStar /> : <FaRegStar />}
+                />
+                <ResumeCard resume={el} key={el.id} />
+              </Box>
+            );
           })}
         </Wrap>
       ) : (
