@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Flex,
+  IconButton,
   Tooltip,
   useDisclosure,
   useToast,
@@ -11,7 +12,7 @@ import {
   selectResumeById,
   updateResume,
 } from '../../../../store/resume/resumes.slice';
-import { Navigate, useLocation, useParams } from 'react-router-dom';
+import { Navigate, useBlocker, useLocation, useParams } from 'react-router-dom';
 import {
   ReactZoomPanPinchContentRef,
   TransformComponent,
@@ -27,6 +28,7 @@ import { useHttpClient } from '../../../../hooks/http-client/use-http-client';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 import { DeleteResumeDialog } from '../../dialogs/delete-resume-dialog/DeleteResumeDialog.tsx';
 import { Resume } from '../../../../model/resume.model.ts';
+import { FaRegStar, FaStar } from 'react-icons/fa';
 
 export function ResumePreviewPage() {
   const params = useParams();
@@ -44,7 +46,15 @@ export function ResumePreviewPage() {
   const [variant, setVariant] = useState(
     resume?.colorVariant || template?.colorVariants[0] || '',
   );
+  const [favorite, setFavorite] = useState(resume?.isFavorite);
   const dispatch = useDispatch();
+
+  useBlocker(() => {
+    if (!canDownload) {
+      return !confirm('Are you sure?');
+    }
+    return false;
+  });
 
   if (!resume || !template) {
     return <Navigate to={'/404'} />;
@@ -58,6 +68,7 @@ export function ResumePreviewPage() {
           updateDate: new Date().toISOString(),
         },
         colorVariant: variant,
+        isFavorite: favorite,
       })
       .then((updatedResume) => {
         dispatch(updateResume(updatedResume));
@@ -90,6 +101,11 @@ export function ResumePreviewPage() {
 
   function updateResumeColorVariant(change: string) {
     setVariant(change);
+    setCanDownload(false);
+  }
+
+  function updateResumeIsFavorite(change: boolean) {
+    setFavorite(change);
     setCanDownload(false);
   }
 
@@ -161,6 +177,11 @@ export function ResumePreviewPage() {
             );
           })}
         </Flex>
+        <IconButton
+          onClick={() => updateResumeIsFavorite(!favorite)}
+          aria-label="Add to favorite"
+          icon={favorite ? <FaStar /> : <FaRegStar />}
+        />
         <Button colorScheme={'red'} variant={'ghost'} onClick={() => onOpen()}>
           DELETE
         </Button>

@@ -52,14 +52,13 @@ export function ResumeListPage() {
         <Wrap spacing={'20px'} mt={'20px'} justify={'space-evenly'}>
           {resumes.map((el: Resume) => {
             return (
-              <Box>
+              <Box key={el.id}>
                 <IconButton
-                  key={el.id}
                   onClick={() => toggleFavorite(el)}
-                  aria-label="Add to favorite"
+                  aria-label="Toggle is favorite"
                   icon={el.isFavorite ? <FaStar /> : <FaRegStar />}
                 />
-                <ResumeCard resume={el} key={el.id} />
+                <ResumeCard resume={el} />
               </Box>
             );
           })}
