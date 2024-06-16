@@ -91,7 +91,8 @@
       "updateDate": "2024-05-01T19:00:00.000Z"
     },
     "templateId": 1,
-    "userId": 1
+    "userId": 1,
+    "isFavorite": false
   },
   {
     "id": 2,
@@ -187,6 +188,7 @@
     },
     "templateId": 2,
     "userId": 1,
-    "colorVariant": "#ddc2c2"
+    "colorVariant": "#ddc2c2",
+    "isFavorite": true
   }
 ]
