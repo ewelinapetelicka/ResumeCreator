@@ -4,7 +4,7 @@ import {
   PersonalDataValue,
 } from '../../model/personal-data.model';
 import { Flex, Input, Text, Textarea } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { PersonalDataDescribableEditor } from './PersonalDataDescribableEditor';
 import { PersonalDataDescribableNameEditor } from './PersonalDataDescribableNameEditor';
 
@@ -17,6 +17,10 @@ export function PersonalDataEditor(props: PersonalDataEditorProps) {
   const [personalDataForm, setPersonalDataForm] = useState<PersonalData>(
     structuredClone(props.personalData),
   );
+
+  useEffect(() => {
+    setPersonalDataForm(structuredClone(props.personalData));
+  }, [props.personalData]);
 
   function updatePersonalDataForm(
     field: PersonalDataField,

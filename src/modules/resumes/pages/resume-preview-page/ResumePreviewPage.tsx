@@ -29,6 +29,8 @@ import { AiOutlineArrowDown } from 'react-icons/ai';
 import { DeleteResumeDialog } from '../../dialogs/delete-resume-dialog/DeleteResumeDialog.tsx';
 import { Resume } from '../../../../model/resume.model.ts';
 import { FaRegStar, FaStar } from 'react-icons/fa';
+import { selectUser } from '../../../../store/user/user.slice.ts';
+import { LuRefreshCw } from 'react-icons/lu';
 
 export function ResumePreviewPage() {
   const params = useParams();
@@ -48,6 +50,8 @@ export function ResumePreviewPage() {
   );
   const [favorite, setFavorite] = useState(resume?.isFavorite);
   const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+  const [personalData, setPersonalData] = useState(resumeDataForm);
 
   useBlocker(() => {
     if (!canDownload) {
@@ -64,7 +68,7 @@ export function ResumePreviewPage() {
     http
       .patch<Resume>('resumes/' + resume?.id, {
         personalData: {
-          ...resumeDataForm,
+          ...personalData,
           updateDate: new Date().toISOString(),
         },
         colorVariant: variant,
@@ -109,6 +113,33 @@ export function ResumePreviewPage() {
     setCanDownload(false);
   }
 
+  function synchronizeWithProfile() {
+    if (
+      new Date(user.personalData.updateDate).getTime() >
+      new Date(personalData.updateDate).getTime()
+    ) {
+      setPersonalData(user.personalData);
+      setCanDownload(false);
+      toast({
+        title: 'Success',
+        description: 'The data has been updated',
+        status: 'success',
+        duration: 5000,
+        position: 'top-right',
+        isClosable: true,
+      });
+    } else {
+      toast({
+        title: 'Info',
+        description: 'No update available',
+        status: 'info',
+        duration: 5000,
+        position: 'top-right',
+        isClosable: true,
+      });
+    }
+  }
+
   return (
     <Box
       w={'calc(100% - 40px)'}
@@ -116,24 +147,38 @@ export function ResumePreviewPage() {
       m={'20px'}
       position={'relative'}>
       <Flex h={'100%'}>
-        <Box
-          w={'50%'}
+        <Flex
           h={'100%'}
-          minWidth={'600px'}
-          boxShadow={'0px 1px 4px #e1e1e1'}
-          borderRadius={'30px'}
-          bg={'white'}
-          alignItems={'center'}
-          gap={'30px'}
-          justifyContent={'center'}
           flexDirection={'column'}
-          p={'20px'}
-          overflowY={'scroll'}>
-          <PersonalDataEditor
-            personalData={resumeDataForm}
-            onChange={(change) => updateResumeDataForm(change)}
-          />
-        </Box>
+          alignItems={'start'}
+          justifyContent={'space-evenly'}>
+          <Button
+            onClick={() => synchronizeWithProfile()}
+            display={'flex'}
+            alignItems={'center'}
+            gap={'5px'}>
+            <LuRefreshCw />
+            Sync with your profile
+          </Button>
+          <Box
+            w={'50%'}
+            h={'94%'}
+            minWidth={'600px'}
+            boxShadow={'0px 1px 4px #e1e1e1'}
+            borderRadius={'30px'}
+            bg={'white'}
+            alignItems={'center'}
+            gap={'30px'}
+            justifyContent={'center'}
+            flexDirection={'column'}
+            p={'20px'}
+            overflowY={'scroll'}>
+            <PersonalDataEditor
+              personalData={personalData}
+              onChange={(change) => updateResumeDataForm(change)}
+            />
+          </Box>
+        </Flex>
         <TransformWrapper
           ref={reactZoomPanPinchContentRef}
           limitToBounds={false}
