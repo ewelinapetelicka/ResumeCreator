@@ -29,7 +29,7 @@ export const selectIsTemplateLoaded = (state: RootState) =>
 export const selectTemplateById = (id: number) => (state: RootState) =>
   state.templates.templates.find((el) => el.id === id);
 export const selectTemplatesByFilters =
-  (query: string, tags: string[]) => (state: RootState) =>
+  (query: string, tags: string[], combineTags: boolean) => (state: RootState) =>
     state.templates.templates.filter((template) => {
       let visible = true;
       if (query) {
@@ -39,9 +39,12 @@ export const selectTemplatesByFilters =
           .includes(query.toLowerCase().trim());
       }
       if (tags.length) {
-        visible = visible && template.tags.some((tag) => tags.includes(tag));
+        visible =
+          visible &&
+          (combineTags
+            ? tags.every((tag) => template.tags.includes(tag))
+            : template.tags.some((tag) => tags.includes(tag)));
       }
       return visible;
     });
-
 export const { setTemplates } = templatesSlice.actions;

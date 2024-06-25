@@ -6,9 +6,12 @@ import {
   Box,
   Button,
   Flex,
+  FormControl,
+  FormLabel,
   Input,
   InputGroup,
   InputLeftElement,
+  Switch,
   Text,
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
@@ -24,7 +27,10 @@ export function TemplateListPage() {
   const [query, setQuery] = useState('');
   const [tags, setTags] = useState<string[]>([]);
   const [hovered, setHovered] = useState<Template | null>(null);
-  const templates = useSelector(selectTemplatesByFilters(query, tags));
+  const [combineTags, setCombineTags] = useState(false);
+  const templates = useSelector(
+    selectTemplatesByFilters(query, tags, combineTags),
+  );
   const navigate = useNavigate();
 
   function chooseTag(tag: string) {
@@ -56,6 +62,14 @@ export function TemplateListPage() {
             );
           })}
         </Flex>
+        <FormControl display="flex" alignItems="center">
+          <FormLabel>Combine tags?</FormLabel>
+          <Switch
+            colorScheme="gray"
+            id="join-tags"
+            onChange={() => setCombineTags(!combineTags)}
+          />
+        </FormControl>
         <Flex justifyContent={'flex-end'}>
           <InputGroup w={300}>
             <InputLeftElement pointerEvents="none">
